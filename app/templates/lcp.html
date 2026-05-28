@@ -5,6 +5,19 @@
 <p class="muted">Enter cost items as JSON. growth_rate is a decimal from the
 Medical Care Cost Index (real medical inflation + expected general inflation).</p>
 
+<fieldset class="helper">
+  <legend>Medical Care Cost Index growth-rate helper (FRED CPI)</legend>
+  <div class="helper-row">
+    <label>CPI category
+      <select id="g_category"></select>
+    </label>
+    <label>Lookback (years) <input type="number" id="g_years" value="10" min="1" max="30"></label>
+    <label>Expected general inflation (%) <input type="number" step="any" id="g_general" value="2.3"></label>
+    <button type="button" onclick="lookupGrowth()">Compute growth rate</button>
+  </div>
+  <p id="g-msg" class="save-status"></p>
+</fieldset>
+
 <form hx-post="/lcp/calculate" hx-target="#result" hx-swap="innerHTML">
   <input type="hidden" name="case_id" value="{{ case_id }}">
   <label>Discount rate (%) <input type="number" step="any" name="discount_rate" value="{{ v.discount_rate }}"></label>
@@ -16,4 +29,43 @@ Medical Care Cost Index (real medical inflation + expected general inflation).</
 </form>
 
 <div id="result" class="result"></div>
+
+<script>
+async function loadCategories() {
+  var sel = document.getElementById('g_category');
+  try {
+    var r = await fetch('/lookups/lcp-categories');
+    var d = await r.json();
+    sel.innerHTML = d.categories.map(function (c) {
+      return '<option>' + c + '</option>';
+    }).join('');
+  } catch (e) { /* leave empty; helper is optional */ }
+}
+async function lookupGrowth() {
+  var msg = document.getElementById('g-msg');
+  msg.textContent = 'Querying FRED…';
+  var qs = new URLSearchParams({
+    category: document.getElementById('g_category').value,
+    years: document.getElementById('g_years').value,
+    general_inflation: (parseFloat(document.getElementById('g_general').value) / 100.0)
+  });
+  var r = await fetch('/lookups/lcp-growth?' + qs.toString());
+  if (!r.ok) {
+    var err = await r.json().catch(function () { return {}; });
+    msg.textContent = 'Could not compute: ' + (err.detail || r.status);
+    return;
+  }
+  var d = await r.json();
+  var growth = d.item_growth_rate.toFixed(4);
+  msg.innerHTML =
+    '<strong>growth_rate: ' + growth + '</strong> '
+    + '(category CAGR ' + (d.category_cagr * 100).toFixed(2) + '% − overall '
+    + (d.overall_cagr * 100).toFixed(2) + '% = real '
+    + (d.real_medical_inflation * 100).toFixed(2) + '% + general '
+    + (d.expected_general_inflation * 100).toFixed(2) + '%). '
+    + 'Paste into an item: "growth_rate": ' + growth
+    + ', "source": "' + d.source + '"';
+}
+loadCategories();
+</script>
 {% endblock %}

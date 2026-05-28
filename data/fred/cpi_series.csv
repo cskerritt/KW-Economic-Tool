@@ -1,0 +1,6 @@
+category,series_id,role,note
+Overall CPI (all items),CPIAUCSL,overall,CPI-U All Items SA (deflator for real medical inflation)
+Medical care,CPIMEDSL,category,CPI-U Medical care SA
+Medical care services,CUSR0000SAM2,category,CPI-U Medical care services SA
+Medical care commodities,CUSR0000SAM1,category,CPI-U Medical care commodities SA
+Hospital and related services,CUSR0000SEMD,category,CPI-U Hospital and related services SA

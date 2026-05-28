@@ -85,3 +85,20 @@ Percentages, May 2023). 52 state/territory totals plus metro and nonmetro areas.
   413/415-425 (descriptive/appendix) are not extracted.
 - NVSR full age-by-age state life tables are not in this PDF; it carries only the
   summary tables. The complete tables live on the CDC FTP site the report cites.
+
+## FRED (live, not scraped) — fred/cpi_series.csv
+Unlike the other folders, `fred/cpi_series.csv` is not extracted from a PDF; it
+is an auditable mapping of friendly CPI category names to FRED series IDs. The
+LCP Medical Care Cost Index helper (`datasets/fred.py`, `/lookups/lcp-growth`)
+fetches those series live from the St. Louis Fed FRED API and computes a
+compound annual growth rate over a lookback window, then composes the per-item
+LCP growth rate via the engine's DED §920 formula:
+`item growth = (category CAGR - overall CPI CAGR) + expected general inflation`.
+
+Requires `FRED_API_KEY` in the environment (never commit it). The five seeded
+series are verified to resolve on FRED (All items CPIAUCSL; Medical care
+CPIMEDSL; Medical care services CUSR0000SAM2; Medical care commodities
+CUSR0000SAM1; Hospital and related services CUSR0000SEMD). Add more category
+rows as needed using valid FRED series IDs; the helper lists whatever is in the
+CSV. The composed rate, the series IDs, the lookback window, and the as-of date
+are returned together so a saved case's growth rate is fully traceable.

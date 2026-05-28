@@ -19,6 +19,13 @@ from datasets.sck import worklife_expectancy, years_to_final_separation, worklif
 from datasets.nvsr import life_expectancy
 from datasets.ecec import fringe_rate
 from datasets.spf import long_term
+from datasets.fred import (
+    cagr,
+    category_growth,
+    cpi_series,
+    list_categories,
+    series_cagr,
+)
 
 __all__ = [
     "list_demographics",
@@ -31,4 +38,9 @@ __all__ = [
     "life_expectancy",
     "fringe_rate",
     "long_term",
+    "cagr",
+    "category_growth",
+    "cpi_series",
+    "list_categories",
+    "series_cagr",
 ]
