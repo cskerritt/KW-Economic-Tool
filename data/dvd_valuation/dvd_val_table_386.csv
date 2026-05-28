@@ -1,0 +1,8 @@
+occupation,soc_code,employment_2023,mean_wage_2023,weight,weighted_wage
+Maids and Housekeeping Cleaners,37-2012,836230,16.66,0.689,11.49
+"Locker Room, Coatroom, and Dressing Room Attendants",39-3093,14720,16.63,0.012,0.20
+Baggage Porters and Bellhops,39-6011,28780,17.36,0.024,0.41
+Laundry and Dry-Cleaning Workers,51-6011,185000,15.33,0.153,2.34
+"Pressers, Textile, Garment, and Related Materials",51-6021,28700,15.55,0.024,0.37
+Sewing Machine Operators,51-6031,116130,16.83,0.096,1.61
+"Sewers, Hand",51-6051,3390,16.28,0.003,0.05

@@ -1,0 +1,16 @@
+series,total_comp_cost,total_comp_pct,wages_cost,wages_pct,total_benefits_cost,total_benefits_pct,paid_leave_cost,paid_leave_pct,supplemental_pay_cost,supplemental_pay_pct,insurance_cost,insurance_pct,retirement_savings_cost,retirement_savings_pct,legally_required_cost,legally_required_pct
+Stateandlocalgovernmentworkers,65.68,100.0,40.49,61.7,25.19,38.3,4.84,7.4,0.69,1.0,7.49,11.4,8.69,13.2,3.48,5.3
+"Occupationalgroup Management,professional,and related",77.94,100.0,49.75,63.8,28.19,36.2,5.36,6.9,0.49,0.6,8.15,10.5,10.31,13.2,3.88,5.0
+Professionalandrelated,75.63,100.0,48.60,64.3,27.03,35.7,4.75,6.3,0.48,0.6,8.12,10.7,9.95,13.2,3.74,4.9
+Teachers2,85.00,100.0,56.09,66.0,28.91,34.0,4.02,4.7,0.31,0.4,8.68,10.2,12.00,14.1,3.90,4.6
+"Primary,secondary,and specialeducationschool teachers",83.76,100.0,54.46,65.0,29.30,35.0,3.60,4.3,0.29,0.3,9.04,10.8,12.75,15.2,3.62,4.3
+Salesandoffice,45.88,100.0,26.37,57.5,19.51,42.5,4.00,8.7,0.40,0.9,7.09,15.5,5.33,11.6,2.68,5.8
+Officeandadministrativesupport,46.08,100.0,26.42,57.3,19.66,42.7,4.02,8.7,0.41,0.9,7.18,15.6,5.38,11.7,2.68,5.8
+Service,50.17,100.0,28.44,56.7,21.73,43.3,4.15,8.3,1.23,2.5,5.99,11.9,7.41,14.8,2.95,5.9
+Industrygroup Educationandhealthservices,68.08,100.0,43.46,63.8,24.62,36.2,4.35,6.4,0.44,0.7,7.66,11.2,8.79,12.9,3.38,5.0
+Educationalservices,69.62,100.0,44.68,64.2,24.94,35.8,4.13,5.9,0.31,0.4,7.76,11.1,9.38,13.5,3.36,4.8
+Elementaryandsecondary schools,67.07,100.0,43.09,64.2,23.98,35.8,3.37,5.0,0.27,0.4,7.62,11.4,9.56,14.3,3.16,4.7
+"Juniorcolleges,colleges,and universities",76.84,100.0,49.20,64.0,27.64,36.0,6.29,8.2,0.39,0.5,8.11,10.6,8.91,11.6,3.93,5.1
+Healthcareandsocialassistance,59.02,100.0,36.29,61.5,22.73,38.5,5.61,9.5,1.23,2.1,7.07,12.0,5.31,9.0,3.50,5.9
+Hospitals,61.95,100.0,38.99,62.9,22.97,37.1,5.86,9.5,1.45,2.3,6.93,11.2,5.04,8.1,3.69,5.9
+Publicadministration,64.55,100.0,37.05,57.4,27.51,42.6,5.95,9.2,1.11,1.7,7.44,11.5,9.28,14.4,3.73,5.8

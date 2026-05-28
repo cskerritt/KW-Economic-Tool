@@ -1,0 +1,4 @@
+table,description,file,rows
+A,"Life expectancy at birth by sex (rank, LE, SE)",nvsr_tableA_life_expectancy_at_birth.csv,52
+B,"Life expectancy at age 65 by sex (rank, LE, SE)",nvsr_tableB_life_expectancy_at_age_65.csv,52
+C,Change in LE at birth 2021 to 2022,nvsr_tableC_change_in_le_at_birth_2021_to_2022.csv,52

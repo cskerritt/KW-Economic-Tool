@@ -1,0 +1,22 @@
+<div class="actions">
+  <form class="save" hx-post="/{{ module }}/save" hx-target="#save-status" hx-swap="innerHTML">
+    <input type="hidden" name="inputs_json" value="{{ inputs_json }}">
+    <input type="hidden" name="case_id" value="{{ case_id }}">
+    <input type="text" name="title" placeholder="Case title" required>
+    <button type="submit">{{ 'Update saved case' if case_id else 'Save case' }}</button>
+  </form>
+
+  <form class="export" method="post" action="/{{ module }}/export">
+    <input type="hidden" name="inputs_json" value="{{ inputs_json }}">
+    <input type="hidden" name="fmt" value="native">
+    <button type="submit">Download {{ 'DOCX' if module == 'lhhs' else 'XLSX' }}</button>
+  </form>
+
+  <form class="export" method="post" action="/{{ module }}/export">
+    <input type="hidden" name="inputs_json" value="{{ inputs_json }}">
+    <input type="hidden" name="fmt" value="pdf">
+    <button type="submit">Download PDF report</button>
+  </form>
+
+  <span id="save-status" class="save-status"></span>
+</div>

@@ -1,0 +1,8 @@
+file,description,rows
+ecec_table1_by_ownership.csv,"Employer costs by ownership (civilian, private, state/local)",26
+ecec_table2_civilian_by_occupation_industry.csv,Civilian workers by occupation and industry group,23
+ecec_table3_stategov_by_occupation_industry.csv,State and local government by occupation and industry group,15
+ecec_table4_private_by_occupation_industry.csv,Private industry by occupation and industry group,140
+ecec_table5_private_by_bargaining_fulltime.csv,"Private industry by bargaining status, full/part-time",57
+ecec_table6_private_by_establishment_size.csv,Private industry by establishment size,95
+ecec_table7_private_by_region_division.csv,Private industry by census region and division,13

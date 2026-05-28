@@ -1,0 +1,27 @@
+<h2>Result</h2>
+<table>
+  <thead>
+    <tr><th>Year</th><th>Annual value (grown)</th><th>Loss %</th>
+        <th>Annual loss</th><th>Present value</th></tr>
+  </thead>
+  <tbody>
+    {% for r in result.rows %}
+    <tr class="{{ 'future' if r.is_future else 'past' }}">
+      <td>{{ r.year }}</td>
+      <td>${{ '{:,.0f}'.format(r.base_annual_value) }}</td>
+      <td>{{ '%.0f%%' % (r.loss_percent * 100) }}</td>
+      <td>${{ '{:,.0f}'.format(r.annual_loss) }}</td>
+      <td>${{ '{:,.0f}'.format(r.present_value) }}</td>
+    </tr>
+    {% endfor %}
+  </tbody>
+  <tfoot>
+    <tr><td colspan="4">Past present value</td>
+        <td>${{ '{:,.0f}'.format(result.past_present_value) }}</td></tr>
+    <tr><td colspan="4">Future present value</td>
+        <td>${{ '{:,.0f}'.format(result.future_present_value) }}</td></tr>
+    <tr class="total"><td colspan="4">Total present value</td>
+        <td>${{ '{:,.2f}'.format(result.total_present_value) }}</td></tr>
+  </tfoot>
+</table>
+{% include "_actions.html" %}

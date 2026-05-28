@@ -1,0 +1,42 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "forensic-calc"
+version = "0.1.0"
+description = "Forensic economic damages calculator: economic loss, life care plan, and loss of household services."
+requires-python = ">=3.11"
+# The engine itself has NO runtime dependencies. It is pure standard-library
+# Python so the math can be tested and audited in isolation. Web, export, and
+# MCP layers add their own dependencies via the optional groups below.
+dependencies = []
+
+[project.optional-dependencies]
+web = [
+    "fastapi>=0.110",
+    "uvicorn[standard]>=0.29",
+    "jinja2>=3.1",
+    "python-multipart>=0.0.9",
+    "authlib>=1.3",
+    "httpx>=0.27",          # required by authlib's Starlette OAuth client
+    "itsdangerous>=2.1",
+    "sqlmodel>=0.0.16",
+]
+export = [
+    "openpyxl>=3.1",
+    "python-docx>=1.1",
+    "reportlab>=4.0",       # pure-python PDF generation (Railway-friendly, no system libs)
+]
+mcp = [
+    "mcp>=1.2",
+]
+dev = [
+    "pytest>=8.0",
+]
+
+[tool.setuptools.packages.find]
+include = ["engine*", "app*", "exports*", "storage*", "mcp_server*", "datasets*"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]

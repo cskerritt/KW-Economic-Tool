@@ -1,0 +1,141 @@
+series,total_comp_cost,total_comp_pct,wages_cost,wages_pct,total_benefits_cost,total_benefits_pct,paid_leave_cost,paid_leave_pct,supplemental_pay_cost,supplemental_pay_pct,insurance_cost,insurance_pct,retirement_savings_cost,retirement_savings_pct,legally_required_cost,legally_required_pct
+Privateindustryworkers,46.15,100.0,32.36,70.1,13.79,29.9,3.52,7.6,1.87,4.1,3.51,7.6,1.55,3.4,3.34,7.2
+"Occupationalgroup Management,professional,and relatedoccupations",77.22,100.0,53.03,68.7,24.19,31.3,7.28,9.4,3.55,4.6,5.54,7.2,2.87,3.7,4.95,6.4
+"Management,business,and financialoccupations",86.61,100.0,58.51,67.6,28.09,32.4,8.33,9.6,4.86,5.6,6.33,7.3,3.17,3.7,5.40,6.2
+Professionalandrelated occupations,72.19,100.0,50.10,69.4,22.09,30.6,6.71,9.3,2.85,3.9,5.12,7.1,2.71,3.8,4.70,6.5
+Salesandofficeoccupations,35.54,100.0,25.48,71.7,10.05,28.3,2.45,6.9,1.06,3.0,3.02,8.5,0.95,2.7,2.58,7.3
+Salesandrelatedoccupations,35.01,100.0,26.37,75.3,8.65,24.7,2.09,6.0,1.04,3.0,2.05,5.9,0.83,2.4,2.64,7.5
+Officeandadministrativesupport occupations,35.96,100.0,24.79,68.9,11.17,31.1,2.73,7.6,1.07,3.0,3.79,10.6,1.04,2.9,2.53,7.0
+Serviceoccupations,23.39,100.0,17.99,76.9,5.40,23.1,1.02,4.4,0.62,2.7,1.33,5.7,0.38,1.6,2.05,8.8
+"Naturalresources,construction,and maintenanceoccupations",46.91,100.0,32.25,68.7,14.66,31.3,2.65,5.6,1.96,4.2,3.84,8.2,2.27,4.8,3.93,8.4
+"Construction,extraction,farming, fishing,andforestryoccupations",45.53,100.0,31.33,68.8,14.20,31.2,2.05,4.5,2.07,4.6,3.68,8.1,2.27,5.0,4.12,9.1
+"Installation,maintenance,and repairoccupations",48.32,100.0,33.18,68.7,15.13,31.3,3.26,6.7,1.85,3.8,4.02,8.3,2.27,4.7,3.74,7.7
+"Production,transportation,and materialmovingoccupations",36.26,100.0,24.82,68.4,11.45,31.6,2.18,6.0,1.65,4.5,3.39,9.3,1.28,3.5,2.95,8.1
+Productionoccupations,36.66,100.0,24.71,67.4,11.95,32.6,2.28,6.2,2.25,6.1,3.51,9.6,1.02,2.8,2.90,7.9
+Transportationandmaterialmoving occupations,36.01,100.0,24.88,69.1,11.13,30.9,2.13,5.9,1.27,3.5,3.32,9.2,1.44,4.0,2.98,8.3
+Industryandoccupationalgroup Goods-producingindustries2,48.97,100.0,33.28,68.0,15.69,32.0,3.20,6.5,2.63,5.4,4.21,8.6,1.84,3.8,3.80,7.8
+"Management,professional,and relatedoccupations",80.04,100.0,54.68,68.3,25.36,31.7,6.89,8.6,4.38,5.5,5.78,7.2,2.95,3.7,5.37,6.7
+"Management,business,and financialoccupations",85.61,100.0,58.77,68.7,26.84,31.3,7.12,8.3,5.31,6.2,5.79,6.8,2.90,3.4,5.72,6.7
+Professionalandrelated occupations,73.31,100.0,49.73,67.8,23.58,32.2,6.60,9.0,3.25,4.4,5.77,7.9,3.00,4.1,4.95,6.8
+Salesandofficeoccupations,42.50,100.0,30.80,72.5,11.70,27.5,2.73,6.4,1.30,3.0,3.55,8.4,0.94,2.2,3.18,7.5
+Officeandadministrativesupport occupations,38.12,100.0,26.85,70.4,11.28,29.6,2.56,6.7,1.29,3.4,3.67,9.6,0.86,2.2,2.90,7.6
+"Naturalresources,construction,and maintenanceoccupations",47.75,100.0,32.49,68.0,15.26,32.0,2.29,4.8,2.30,4.8,3.94,8.3,2.52,5.3,4.19,8.8
+"Construction,extraction,farming, fishingandforestry occupations",46.50,100.0,31.94,68.7,14.56,31.3,2.01,4.3,2.18,4.7,3.70,7.9,2.42,5.2,4.25,9.1
+"Installation,maintenance,and repairoccupations",51.56,100.0,34.18,66.3,17.38,33.7,3.15,6.1,2.66,5.2,4.70,9.1,2.84,5.5,4.02,7.8
+"Production,transportation,and materialmovingoccupations",37.67,100.0,24.86,66.0,12.81,34.0,2.36,6.3,2.47,6.6,3.94,10.5,1.08,2.9,2.96,7.8
+Productionoccupations,38.41,100.0,25.21,65.6,13.20,34.4,2.46,6.4,2.59,6.7,4.06,10.6,1.12,2.9,2.97,7.7
+movingoccupations,34.93,100.0,23.56,67.4,11.38,32.6,2.00,5.7,2.06,5.9,3.51,10.0,0.92,2.6,2.89,8.3
+Constructionindustry,50.93,100.0,35.47,69.7,15.45,30.3,2.59,5.1,2.52,5.0,3.72,7.3,2.31,4.5,4.31,8.5
+Manufacturingindustry,47.64,100.0,31.88,66.9,15.76,33.1,3.58,7.5,2.64,5.6,4.49,9.4,1.57,3.3,3.48,7.3
+"Management,professional,and relatedoccupations",80.44,100.0,54.77,68.1,25.67,31.9,7.50,9.3,3.48,4.3,6.17,7.7,3.23,4.0,5.29,6.6
+"Management,business,and financialoccupations",87.90,100.0,60.36,68.7,27.54,31.3,8.30,9.4,3.72,4.2,6.46,7.3,3.39,3.9,5.67,6.4
+Professionalandrelated occupations,74.94,100.0,50.65,67.6,24.29,32.4,6.90,9.2,3.30,4.4,5.96,8.0,3.12,4.2,5.01,6.7
+Salesandofficeoccupations,40.87,100.0,28.65,70.1,12.23,29.9,2.97,7.3,1.41,3.5,3.88,9.5,1.05,2.6,2.92,7.1
+Officeandadministrative supportoccupations,38.52,100.0,26.44,68.6,12.08,31.4,2.82,7.3,1.41,3.7,4.18,10.8,0.99,2.6,2.68,7.0
+"Naturalresources,construction, andmaintenanceoccupations",49.32,100.0,32.15,65.2,17.17,34.8,3.34,6.8,3.33,6.8,5.02,10.2,1.68,3.4,3.80,7.7
+"Installation,maintenance,and repairoccupations",50.29,100.0,33.57,66.7,16.72,33.3,3.61,7.2,2.68,5.3,4.90,9.7,1.73,3.4,3.80,7.6
+"Production,transportation,and materialmovingoccupations",37.63,100.0,24.70,65.6,12.93,34.4,2.41,6.4,2.51,6.7,4.01,10.7,1.09,2.9,2.92,7.8
+Productionoccupations,38.47,100.0,25.16,65.4,13.32,34.6,2.49,6.5,2.61,6.8,4.12,10.7,1.13,2.9,2.96,7.7
+Transportationandmaterial movingoccupations,33.82,100.0,22.62,66.9,11.20,33.1,2.07,6.1,2.02,6.0,3.52,10.4,0.87,2.6,2.73,8.1
+Aircraftmanufacturingindustry,80.47,100.0,51.09,63.5,29.37,36.5,7.46,9.3,4.06,5.0,7.97,9.9,4.55,5.7,5.33,6.6
+Service-providingindustries3,45.59,100.0,32.17,70.6,13.42,29.4,3.58,7.8,1.72,3.8,3.37,7.4,1.50,3.3,3.25,7.1
+"Management,professional,and relatedoccupations",76.89,100.0,52.84,68.7,24.05,31.3,7.32,9.5,3.45,4.5,5.51,7.2,2.86,3.7,4.90,6.4
+"Management,business,and financialoccupations",86.80,100.0,58.46,67.4,28.34,32.6,8.57,9.9,4.77,5.5,6.43,7.4,3.22,3.7,5.34,6.2
+Professionalandrelated occupations,72.10,100.0,50.13,69.5,21.98,30.5,6.72,9.3,2.82,3.9,5.07,7.0,2.68,3.7,4.69,6.5
+Salesandofficeoccupations,34.93,100.0,25.02,71.6,9.91,28.4,2.42,6.9,1.04,3.0,2.98,8.5,0.95,2.7,2.53,7.2
+Salesandrelatedoccupations,34.05,100.0,25.59,75.2,8.45,24.8,2.04,6.0,1.03,3.0,2.00,5.9,0.81,2.4,2.57,7.6
+Officeandadministrativesupport occupations,35.68,100.0,24.52,68.7,11.16,31.3,2.76,7.7,1.04,2.9,3.81,10.7,1.06,3.0,2.49,7.0
+Serviceoccupations,23.38,100.0,17.98,76.9,5.40,23.1,1.02,4.4,0.62,2.6,1.33,5.7,0.38,1.6,2.05,8.8
+"Naturalresources,construction,and maintenanceoccupations",45.77,100.0,31.92,69.7,13.85,30.3,3.13,6.8,1.50,3.3,3.71,8.1,1.93,4.2,3.58,7.8
+"Installation,maintenance,and repairoccupations",47.01,100.0,32.78,69.7,14.23,30.3,3.30,7.0,1.52,3.2,3.74,8.0,2.04,4.3,3.62,7.7
+"Production,transportation,and materialmovingoccupations",35.44,100.0,24.79,70.0,10.65,30.0,2.08,5.9,1.16,3.3,3.07,8.7,1.39,3.9,2.94,8.3
+Productionoccupations,31.25,100.0,23.14,74.0,8.11,26.0,1.71,5.5,1.22,3.9,1.81,5.8,0.71,2.3,2.66,8.5
+Transportationandmaterial movingoccupations,36.17,100.0,25.08,69.3,11.09,30.7,2.15,5.9,1.15,3.2,3.29,9.1,1.51,4.2,2.99,8.3
+"Trade,transportation,andutilities industry",38.48,100.0,27.47,71.4,11.01,28.6,2.52,6.6,1.19,3.1,2.93,7.6,1.39,3.6,2.98,7.7
+relatedoccupations,71.52,100.0,50.41,70.5,21.11,29.5,6.42,9.0,2.69,3.8,4.49,6.3,2.78,3.9,4.73,6.6
+"Management,business,and financialoccupations",85.80,100.0,59.47,69.3,26.33,30.7,8.09,9.4,3.79,4.4,5.59,6.5,3.39,4.0,5.47,6.4
+Professionalandrelated occupations,58.07,100.0,41.88,72.1,16.19,27.9,4.84,8.3,1.65,2.8,3.46,6.0,2.20,3.8,4.04,7.0
+Salesandofficeoccupations,30.18,100.0,22.77,75.4,7.41,24.6,1.72,5.7,0.73,2.4,1.91,6.3,0.69,2.3,2.35,7.8
+Salesandrelatedoccupations,28.93,100.0,22.32,77.2,6.60,22.8,1.53,5.3,0.66,2.3,1.55,5.4,0.58,2.0,2.29,7.9
+Officeandadministrative supportoccupations,34.80,100.0,24.42,70.2,10.38,29.8,2.44,7.0,1.02,2.9,3.25,9.3,1.09,3.1,2.58,7.4
+Serviceoccupations,25.33,100.0,18.80,74.2,6.53,25.8,1.23,4.8,0.60,2.4,1.72,6.8,0.78,3.1,2.19,8.7
+"Naturalresources,construction, andmaintenanceoccupations",50.44,100.0,34.98,69.4,15.45,30.6,3.50,6.9,1.84,3.6,3.87,7.7,2.32,4.6,3.91,7.8
+"Installation,maintenance,and repairoccupations",50.94,100.0,35.52,69.7,15.41,30.3,3.56,7.0,1.80,3.5,3.84,7.5,2.29,4.5,3.92,7.7
+"Production,transportation,and materialmovingoccupations",37.92,100.0,26.07,68.7,11.85,31.3,2.32,6.1,1.22,3.2,3.54,9.3,1.67,4.4,3.10,8.2
+Transportationandmaterial movingoccupations,38.00,100.0,26.07,68.6,11.93,31.4,2.31,6.1,1.19,3.1,3.60,9.5,1.71,4.5,3.11,8.2
+Wholesaletradeindustry,53.03,100.0,37.52,70.8,15.51,29.2,4.18,7.9,2.06,3.9,3.77,7.1,1.73,3.3,3.77,7.1
+Salesandofficeoccupations.,53.65,100.0,38.91,72.5,14.74,27.5,3.95,7.4,1.67,3.1,3.80,7.1,1.59,3.0,3.72,6.9
+Officeandadministrative supportoccupations,35.82,100.0,25.28,70.6,10.54,29.4,2.59,7.2,1.19,3.3,3.26,9.1,0.90,2.5,2.60,7.3
+"Production,transportation,and materialmoving occupations",33.52,100.0,23.63,70.5,9.89,29.5,2.12,6.3,1.31,3.9,2.72,8.1,0.94,2.8,2.80,8.3
+Transportationandmaterial movingoccupations,33.68,100.0,23.64,70.2,10.04,29.8,2.14,6.4,1.24,3.7,2.85,8.4,1.00,3.0,2.81,8.3
+Retailtradeindustry,26.41,100.0,20.27,76.7,6.14,23.3,1.34,5.1,0.58,2.2,1.52,5.7,0.51,1.9,2.19,8.3
+Salesandofficeoccupations.,23.80,100.0,18.70,78.6,5.10,21.4,1.08,4.5,0.42,1.8,1.26,5.3,0.38,1.6,1.97,8.3
+Salesandrelated occupations,23.33,100.0,18.47,79.1,4.87,20.9,1.01,4.3,0.41,1.7,1.14,4.9,0.36,1.5,1.96,8.4
+Officeandadministrative supportoccupations,28.39,100.0,21.00,74.0,7.38,26.0,1.76,6.2,0.55,1.9,2.37,8.4,0.59,2.1,2.11,7.4
+"Production,transportation,and materialmoving occupations",24.66,100.0,18.33,74.3,6.34,25.7,1.22,4.9,0.65,2.6,1.71,6.9,0.56,2.3,2.20,8.9
+Transportationandmaterial movingoccupations,24.45,100.0,18.17,74.3,6.28,25.7,1.20,4.9,0.63,2.6,1.70,6.9,0.56,2.3,2.19,9.0
+Transportationandwarehousing industry,49.70,100.0,33.20,66.8,16.50,33.2,3.37,6.8,1.68,3.4,4.97,10.0,2.64,5.3,3.84,7.7
+Utilitiesindustry,81.46,100.0,51.68,63.4,29.78,36.6,7.52,9.2,2.95,3.6,7.40,9.1,6.36,7.8,5.55,6.8
+Informationindustry,82.18,100.0,52.95,64.4,29.23,35.6,8.51,10.4,4.36,5.3,7.62,9.3,3.54,4.3,5.21,6.3
+"Management,professional,and relatedoccupations",99.53,100.0,64.66,65.0,34.87,35.0,10.92,11.0,5.73,5.8,8.52,8.6,3.51,3.5,6.19,6.2
+occupations,95.29,100.0,61.91,65.0,33.38,35.0,10.50,11.0,5.20,5.5,8.25,8.7,3.40,3.6,6.03,6.3
+Salesandofficeoccupations,56.42,100.0,36.58,64.8,19.84,35.2,4.91,8.7,2.28,4.0,6.23,11.0,2.79,4.9,3.64,6.4
+Financialactivitiesindustry,64.76,100.0,42.44,65.5,22.32,34.5,5.95,9.2,3.81,5.9,6.12,9.4,2.41,3.7,4.04,6.2
+"Management,professional,and relatedoccupations",91.78,100.0,59.90,65.3,31.89,34.7,9.08,9.9,5.98,6.5,7.68,8.4,3.67,4.0,5.47,6.0
+"Management,business,and financialoccupations",92.85,100.0,60.82,65.5,32.03,34.5,9.11,9.8,6.31,6.8,7.56,8.1,3.58,3.9,5.46,5.9
+Professionalandrelated occupations,88.40,100.0,56.96,64.4,31.44,35.6,9.00,10.2,4.95,5.6,8.06,9.1,3.94,4.5,5.50,6.2
+Salesandofficeoccupations,44.72,100.0,29.50,66.0,15.21,34.0,3.66,8.2,2.30,5.2,4.97,11.1,1.38,3.1,2.90,6.5
+Salesandrelatedoccupations,58.48,100.0,40.01,68.4,18.48,31.6,4.27,7.3,4.744,8.1,4.12,7.0,1.60,2.7,3.75,6.4
+Officeandadministrative supportoccupations,40.71,100.0,26.45,65.0,14.26,35.0,3.48,8.5,1.60,3.9,5.22,12.8,1.31,3.2,2.65,6.5
+Financeandinsuranceindustry,72.19,100.0,46.68,64.7,25.51,35.3,6.85,9.5,4.63,6.4,6.87,9.5,2.81,3.9,4.34,6.0
+Creditintermediationand relatedactivitiesindustry,64.86,100.0,41.95,64.7,22.91,35.3,6.24,9.6,3.61,5.6,6.41,9.9,2.66,4.1,3.99,6.1
+Insurancecarriersandrelated activitiesindustry,67.57,100.0,44.00,65.1,23.57,34.9,6.31,9.3,3.81,5.6,6.78,10.0,2.45,3.6,4.21,6.2
+Realestateandrentaland leasingindustry,42.95,100.0,29.99,69.8,12.97,30.2,3.29,7.7,1.40,3.3,3.90,9.1,1.22,2.8,3.15,7.3
+Professionalandbusinessservices industry,59.47,100.0,41.29,69.4,18.18,30.6,5.24,8.8,2.83,4.8,4.14,7.0,1.93,3.3,4.03,6.8
+"Management,professional,and relatedoccupations",85.35,100.0,58.13,68.1,27.22,31.9,8.38,9.8,4.52,5.3,5.80,6.8,3.14,3.7,5.39,6.3
+"Management,business,and financialoccupations",89.88,100.0,60.52,67.3,29.37,32.7,8.83,9.8,5.60,6.2,6.24,6.9,3.13,3.5,5.58,6.2
+Professionalandrelated occupations,82.31,100.0,56.53,68.7,25.78,31.3,8.08,9.8,3.80,4.6,5.51,6.7,3.14,3.8,5.26,6.4
+Salesandofficeoccupations,40.25,100.0,28.49,70.8,11.76,29.2,3.18,7.9,1.20,3.0,3.37,8.4,1.14,2.8,2.87,7.1
+Officeandadministrative supportoccupations,35.20,100.0,24.66,70.1,10.54,29.9,2.75,7.8,1.20,3.4,3.23,9.2,0.83,2.4,2.53,7.2
+Serviceoccupations,27.43,100.0,20.62,75.1,6.82,24.9,1.27,4.6,1.01,3.7,1.84,6.7,0.31,1.1,2.39,8.7
+"Production,transportation,and materialmovingoccupations",27.04,100.0,20.64,76.3,6.40,23.7,1.09,4.0,1.22,4.5,1.28,4.7,0.37,1.4,2.44,9.0
+Transportationandmaterial movingoccupations,27.24,100.0,20.47,75.1,6.77,24.9,1.07,3.9,1.34,4.9,1.51,5.6,0.344,1.24,2.51,9.2
+"Professional,scientific,and technicalservicesindustry",74.63,100.0,51.05,68.4,23.58,31.6,7.08,9.5,3.56,4.8,5.36,7.2,2.81,3.8,4.78,6.4
+Administrativeandwasteservices industry,34.81,100.0,25.90,74.4,8.91,25.6,2.06,5.9,1.35,3.9,2.15,6.2,0.56,1.6,2.78,8.0
+Educationandhealthservices industry,49.42,100.0,35.02,70.9,14.39,29.1,4.14,8.4,1.60,3.2,3.68,7.4,1.58,3.2,3.40,6.9
+"Management,professional,and relatedoccupations",67.21,100.0,47.44,70.6,19.77,29.4,6.08,9.0,2.18,3.2,4.72,7.0,2.42,3.6,4.38,6.5
+financialoccupations,71.59,100.0,49.93,69.7,21.66,30.3,7.39,10.3,1.86,2.6,5.30,7.4,2.58,3.6,4.52,6.3
+Professionalandrelated occupations,66.72,100.0,47.16,70.7,19.56,29.3,5.93,8.9,2.21,3.3,4.66,7.0,2.40,3.6,4.36,6.5
+Salesandofficeoccupations,34.42,100.0,23.59,68.5,10.83,31.5,2.82,8.2,0.63,1.8,4.17,12.1,0.89,2.6,2.31,6.7
+Officeandadministrative supportoccupations,34.23,100.0,23.45,68.5,10.78,31.5,2.81,8.2,0.62,1.8,4.16,12.1,0.89,2.6,2.30,6.7
+Serviceoccupations,27.22,100.0,19.84,72.9,7.38,27.1,1.60,5.9,1.05,3.8,1.96,7.2,0.53,2.0,2.24,8.2
+Educationalservicesindustry,56.52,100.0,40.61,71.9,15.91,28.1,4.77,8.4,0.50,0.9,4.15,7.3,2.68,4.7,3.81,6.7
+"Management,professional,and relatedoccupations",60.78,100.0,44.10,72.6,16.68,27.4,5.02,8.3,0.52,0.9,4.22,6.9,2.84,4.7,4.08,6.7
+"Management,business,and financialoccupations",73.80,100.0,51.10,69.2,22.70,30.8,8.26,11.2,0.74,1.0,5.56,7.5,3.49,4.7,4.65,6.3
+Professionalandrelated occupations,58.41,100.0,42.83,73.3,15.59,26.7,4.42,7.6,0.48,0.8,3.98,6.8,2.73,4.7,3.98,6.8
+Salesandofficeoccupations.,38.34,100.0,25.89,67.5,12.45,32.5,3.97,10.4,0.26,0.7,3.83,10.0,1.82,4.8,2.57,6.7
+Officeandadministrative supportoccupations,38.65,100.0,26.06,67.4,12.59,32.6,4.02,10.4,0.26,0.7,3.87,10.0,1.85,4.8,2.59,6.7
+Serviceoccupations,35.22,100.0,24.21,68.7,11.01,31.3,2.66,7.6,0.46,1.3,3.36,9.5,1.98,5.6,2.54,7.2
+"Juniorcolleges,colleges, universitiesandprofessional schoolsindustry",70.50,100.0,48.70,69.1,21.80,30.9,6.82,9.7,0.72,1.0,5.89,8.4,3.97,5.6,4.40,6.2
+Healthcareandsocialassistance industry,48.43,100.0,34.25,70.7,14.18,29.3,4.05,8.4,1.75,3.6,3.61,7.5,1.43,3.0,3.34,6.9
+Registerednurseoccupations,77.52,100.0,51.27,66.1,26.25,33.9,7.44,9.6,4.08,5.3,5.99,7.7,3.55,4.6,5.19,6.7
+"Management,professional,and relatedoccupations",68.67,100.0,48.20,70.2,20.47,29.8,6.32,9.2,2.55,3.7,4.83,7.0,2.32,3.4,4.44,6.5
+Professionalandrelated occupations,68.47,100.0,48.08,70.2,20.40,29.8,6.25,9.1,2.57,3.8,4.80,7.0,2.33,3.4,4.44,6.5
+Salesandofficeoccupations.,33.85,100.0,23.26,68.7,10.59,31.3,2.66,7.8,0.68,2.0,4.22,12.5,0.76,2.2,2.27,6.7
+Officeandadministrative supportoccupations,33.60,100.0,23.08,68.7,10.52,31.3,2.64,7.9,0.67,2.0,4.20,12.5,0.76,2.3,2.26,6.7
+Serviceoccupations,27.04,100.0,19.75,73.0,7.29,27.0,1.58,5.8,1.06,3.9,1.92,7.1,0.50,1.8,2.23,8.3
+Hospitalsindustry,65.65,100.0,43.18,65.8,22.47,34.2,6.38,9.7,3.27,5.0,5.65,8.6,2.93,4.5,4.25,6.5
+"Management,professional, andrelatedoccupations",78.78,100.0,52.03,66.0,26.75,34.0,7.99,10.1,3.92,5.0,6.23,7.9,3.59,4.6,5.01,6.4
+Registerednurse occupations,79.20,100.0,51.49,65.0,27.71,35.0,7.82,9.9,4.53,5.7,6.47,8.2,3.69,4.7,5.20,6.6
+Serviceoccupations,35.60,100.0,22.94,64.5,12.65,35.5,2.51,7.1,2.10,5.9,3.99,11.2,1.49,4.2,2.55,7.2
+Nursingandresidentialcare facilitiesindustry,33.33,100.0,24.22,72.7,9.10,27.3,2.33,7.0,1.10,3.3,2.50,7.5,0.59,1.8,2.58,7.7
+"Management,professional, andrelatedoccupations",49.59,100.0,36.00,72.6,13.59,27.4,3.94,7.9,1.46,3.0,3.50,7.1,1.11,2.2,3.58,7.2
+Serviceoccupations,27.00,100.0,19.70,73.0,7.30,27.0,1.65,6.1,1.02,3.8,2.02,7.5,0.39,1.4,2.22,8.2
+Nursingcarefacilitiesindustry,35.29,100.0,25.92,73.4,9.37,26.6,2.28,6.5,1.29,3.7,2.51,7.1,0.61,1.7,2.68,7.6
+andrelatedoccupations,51.54,100.0,38.26,74.2,13.28,25.8,3.47,6.7,1.91,3.7,3.12,6.1,1.05,2.0,3.73,7.2
+Serviceoccupations,27.88,100.0,20.26,72.7,7.61,27.3,1.70,6.1,1.09,3.9,2.17,7.8,0.42,1.5,2.23,8.0
+Leisureandhospitalityindustry,20.90,100.0,16.93,81.0,3.97,19.0,0.70,3.3,0.28,1.4,0.85,4.1,0.26,1.3,1.88,9.0
+Salesandofficeoccupations,23.22,100.0,18.73,80.7,4.49,19.3,0.83,3.6,0.25,1.1,1.30,5.6,0.264,1.1,1.85,7.9
+Serviceoccupations,19.16,100.0,15.70,81.9,3.46,18.1,0.53,2.7,0.25,1.3,0.68,3.6,0.21,1.1,1.79,9.3
+Accommodationandfood servicesindustry,19.71,100.0,15.96,80.9,3.76,19.1,0.62,3.2,0.26,1.3,0.83,4.2,0.24,1.2,1.80,9.1
+Otherservicesindustry,37.77,100.0,28.02,74.2,9.75,25.8,2.56,6.8,0.60,1.6,2.40,6.3,1.31,3.5,2.88,7.6

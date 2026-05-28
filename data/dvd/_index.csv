@@ -1,0 +1,386 @@
+table,demographic,file,n_rows
+1,"Married men, Employed full-time, Regardless of spousal employment, All ages, Youngest child ages 0 or 1",dvd_table_001.csv,33
+2,"Married men, Employed full-time, Regardless of spousal employment, All ages, Youngest child ages 2 through 5",dvd_table_002.csv,33
+3,"Married men, Employed full-time, Regardless of spousal employment, All ages, Youngest child ages 6 through 12",dvd_table_003.csv,33
+4,"Married men, Employed full-time, Regardless of spousal employment, All ages, Youngest child ages 13 through 17",dvd_table_004.csv,33
+5,"Married men, Employed full-time, Regardless of spousal employment, All ages, No minor children in home",dvd_table_005.csv,33
+6,"Married men, Employed full-time, Regardless of spousal employment, Less than 45 years old, No minor children in home",dvd_table_006.csv,33
+7,"Married men, Employed full-time, Regardless of spousal employment, Ages 45 through 54, No minor children in home",dvd_table_007.csv,33
+8,"Married men, Employed full-time, Regardless of spousal employment, Ages 55 & over, No minor children in home",dvd_table_008.csv,33
+9,"Married men, Employed full-time, Regardless of spousal employment, All ages, Living with spouse only",dvd_table_009.csv,33
+10,"Married men, Employed full-time, Regardless of spousal employment, Less than 45 years old, Living with spouse only",dvd_table_010.csv,33
+11,"Married men, Employed full-time, Regardless of spousal employment, Ages 45 through 54, Living with spouse only",dvd_table_011.csv,33
+12,"Married men, Employed full-time, Regardless of spousal employment, Ages 55 & over, Living with spouse only",dvd_table_012.csv,33
+13,"Married men, Employed full-time, Spouse employed, All ages, Youngest child ages 0 or 1",dvd_table_013.csv,33
+14,"Married men, Employed full-time, Spouse employed, All ages, Youngest child ages 2 through 5",dvd_table_014.csv,33
+15,"Married men, Employed full-time, Spouse employed, All ages, Youngest child ages 6 through 12",dvd_table_015.csv,33
+16,"Married men, Employed full-time, Spouse employed, All ages, Youngest child ages 13 through 17",dvd_table_016.csv,33
+17,"Married men, Employed full-time, Spouse employed, All ages, No minor children in home",dvd_table_017.csv,33
+18,"Married men, Employed full-time, Spouse employed, Less than 45 years old, No minor children in home",dvd_table_018.csv,33
+19,"Married men, Employed full-time, Spouse employed, Ages 45 through 54, No minor children in home",dvd_table_019.csv,33
+20,"Married men, Employed full-time, Spouse employed, Ages 55 & over, No minor children in home",dvd_table_020.csv,33
+21,"Married men, Employed full-time, Spouse employed, All ages, Living with spouse only",dvd_table_021.csv,33
+22,"Married men, Employed full-time, Spouse employed, Less than 45 years old, Living with spouse only",dvd_table_022.csv,33
+23,"Married men, Employed full-time, Spouse employed, Ages 45 through 54, Living with spouse only",dvd_table_023.csv,33
+24,"Married men, Employed full-time, Spouse employed, Ages 55 & over, Living with spouse only",dvd_table_024.csv,33
+25,"Married men, Employed full-time, Spouse not employed, All ages, Youngest child ages 0 or 1",dvd_table_025.csv,33
+26,"Married men, Employed full-time, Spouse not employed, All ages, Youngest child ages 2 through 5",dvd_table_026.csv,33
+27,"Married men, Employed full-time, Spouse not employed, All ages, Youngest child ages 6 through 12",dvd_table_027.csv,33
+28,"Married men, Employed full-time, Spouse not employed, All ages, Youngest child ages 13 through 17",dvd_table_028.csv,33
+29,"Married men, Employed full-time, Spouse not employed, All ages, No minor children in home",dvd_table_029.csv,33
+30,"Married men, Employed full-time, Spouse not employed, Less than 45 years old, No minor children in home",dvd_table_030.csv,33
+31,"Married men, Employed full-time, Spouse not employed, Ages 45 through 54, No minor children in home",dvd_table_031.csv,33
+32,"Married men, Employed full-time, Spouse not employed, Ages 55 & over, No minor children in home",dvd_table_032.csv,33
+33,"Married men, Employed full-time, Spouse not employed, All ages, Living with spouse only",dvd_table_033.csv,33
+34,"Married men, Employed full-time, Spouse not employed, Less than 45 years old, Living with spouse only",dvd_table_034.csv,33
+35,"Married men, Employed full-time, Spouse not employed, Ages 45 through 54, Living with spouse only",dvd_table_035.csv,33
+36,"Married men, Employed full-time, Spouse not employed, Ages 55 & over, Living with spouse only",dvd_table_036.csv,33
+37,"Married men, Employed part-time, Regardless of spousal employment, All ages, Youngest child ages 0 or 1",dvd_table_037.csv,33
+38,"Married men, Employed part-time, Regardless of spousal employment, All ages, Youngest child ages 2 through 5",dvd_table_038.csv,33
+39,"Married men, Employed part-time, Regardless of spousal employment, All ages, Youngest child ages 6 through 12",dvd_table_039.csv,33
+40,"Married men, Employed part-time, Regardless of spousal employment, All ages, Minor children in home",dvd_table_040.csv,33
+41,"Married men, Employed part-time, Regardless of spousal employment, All ages, No minor children in home",dvd_table_041.csv,33
+42,"Married men, Employed part-time, Regardless of spousal employment, Less than 45 years old, No minor children in home",dvd_table_042.csv,33
+43,"Married men, Employed part-time, Regardless of spousal employment, Ages 55 & over, No minor children in home",dvd_table_043.csv,33
+44,"Married men, Employed part-time, Regardless of spousal employment, All ages, Living with spouse only",dvd_table_044.csv,33
+45,"Married men, Employed part-time, Regardless of spousal employment, Less than 45 years old, Living with spouse only",dvd_table_045.csv,33
+46,"Married men, Employed part-time, Regardless of spousal employment, Ages 55 & over, Living with spouse only",dvd_table_046.csv,33
+47,"Married men, Employed part-time, Spouse employed, All ages, Minor children in home",dvd_table_047.csv,33
+48,"Married men, Employed part-time, Spouse employed, All ages, No minor children in home",dvd_table_048.csv,33
+49,"Married men, Employed part-time, Spouse employed, Less than 45 years old, No minor children in home",dvd_table_049.csv,33
+50,"Married men, Employed part-time, Spouse employed, Ages 55 & over, No minor children in home",dvd_table_050.csv,33
+51,"Married men, Employed part-time, Spouse employed, All ages, Living with spouse only",dvd_table_051.csv,33
+52,"Married men, Employed part-time, Spouse employed, Less than 45 years old, Living with spouse only",dvd_table_052.csv,33
+53,"Married men, Employed part-time, Spouse employed, Ages 55 & over, Living with spouse only",dvd_table_053.csv,33
+54,"Married men, Employed part-time, Spouse not employed, All ages, Minor children in home",dvd_table_054.csv,33
+55,"Married men, Employed part-time, Spouse not employed, All ages, No minor children in home",dvd_table_055.csv,33
+56,"Married men, Employed part-time, Spouse not employed, Ages 55 & over, No minor children in home",dvd_table_056.csv,33
+57,"Married men, Employed part-time, Spouse not employed, All ages, Living with spouse only",dvd_table_057.csv,33
+58,"Married men, Employed part-time, Spouse not employed, Ages 55 & over, Living with spouse only",dvd_table_058.csv,33
+59,"Married men, Unemployed, Regardless of spousal employment, All ages, Youngest child ages 2 through 5",dvd_table_059.csv,33
+60,"Married men, Unemployed, Regardless of spousal employment, All ages, Youngest child ages 6 through 12",dvd_table_060.csv,33
+61,"Married men, Unemployed, Regardless of spousal employment, All ages, Minor children in home",dvd_table_061.csv,33
+62,"Married men, Unemployed, Regardless of spousal employment, All ages, No minor children in home",dvd_table_062.csv,33
+63,"Married men, Unemployed, Regardless of spousal employment, Ages 55 & over, No minor children in home",dvd_table_063.csv,33
+64,"Married men, Unemployed, Regardless of spousal employment, All ages, Living with spouse only",dvd_table_064.csv,33
+65,"Married men, Unemployed, Regardless of spousal employment, Ages 55 & over, Living with spouse only",dvd_table_065.csv,33
+66,"Married men, Unemployed, Spouse employed, All ages, Minor children in home",dvd_table_066.csv,33
+67,"Married men, Unemployed, Spouse employed, All ages, No minor children in home",dvd_table_067.csv,33
+68,"Married men, Unemployed, Spouse employed, All ages, Living with spouse only",dvd_table_068.csv,33
+69,"Married men, Unemployed, Spouse not employed, All ages, Minor children in home",dvd_table_069.csv,33
+70,"Married men, Unemployed, Spouse not employed, All ages, No minor children in home",dvd_table_070.csv,33
+71,"Married men, Disabled and unable to work, Regardless of spousal employment, All ages, Minor children in home",dvd_table_071.csv,33
+72,"Married men, Disabled and unable to work, Regardless of spousal employment, Less than 45 years old, Minor children in home",dvd_table_072.csv,33
+73,"Married men, Disabled and unable to work, Regardless of spousal employment, Ages 45 through 54, Minor children in home",dvd_table_073.csv,33
+74,"Married men, Disabled and unable to work, Regardless of spousal employment, All ages, No minor children in home",dvd_table_074.csv,33
+75,"Married men, Disabled and unable to work, Regardless of spousal employment, Ages 45 through 54, No minor children in home",dvd_table_075.csv,33
+76,"Married men, Disabled and unable to work, Regardless of spousal employment, Ages 55 & over, No minor children in home",dvd_table_076.csv,33
+77,"Married men, Disabled and unable to work, Regardless of spousal employment, All ages, Living with spouse only",dvd_table_077.csv,33
+78,"Married men, Disabled and unable to work, Regardless of spousal employment, Ages 55 & over, Living with spouse only",dvd_table_078.csv,33
+79,"Married men, Disabled and unable to work, Spouse employed, All ages, Minor children in home",dvd_table_079.csv,33
+80,"Married men, Disabled and unable to work, Spouse employed, All ages, No minor children in home",dvd_table_080.csv,33
+81,"Married men, Disabled and unable to work, Spouse employed, Ages 55 & over, No minor children in home",dvd_table_081.csv,33
+82,"Married men, Disabled and unable to work, Spouse employed, All ages, Living with spouse only",dvd_table_082.csv,33
+83,"Married men, Disabled and unable to work, Spouse employed, Ages 55 & over, Living with spouse only",dvd_table_083.csv,33
+84,"Married men, Disabled and unable to work, Spouse not employed, All ages, Minor children in home",dvd_table_084.csv,33
+85,"Married men, Disabled and unable to work, Spouse not employed, All ages, No minor children in home",dvd_table_085.csv,33
+86,"Married men, Disabled and unable to work, Spouse not employed, Ages 55 & over, No minor children in home",dvd_table_086.csv,33
+87,"Married men, Disabled and unable to work, Spouse not employed, All ages, Living with spouse only",dvd_table_087.csv,33
+88,"Married men, Disabled and unable to work, Spouse not employed, Ages 55 & over, Living with spouse only",dvd_table_088.csv,33
+89,"Married men, Homemaker not in labor force, Regardless of spousal employment, All ages, Minor children in home",dvd_table_089.csv,33
+90,"Married men, Homemaker not in labor force, Spouse employed, All ages, Minor children in home",dvd_table_090.csv,33
+91,"Married men, Retired, Regardless of spousal employment, All ages, Minor children in home",dvd_table_091.csv,33
+92,"Married men, Retired, Regardless of spousal employment, All ages, No minor children in home",dvd_table_092.csv,33
+93,"Married men, Retired, Regardless of spousal employment, Under age 62, No minor children in home",dvd_table_093.csv,33
+94,"Married men, Retired, Regardless of spousal employment, Ages 62 through 74, No minor children in home",dvd_table_094.csv,33
+95,"Married men, Retired, Regardless of spousal employment, Ages 75 & over, No minor children in home",dvd_table_095.csv,33
+96,"Married men, Retired, Regardless of spousal employment, All ages, Living with spouse only",dvd_table_096.csv,33
+97,"Married men, Retired, Regardless of spousal employment, Under age 62, Living with spouse only",dvd_table_097.csv,33
+98,"Married men, Retired, Regardless of spousal employment, Ages 62 through 74, Living with spouse only",dvd_table_098.csv,33
+99,"Married men, Retired, Regardless of spousal employment, Ages 75 & over, Living with spouse only",dvd_table_099.csv,33
+100,"Married men, Retired, Spouse employed, All ages, No minor children in home",dvd_table_100.csv,33
+101,"Married men, Retired, Spouse employed, Under age 62, No minor children in home",dvd_table_101.csv,33
+102,"Married men, Retired, Spouse employed, Ages 62 through 74, No minor children in home",dvd_table_102.csv,33
+103,"Married men, Retired, Spouse employed, Ages 75 & over, No minor children in home",dvd_table_103.csv,33
+104,"Married men, Retired, Spouse employed, All ages, Living with spouse only",dvd_table_104.csv,33
+105,"Married men, Retired, Spouse employed, Under age 62, Living with spouse only",dvd_table_105.csv,33
+106,"Married men, Retired, Spouse employed, Ages 62 through 74, Living with spouse only",dvd_table_106.csv,33
+107,"Married men, Retired, Spouse not employed, All ages, Minor children in home",dvd_table_107.csv,33
+108,"Married men, Retired, Spouse not employed, All ages, No minor children in home",dvd_table_108.csv,33
+109,"Married men, Retired, Spouse not employed, Under age 62, No minor children in home",dvd_table_109.csv,33
+110,"Married men, Retired, Spouse not employed, Ages 62 through 74, No minor children in home",dvd_table_110.csv,33
+111,"Married men, Retired, Spouse not employed, Ages 75 & over, No minor children in home",dvd_table_111.csv,33
+112,"Married men, Retired, Spouse not employed, All ages, Living with spouse only",dvd_table_112.csv,33
+113,"Married men, Retired, Spouse not employed, Under age 62, Living with spouse only",dvd_table_113.csv,33
+114,"Married men, Retired, Spouse not employed, Ages 62 through 74, Living with spouse only",dvd_table_114.csv,33
+115,"Married men, Retired, Spouse not employed, Ages 75 & over, Living with spouse only",dvd_table_115.csv,33
+116,"Married women, Employed full-time, Regardless of spousal employment, All ages, Youngest child ages 0 or 1",dvd_table_116.csv,33
+117,"Married women, Employed full-time, Regardless of spousal employment, All ages, Youngest child ages 2 through 5",dvd_table_117.csv,33
+118,"Married women, Employed full-time, Regardless of spousal employment, All ages, Youngest child ages 6 through 12",dvd_table_118.csv,33
+119,"Married women, Employed full-time, Regardless of spousal employment, All ages, Youngest child ages 13 through 17",dvd_table_119.csv,33
+120,"Married women, Employed full-time, Regardless of spousal employment, All ages, No minor children in home",dvd_table_120.csv,33
+121,"Married women, Employed full-time, Regardless of spousal employment, Less than 45 years old, No minor children in home",dvd_table_121.csv,33
+122,"Married women, Employed full-time, Regardless of spousal employment, Ages 45 through 54, No minor children in home",dvd_table_122.csv,33
+123,"Married women, Employed full-time, Regardless of spousal employment, Ages 55 & over, No minor children in home",dvd_table_123.csv,33
+124,"Married women, Employed full-time, Regardless of spousal employment, All ages, Living with spouse only",dvd_table_124.csv,33
+125,"Married women, Employed full-time, Regardless of spousal employment, Less than 45 years old, Living with spouse only",dvd_table_125.csv,33
+126,"Married women, Employed full-time, Regardless of spousal employment, Ages 45 through 54, Living with spouse only",dvd_table_126.csv,33
+127,"Married women, Employed full-time, Regardless of spousal employment, Ages 55 & over, Living with spouse only",dvd_table_127.csv,33
+128,"Married women, Employed full-time, Spouse employed, All ages, Youngest child ages 0 or 1",dvd_table_128.csv,33
+129,"Married women, Employed full-time, Spouse employed, All ages, Youngest child ages 2 through 5",dvd_table_129.csv,33
+130,"Married women, Employed full-time, Spouse employed, All ages, Youngest child ages 6 through 12",dvd_table_130.csv,33
+131,"Married women, Employed full-time, Spouse employed, All ages, Youngest child ages 13 through 17",dvd_table_131.csv,33
+132,"Married women, Employed full-time, Spouse employed, All ages, No minor children in home",dvd_table_132.csv,33
+133,"Married women, Employed full-time, Spouse employed, Less than 45 years old, No minor children in home",dvd_table_133.csv,33
+134,"Married women, Employed full-time, Spouse employed, Ages 45 through 54, No minor children in home",dvd_table_134.csv,33
+135,"Married women, Employed full-time, Spouse employed, Ages 55 & over, No minor children in home",dvd_table_135.csv,33
+136,"Married women, Employed full-time, Spouse employed, All ages, Living with spouse only",dvd_table_136.csv,33
+137,"Married women, Employed full-time, Spouse employed, Less than 45 years old, Living with spouse only",dvd_table_137.csv,33
+138,"Married women, Employed full-time, Spouse employed, Ages 45 through 54, Living with spouse only",dvd_table_138.csv,33
+139,"Married women, Employed full-time, Spouse employed, Ages 55 & over, Living with spouse only",dvd_table_139.csv,33
+140,"Married women, Employed full-time, Spouse not employed, All ages, Youngest child ages 2 through 5",dvd_table_140.csv,33
+141,"Married women, Employed full-time, Spouse not employed, All ages, Youngest child ages 6 through 12",dvd_table_141.csv,33
+142,"Married women, Employed full-time, Spouse not employed, All ages, Youngest child ages 13 through 17",dvd_table_142.csv,33
+143,"Married women, Employed full-time, Spouse not employed, All ages, No minor children in home",dvd_table_143.csv,33
+144,"Married women, Employed full-time, Spouse not employed, Less than 45 years old, No minor children in home",dvd_table_144.csv,33
+145,"Married women, Employed full-time, Spouse not employed, Ages 45 through 54, No minor children in home",dvd_table_145.csv,33
+146,"Married women, Employed full-time, Spouse not employed, Ages 55 & over, No minor children in home",dvd_table_146.csv,33
+147,"Married women, Employed full-time, Spouse not employed, All ages, Living with spouse only",dvd_table_147.csv,33
+148,"Married women, Employed full-time, Spouse not employed, Less than 45 years old, Living with spouse only",dvd_table_148.csv,33
+149,"Married women, Employed full-time, Spouse not employed, Ages 45 through 54, Living with spouse only",dvd_table_149.csv,33
+150,"Married women, Employed full-time, Spouse not employed, Ages 55 & over, Living with spouse only",dvd_table_150.csv,33
+151,"Married women, Employed part-time, Regardless of spousal employment, All ages, Youngest child ages 0 or 1",dvd_table_151.csv,33
+152,"Married women, Employed part-time, Regardless of spousal employment, All ages, Youngest child ages 2 through 5",dvd_table_152.csv,33
+153,"Married women, Employed part-time, Regardless of spousal employment, All ages, Youngest child ages 6 through 12",dvd_table_153.csv,33
+154,"Married women, Employed part-time, Regardless of spousal employment, All ages, Youngest child ages 13 through 17",dvd_table_154.csv,33
+155,"Married women, Employed part-time, Regardless of spousal employment, All ages, No minor children in home",dvd_table_155.csv,33
+156,"Married women, Employed part-time, Regardless of spousal employment, Less than 45 years old, No minor children in home",dvd_table_156.csv,33
+157,"Married women, Employed part-time, Regardless of spousal employment, Ages 45 through 54, No minor children in home",dvd_table_157.csv,33
+158,"Married women, Employed part-time, Regardless of spousal employment, Ages 55 & over, No minor children in home",dvd_table_158.csv,33
+159,"Married women, Employed part-time, Regardless of spousal employment, All ages, Living with spouse only",dvd_table_159.csv,33
+160,"Married women, Employed part-time, Regardless of spousal employment, Less than 45 years old, Living with spouse only",dvd_table_160.csv,33
+161,"Married women, Employed part-time, Regardless of spousal employment, Ages 45 through 54, Living with spouse only",dvd_table_161.csv,33
+162,"Married women, Employed part-time, Regardless of spousal employment, Ages 55 & over, Living with spouse only",dvd_table_162.csv,33
+163,"Married women, Employed part-time, Spouse employed, All ages, Youngest child ages 0 or 1",dvd_table_163.csv,33
+164,"Married women, Employed part-time, Spouse employed, All ages, Youngest child ages 2 through 5",dvd_table_164.csv,33
+165,"Married women, Employed part-time, Spouse employed, All ages, Youngest child ages 6 through 12",dvd_table_165.csv,33
+166,"Married women, Employed part-time, Spouse employed, All ages, Youngest child ages 13 through 17",dvd_table_166.csv,33
+167,"Married women, Employed part-time, Spouse employed, All ages, No minor children in home",dvd_table_167.csv,33
+168,"Married women, Employed part-time, Spouse employed, Less than 45 years old, No minor children in home",dvd_table_168.csv,33
+169,"Married women, Employed part-time, Spouse employed, Ages 45 through 54, No minor children in home",dvd_table_169.csv,33
+170,"Married women, Employed part-time, Spouse employed, Ages 55 & over, No minor children in home",dvd_table_170.csv,33
+171,"Married women, Employed part-time, Spouse employed, All ages, Living with spouse only",dvd_table_171.csv,33
+172,"Married women, Employed part-time, Spouse employed, Less than 45 years old, Living with spouse only",dvd_table_172.csv,33
+173,"Married women, Employed part-time, Spouse employed, Ages 45 through 54, Living with spouse only",dvd_table_173.csv,33
+174,"Married women, Employed part-time, Spouse employed, Ages 55 & over, Living with spouse only",dvd_table_174.csv,33
+175,"Married women, Employed part-time, Spouse not employed, All ages, No minor children in home",dvd_table_175.csv,33
+176,"Married women, Employed part-time, Spouse not employed, Ages 55 & over, No minor children in home",dvd_table_176.csv,33
+177,"Married women, Employed part-time, Spouse not employed, All ages, Living with spouse only",dvd_table_177.csv,33
+178,"Married women, Employed part-time, Spouse not employed, Ages 55 & over, Living with spouse only",dvd_table_178.csv,33
+179,"Married women, Unemployed, Regardless of spousal employment, All ages, Minor children in home",dvd_table_179.csv,33
+180,"Married women, Unemployed, Regardless of spousal employment, All ages, No minor children in home",dvd_table_180.csv,33
+181,"Married women, Unemployed, Regardless of spousal employment, All ages, Living with spouse only",dvd_table_181.csv,33
+182,"Married women, Unemployed, Spouse employed, All ages, Minor children in home",dvd_table_182.csv,33
+183,"Married women, Unemployed, Spouse employed, All ages, No minor children in home",dvd_table_183.csv,33
+184,"Married women, Unemployed, Spouse employed, All ages, Living with spouse only",dvd_table_184.csv,33
+185,"Married women, Disabled and unable to work, Regardless of spousal employment, All ages, Minor children in home",dvd_table_185.csv,33
+186,"Married women, Disabled and unable to work, Regardless of spousal employment, Less than 45 years old, Minor children in home",dvd_table_186.csv,33
+187,"Married women, Disabled and unable to work, Regardless of spousal employment, All ages, No minor children in home",dvd_table_187.csv,33
+188,"Married women, Disabled and unable to work, Regardless of spousal employment, Ages 45 through 54, No minor children in home",dvd_table_188.csv,33
+189,"Married women, Disabled and unable to work, Regardless of spousal employment, Ages 55 & over, No minor children in home",dvd_table_189.csv,33
+190,"Married women, Disabled and unable to work, Regardless of spousal employment, All ages, Living with spouse only",dvd_table_190.csv,33
+191,"Married women, Disabled and unable to work, Regardless of spousal employment, Ages 45 through 54, Living with spouse only",dvd_table_191.csv,33
+192,"Married women, Disabled and unable to work, Regardless of spousal employment, Ages 55 & over, Living with spouse only",dvd_table_192.csv,33
+193,"Married women, Disabled and unable to work, Spouse employed, All ages, Minor children in home",dvd_table_193.csv,33
+194,"Married women, Disabled and unable to work, Spouse employed, All ages, No minor children in home",dvd_table_194.csv,33
+195,"Married women, Disabled and unable to work, Spouse employed, Ages 45 through 54, No minor children in home",dvd_table_195.csv,33
+196,"Married women, Disabled and unable to work, Spouse employed, Ages 55 & over, No minor children in home",dvd_table_196.csv,33
+197,"Married women, Disabled and unable to work, Spouse employed, All ages, Living with spouse only",dvd_table_197.csv,33
+198,"Married women, Disabled and unable to work, Spouse employed, Ages 45 through 54, Living with spouse only",dvd_table_198.csv,33
+199,"Married women, Disabled and unable to work, Spouse employed, Ages 55 & over, Living with spouse only",dvd_table_199.csv,33
+200,"Married women, Disabled and unable to work, Spouse not employed, All ages, No minor children in home",dvd_table_200.csv,33
+201,"Married women, Disabled and unable to work, Spouse not employed, Ages 55 & over, No minor children in home",dvd_table_201.csv,33
+202,"Married women, Disabled and unable to work, Spouse not employed, All ages, Living with spouse only",dvd_table_202.csv,33
+203,"Married women, Disabled and unable to work, Spouse not employed, Ages 55 & over, Living with spouse only",dvd_table_203.csv,33
+204,"Married women, In school full-time, Regardless of spousal employment, All ages, Minor children in home",dvd_table_204.csv,33
+205,"Married women, In school full-time, Regardless of spousal employment, Less than 45 years old, Minor children in home",dvd_table_205.csv,33
+206,"Married women, In school full-time, Regardless of spousal employment, All ages, No minor children in home",dvd_table_206.csv,33
+207,"Married women, In school full-time, Spouse employed, All ages, Minor children in home",dvd_table_207.csv,33
+208,"Married women, In school full-time, Spouse employed, Less than 45 years old, Minor children in home",dvd_table_208.csv,33
+209,"Married women, Homemaker not in labor force, Regardless of spousal employment, All ages, Youngest child ages 0 or 1",dvd_table_209.csv,33
+210,"Married women, Homemaker not in labor force, Regardless of spousal employment, All ages, Youngest child ages 2 through 5",dvd_table_210.csv,33
+211,"Married women, Homemaker not in labor force, Regardless of spousal employment, All ages, Youngest child ages 6 through 12",dvd_table_211.csv,33
+212,"Married women, Homemaker not in labor force, Regardless of spousal employment, All ages, Youngest child ages 13 through 17",dvd_table_212.csv,33
+213,"Married women, Homemaker not in labor force, Regardless of spousal employment, All ages, No minor children in home",dvd_table_213.csv,33
+214,"Married women, Homemaker not in labor force, Regardless of spousal employment, Less than 45 years old, No minor children in home",dvd_table_214.csv,33
+215,"Married women, Homemaker not in labor force, Regardless of spousal employment, Ages 45 through 54, No minor children in home",dvd_table_215.csv,33
+216,"Married women, Homemaker not in labor force, Regardless of spousal employment, Ages 55 & over, No minor children in home",dvd_table_216.csv,33
+217,"Married women, Homemaker not in labor force, Regardless of spousal employment, All ages, Living with spouse only",dvd_table_217.csv,33
+218,"Married women, Homemaker not in labor force, Regardless of spousal employment, Less than 45 years old, Living with spouse only",dvd_table_218.csv,33
+219,"Married women, Homemaker not in labor force, Regardless of spousal employment, Ages 45 through 54, Living with spouse only",dvd_table_219.csv,33
+220,"Married women, Homemaker not in labor force, Regardless of spousal employment, Ages 55 & over, Living with spouse only",dvd_table_220.csv,33
+221,"Married women, Homemaker not in labor force, Spouse employed, All ages, Youngest child ages 0 or 1",dvd_table_221.csv,33
+222,"Married women, Homemaker not in labor force, Spouse employed, All ages, Youngest child ages 2 through 5",dvd_table_222.csv,33
+223,"Married women, Homemaker not in labor force, Spouse employed, All ages, Youngest child ages 6 through 12",dvd_table_223.csv,33
+224,"Married women, Homemaker not in labor force, Spouse employed, All ages, Youngest child ages 13 through 17",dvd_table_224.csv,33
+225,"Married women, Homemaker not in labor force, Spouse employed, All ages, No minor children in home",dvd_table_225.csv,33
+226,"Married women, Homemaker not in labor force, Spouse employed, Less than 45 years old, No minor children in home",dvd_table_226.csv,33
+227,"Married women, Homemaker not in labor force, Spouse employed, Ages 45 through 54, No minor children in home",dvd_table_227.csv,33
+228,"Married women, Homemaker not in labor force, Spouse employed, Ages 55 & over, No minor children in home",dvd_table_228.csv,33
+229,"Married women, Homemaker not in labor force, Spouse employed, All ages, Living with spouse only",dvd_table_229.csv,33
+230,"Married women, Homemaker not in labor force, Spouse employed, Less than 45 years old, Living with spouse only",dvd_table_230.csv,33
+231,"Married women, Homemaker not in labor force, Spouse employed, Ages 45 through 54, Living with spouse only",dvd_table_231.csv,33
+232,"Married women, Homemaker not in labor force, Spouse employed, Ages 55 & over, Living with spouse only",dvd_table_232.csv,33
+233,"Married women, Homemaker not in labor force, Spouse not employed, All ages, No minor children in home",dvd_table_233.csv,33
+234,"Married women, Retired, Regardless of spousal employment, All ages, Minor children in home",dvd_table_234.csv,33
+235,"Married women, Retired, Regardless of spousal employment, All ages, No minor children in home",dvd_table_235.csv,33
+236,"Married women, Retired, Regardless of spousal employment, Under age 62, No minor children in home",dvd_table_236.csv,33
+237,"Married women, Retired, Regardless of spousal employment, Ages 62 through 74, No minor children in home",dvd_table_237.csv,33
+238,"Married women, Retired, Regardless of spousal employment, Ages 75 & over, No minor children in home",dvd_table_238.csv,33
+239,"Married women, Retired, Regardless of spousal employment, All ages, Living with spouse only",dvd_table_239.csv,33
+240,"Married women, Retired, Regardless of spousal employment, Under age 62, Living with spouse only",dvd_table_240.csv,33
+241,"Married women, Retired, Regardless of spousal employment, Ages 62 through 74, Living with spouse only",dvd_table_241.csv,33
+242,"Married women, Retired, Regardless of spousal employment, Ages 75 & over, Living with spouse only",dvd_table_242.csv,33
+243,"Married women, Retired, Spouse employed, All ages, No minor children in home",dvd_table_243.csv,33
+244,"Married women, Retired, Spouse employed, Under age 62, No minor children in home",dvd_table_244.csv,33
+245,"Married women, Retired, Spouse employed, Ages 62 through 74, No minor children in home",dvd_table_245.csv,33
+246,"Married women, Retired, Spouse employed, All ages, Living with spouse only",dvd_table_246.csv,33
+247,"Married women, Retired, Spouse employed, Under age 62, Living with spouse only",dvd_table_247.csv,33
+248,"Married women, Retired, Spouse employed, Ages 62 through 74, Living with spouse only",dvd_table_248.csv,33
+249,"Married women, Retired, Spouse not employed, All ages, Minor children in home",dvd_table_249.csv,33
+250,"Married women, Retired, Spouse not employed, All ages, No minor children in home",dvd_table_250.csv,33
+251,"Married women, Retired, Spouse not employed, Under age 62, No minor children in home",dvd_table_251.csv,33
+252,"Married women, Retired, Spouse not employed, Ages 62 through 74, No minor children in home",dvd_table_252.csv,33
+253,"Married women, Retired, Spouse not employed, Ages 75 & over, No minor children in home",dvd_table_253.csv,33
+254,"Married women, Retired, Spouse not employed, All ages, Living with spouse only",dvd_table_254.csv,33
+255,"Married women, Retired, Spouse not employed, Under age 62, Living with spouse only",dvd_table_255.csv,33
+256,"Married women, Retired, Spouse not employed, Ages 62 through 74, Living with spouse only",dvd_table_256.csv,33
+257,"Married women, Retired, Spouse not employed, Ages 75 & over, Living with spouse only",dvd_table_257.csv,33
+258,"Single men, Employed full-time, All ages, Youngest child ages 2 through 5",dvd_table_258.csv,33
+259,"Single men, Employed full-time, All ages, Youngest child ages 6 through 12",dvd_table_259.csv,33
+260,"Single men, Employed full-time, All ages, Youngest child ages 13 through 17",dvd_table_260.csv,33
+261,"Single men, Employed full-time, All ages, Minor children in home",dvd_table_261.csv,33
+262,"Single men, Employed full-time, All ages, No minor children in home",dvd_table_262.csv,33
+263,"Single men, Employed full-time, Less than 45 years old, No minor children in home",dvd_table_263.csv,33
+264,"Single men, Employed full-time, Ages 45 through 54, No minor children in home",dvd_table_264.csv,33
+265,"Single men, Employed full-time, Ages 55 & over, No minor children in home",dvd_table_265.csv,33
+266,"Single men, Employed full-time, All ages, Living alone",dvd_table_266.csv,33
+267,"Single men, Employed full-time, Less than 45 years old, Living alone",dvd_table_267.csv,33
+268,"Single men, Employed full-time, Ages 45 through 54, Living alone",dvd_table_268.csv,33
+269,"Single men, Employed full-time, Ages 55 & over, Living alone",dvd_table_269.csv,33
+270,"Single men, Employed part-time, All ages, Youngest child ages 6 through 12",dvd_table_270.csv,33
+271,"Single men, Employed part-time, All ages, Youngest child ages 13 through 17",dvd_table_271.csv,33
+272,"Single men, Employed part-time, All ages, Minor children in home",dvd_table_272.csv,33
+273,"Single men, Employed part-time, All ages, No minor children in home",dvd_table_273.csv,33
+274,"Single men, Employed part-time, Less than 45 years old, No minor children in home",dvd_table_274.csv,33
+275,"Single men, Employed part-time, Ages 45 through 54, No minor children in home",dvd_table_275.csv,33
+276,"Single men, Employed part-time, Ages 55 & over, No minor children in home",dvd_table_276.csv,33
+277,"Single men, Employed part-time, All ages, Living alone",dvd_table_277.csv,33
+278,"Single men, Employed part-time, Less than 45 years old, Living alone",dvd_table_278.csv,33
+279,"Single men, Employed part-time, Ages 55 & over, Living alone",dvd_table_279.csv,33
+280,"Single men, Unemployed, All ages, Youngest child ages 13 through 17",dvd_table_280.csv,33
+281,"Single men, Unemployed, All ages, Minor children in home",dvd_table_281.csv,33
+282,"Single men, Unemployed, All ages, No minor children in home",dvd_table_282.csv,33
+283,"Single men, Unemployed, Less than 45 years old, No minor children in home",dvd_table_283.csv,33
+284,"Single men, Unemployed, Ages 45 through 54, No minor children in home",dvd_table_284.csv,33
+285,"Single men, Unemployed, All ages, Living alone",dvd_table_285.csv,33
+286,"Single men, Disabled and unable to work, All ages, Minor children in home",dvd_table_286.csv,33
+287,"Single men, Disabled and unable to work, All ages, No minor children in home",dvd_table_287.csv,33
+288,"Single men, Disabled and unable to work, Less than 45 years old, No minor children in home",dvd_table_288.csv,33
+289,"Single men, Disabled and unable to work, Ages 45 through 54, No minor children in home",dvd_table_289.csv,33
+290,"Single men, Disabled and unable to work, Ages 55 & over, No minor children in home",dvd_table_290.csv,33
+291,"Single men, Disabled and unable to work, All ages, Living alone",dvd_table_291.csv,33
+292,"Single men, Disabled and unable to work, Less than 45 years old, Living alone",dvd_table_292.csv,33
+293,"Single men, Disabled and unable to work, Ages 45 through 54, Living alone",dvd_table_293.csv,33
+294,"Single men, Disabled and unable to work, Ages 55 & over, Living alone",dvd_table_294.csv,33
+295,"Single men, In school full-time, All ages, Minor children in home",dvd_table_295.csv,33
+296,"Single men, In school full-time, Less than 45 years old, Minor children in home",dvd_table_296.csv,33
+297,"Single men, In school full-time, All ages, No minor children in home",dvd_table_297.csv,33
+298,"Single men, In school full-time, Less than 45 years old, No minor children in home",dvd_table_298.csv,33
+299,"Single men, Homemaker not in labor force, All ages, No minor children in home",dvd_table_299.csv,33
+300,"Single men, Retired, All ages, No minor children in home",dvd_table_300.csv,33
+301,"Single men, Retired, Under age 62, No minor children in home",dvd_table_301.csv,33
+302,"Single men, Retired, Ages 62 through 74, No minor children in home",dvd_table_302.csv,33
+303,"Single men, Retired, Ages 75 & over, No minor children in home",dvd_table_303.csv,33
+304,"Single men, Retired, All ages, Living alone",dvd_table_304.csv,33
+305,"Single men, Retired, Under age 62, Living alone",dvd_table_305.csv,33
+306,"Single men, Retired, Ages 62 through 74, Living alone",dvd_table_306.csv,33
+307,"Single men, Retired, Ages 75 & over, Living alone",dvd_table_307.csv,33
+308,"Single women, Employed full-time, All ages, Youngest child ages 0 or 1",dvd_table_308.csv,33
+309,"Single women, Employed full-time, All ages, Youngest child ages 2 through 5",dvd_table_309.csv,33
+310,"Single women, Employed full-time, All ages, Youngest child ages 6 through 12",dvd_table_310.csv,33
+311,"Single women, Employed full-time, All ages, Youngest child ages 13 through 17",dvd_table_311.csv,33
+312,"Single women, Employed full-time, All ages, No minor children in home",dvd_table_312.csv,33
+313,"Single women, Employed full-time, Less than 45 years old, No minor children in home",dvd_table_313.csv,33
+314,"Single women, Employed full-time, Ages 45 through 54, No minor children in home",dvd_table_314.csv,33
+315,"Single women, Employed full-time, Ages 55 & over, No minor children in home",dvd_table_315.csv,33
+316,"Single women, Employed full-time, All ages, Living alone",dvd_table_316.csv,33
+317,"Single women, Employed full-time, Less than 45 years old, Living alone",dvd_table_317.csv,33
+318,"Single women, Employed full-time, Ages 45 through 54, Living alone",dvd_table_318.csv,33
+319,"Single women, Employed full-time, Ages 55 & over, Living alone",dvd_table_319.csv,33
+320,"Single women, Employed part-time, All ages, Youngest child ages 0 or 1",dvd_table_320.csv,33
+321,"Single women, Employed part-time, All ages, Youngest child ages 2 through 5",dvd_table_321.csv,33
+322,"Single women, Employed part-time, All ages, Youngest child ages 6 through 12",dvd_table_322.csv,33
+323,"Single women, Employed part-time, All ages, Youngest child ages 13 through 17",dvd_table_323.csv,33
+324,"Single women, Employed part-time, All ages, No minor children in home",dvd_table_324.csv,33
+325,"Single women, Employed part-time, Less than 45 years old, No minor children in home",dvd_table_325.csv,33
+326,"Single women, Employed part-time, Ages 45 through 54, No minor children in home",dvd_table_326.csv,33
+327,"Single women, Employed part-time, Ages 55 & over, No minor children in home",dvd_table_327.csv,33
+328,"Single women, Employed part-time, All ages, Living alone",dvd_table_328.csv,33
+329,"Single women, Employed part-time, Less than 45 years old, Living alone",dvd_table_329.csv,33
+330,"Single women, Employed part-time, Ages 55 & over, Living alone",dvd_table_330.csv,33
+331,"Single women, Unemployed, All ages, Youngest child ages 2 through 5",dvd_table_331.csv,33
+332,"Single women, Unemployed, All ages, Youngest child ages 6 through 12",dvd_table_332.csv,33
+333,"Single women, Unemployed, All ages, Youngest child ages 13 through 17",dvd_table_333.csv,33
+334,"Single women, Unemployed, All ages, Minor children in home",dvd_table_334.csv,33
+335,"Single women, Unemployed, All ages, No minor children in home",dvd_table_335.csv,33
+336,"Single women, Unemployed, Less than 45 years old, No minor children in home",dvd_table_336.csv,33
+337,"Single women, Unemployed, All ages, Living alone",dvd_table_337.csv,33
+338,"Single women, Disabled and unable to work, All ages, Minor children in home",dvd_table_338.csv,33
+339,"Single women, Disabled and unable to work, Less than 45 years old, Minor children in home",dvd_table_339.csv,33
+340,"Single women, Disabled and unable to work, All ages, No minor children in home",dvd_table_340.csv,33
+341,"Single women, Disabled and unable to work, Less than 45 years old, No minor children in home",dvd_table_341.csv,33
+342,"Single women, Disabled and unable to work, Ages 45 through 54, No minor children in home",dvd_table_342.csv,33
+343,"Single women, Disabled and unable to work, Ages 55 & over, No minor children in home",dvd_table_343.csv,33
+344,"Single women, Disabled and unable to work, All ages, Living alone",dvd_table_344.csv,33
+345,"Single women, Disabled and unable to work, Ages 45 through 54, Living alone",dvd_table_345.csv,33
+346,"Single women, Disabled and unable to work, Ages 55 & over, Living alone",dvd_table_346.csv,33
+347,"Single women, In school full-time, All ages, Minor children in home",dvd_table_347.csv,33
+348,"Single women, In school full-time, Less than 45 years old, Minor children in home",dvd_table_348.csv,33
+349,"Single women, In school full-time, All ages, No minor children in home",dvd_table_349.csv,33
+350,"Single women, In school full-time, Less than 45 years old, No minor children in home",dvd_table_350.csv,33
+351,"Single women, Homemaker not in labor force, All ages, Youngest child ages 0 or 1",dvd_table_351.csv,33
+352,"Single women, Homemaker not in labor force, All ages, Youngest child ages 2 through 5",dvd_table_352.csv,33
+353,"Single women, Homemaker not in labor force, All ages, Youngest child ages 6 through 12",dvd_table_353.csv,33
+354,"Single women, Homemaker not in labor force, All ages, Minor children in home",dvd_table_354.csv,33
+355,"Single women, Homemaker not in labor force, Less than 45 years old, Minor children in home",dvd_table_355.csv,33
+356,"Single women, Homemaker not in labor force, All ages, No minor children in home",dvd_table_356.csv,33
+357,"Single women, Retired, All ages, Minor children in home",dvd_table_357.csv,33
+358,"Single women, Retired, All ages, No minor children in home",dvd_table_358.csv,33
+359,"Single women, Retired, Under age 62, No minor children in home",dvd_table_359.csv,33
+360,"Single women, Retired, Ages 62 through 74, No minor children in home",dvd_table_360.csv,33
+361,"Single women, Retired, Ages 75 & over, No minor children in home",dvd_table_361.csv,33
+362,"Single women, Retired, All ages, Living alone",dvd_table_362.csv,33
+363,"Single women, Retired, Under age 62, Living alone",dvd_table_363.csv,33
+364,"Single women, Retired, Ages 62 through 74, Living alone",dvd_table_364.csv,33
+365,"Single women, Retired, Ages 75 & over, Living alone",dvd_table_365.csv,33
+366,"Men, ages 15 & over",dvd_table_366.csv,33
+367,"Men, ages 15 to 17",dvd_table_367.csv,33
+368,"Men, ages 18 & over",dvd_table_368.csv,33
+369,"Men, ages 18 to 24",dvd_table_369.csv,33
+370,"Men, ages 25 to 34",dvd_table_370.csv,33
+371,"Men, ages 35 to 44",dvd_table_371.csv,33
+372,"Men, ages 45 to 54",dvd_table_372.csv,33
+373,"Men, ages 55 to 64",dvd_table_373.csv,33
+374,"Men, ages 65 to 74",dvd_table_374.csv,33
+375,"Men, ages 75 & over",dvd_table_375.csv,33
+376,"Women, ages 15 & over",dvd_table_376.csv,33
+377,"Women, ages 15 to 17",dvd_table_377.csv,33
+378,"Women, ages 18 & over",dvd_table_378.csv,33
+379,"Women, ages 18 to 24",dvd_table_379.csv,33
+380,"Women, ages 25 to 34",dvd_table_380.csv,33
+381,"Women, ages 35 to 44",dvd_table_381.csv,33
+382,"Women, ages 45 to 54",dvd_table_382.csv,33
+383,"Women, ages 55 to 64",dvd_table_383.csv,33
+384,"Women, ages 65 to 74",dvd_table_384.csv,33
+385,"Women, ages 75 & over",dvd_table_385.csv,33

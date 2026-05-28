@@ -1,0 +1,84 @@
+{% extends "base.html" %}
+{% block title %}Loss of household services{% endblock %}
+{% block content %}
+<h1>Loss of household services (replacement cost)</h1>
+<p class="muted">Weekly hours and hourly value come from the matched Expectancy
+Data DVD table. loss_percent (0..1) reflects functional limitations and
+declining health.</p>
+
+<fieldset class="helper">
+  <legend>Build from reference data (DVD 2023)</legend>
+  <label>DVD demographic table
+    <input list="dvd-list" id="dvd_pick" placeholder="Type a number or demographic">
+  </label>
+  <datalist id="dvd-list">
+    {% for d in demographics %}<option value="{{ d.table }}">{{ d.table }} &mdash; {{ d.demographic }}</option>{% endfor %}
+  </datalist>
+  <div class="helper-row">
+    <label>Start <input type="number" id="dvd_start" value="2026"></label>
+    <label>End <input type="number" id="dvd_end" value="2030"></label>
+    <label>Loss % (0-1) <input type="number" step="any" id="dvd_loss" value="1.0"></label>
+    <button type="button" onclick="addDvdStage()">Add stage from DVD</button>
+  </div>
+  <div class="helper-row">
+    <label>Residence (state or metro) <input type="text" id="residence" placeholder="e.g. Birmingham-Hoover, AL"></label>
+    <button type="button" onclick="lookupArea()">Set area factor</button>
+  </div>
+  <span id="dvd-msg" class="save-status"></span>
+</fieldset>
+
+<form hx-post="/lhhs/calculate" hx-target="#result" hx-swap="innerHTML">
+  <input type="hidden" name="case_id" value="{{ case_id }}">
+  <label>Base year (DVD value year) <input type="number" name="base_year" value="{{ v.base_year }}"></label>
+  <label>Valuation year <input type="number" name="valuation_year" value="{{ v.valuation_year }}"></label>
+  <label>Wage growth (%) <input type="number" step="any" name="growth_rate" value="{{ v.growth_rate }}"></label>
+  <label>Discount rate (%) <input type="number" step="any" name="discount_rate" value="{{ v.discount_rate }}"></label>
+  <label>Area wage factor (% of national, DVD Table 414) <input type="number" step="any" id="area_wage_factor" name="area_wage_factor" value="{{ v.area_wage_factor }}"></label>
+  <label>Self-consumption (%) <input type="number" step="any" name="self_consumption" value="{{ v.self_consumption }}"></label>
+  <label>Stages (JSON array)
+    <textarea name="stages_json" id="stages_json" rows="12">{{ v.stages_json }}</textarea>
+  </label>
+  <button type="submit">Calculate</button>
+</form>
+
+<div id="result" class="result"></div>
+
+<script>
+function tableNum() {
+  var raw = (document.getElementById('dvd_pick').value || '').trim();
+  var m = raw.match(/^\d+/);
+  return m ? parseInt(m[0], 10) : null;
+}
+async function addDvdStage() {
+  var msg = document.getElementById('dvd-msg');
+  var n = tableNum();
+  if (!n) { msg.textContent = 'Pick a DVD table first.'; return; }
+  var r = await fetch('/lookups/dvd?table_num=' + n);
+  if (!r.ok) { msg.textContent = 'Lookup failed.'; return; }
+  var hp = await r.json();
+  var ta = document.getElementById('stages_json');
+  var stages = [];
+  try { stages = JSON.parse(ta.value || '[]'); } catch (e) { stages = []; }
+  stages.push({
+    start_year: parseInt(document.getElementById('dvd_start').value, 10),
+    end_year: parseInt(document.getElementById('dvd_end').value, 10),
+    weekly_hours: hp.weekly_hours,
+    hourly_value: Math.round(hp.hourly_value * 100) / 100,
+    loss_percent: parseFloat(document.getElementById('dvd_loss').value)
+  });
+  ta.value = JSON.stringify(stages, null, 2);
+  msg.textContent = 'Added Table ' + n + ' (HP ' + hp.weekly_hours + ' hrs/wk, $' +
+                    hp.dollar_value_of_a_day + '/day).';
+}
+async function lookupArea() {
+  var msg = document.getElementById('dvd-msg');
+  var area = (document.getElementById('residence').value || '').trim();
+  if (!area) { msg.textContent = 'Enter a residence.'; return; }
+  var r = await fetch('/lookups/area?area=' + encodeURIComponent(area));
+  var d = await r.json();
+  if (d.factor == null) { msg.textContent = 'No area match for "' + area + '".'; return; }
+  document.getElementById('area_wage_factor').value = Math.round(d.factor * 10000) / 100;
+  msg.textContent = 'Area factor set to ' + (Math.round(d.factor * 10000) / 100) + '% (' + d.area + ').';
+}
+</script>
+{% endblock %}

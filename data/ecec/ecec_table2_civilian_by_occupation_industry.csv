@@ -1,0 +1,24 @@
+series,total_comp_cost,total_comp_pct,wages_cost,wages_pct,total_benefits_cost,total_benefits_pct,paid_leave_cost,paid_leave_pct,supplemental_pay_cost,supplemental_pay_pct,insurance_cost,insurance_pct,retirement_savings_cost,retirement_savings_pct,legally_required_cost,legally_required_pct
+Civilianworkers2,48.78,100.0,33.45,68.6,15.33,31.4,3.70,7.6,1.71,3.5,4.04,8.3,2.52,5.2,3.36,6.9
+"Occupationalgroup Management,professional,and related",77.39,100.0,52.28,67.6,25.11,32.4,6.84,8.8,2.85,3.7,6.14,7.9,4.58,5.9,4.70,6.1
+"Management,businessand financial",87.21,100.0,58.35,66.9,28.86,33.1,8.42,9.7,4.41,5.1,6.54,7.5,4.16,4.8,5.33,6.1
+Professionalandrelated,73.16,100.0,49.67,67.9,23.49,32.1,6.16,8.4,2.18,3.0,5.97,8.2,4.76,6.5,4.43,6.1
+Teachers3,79.00,100.0,53.76,68.1,25.24,31.9,4.21,5.3,0.40,0.5,7.23,9.1,9.44,12.0,3.95,5.0
+"Primary,secondary,and specialeducationschool teachers",78.12,100.0,51.34,65.7,26.78,34.3,3.56,4.6,0.29,0.4,8.15,10.4,11.22,14.4,3.56,4.6
+Registerednurses,76.49,100.0,50.43,65.9,26.05,34.1,7.27,9.5,3.67,4.8,6.12,8.0,3.93,5.1,5.06,6.6
+Salesandoffice,36.49,100.0,25.57,70.1,10.92,29.9,2.59,7.1,1.00,2.7,3.40,9.3,1.35,3.7,2.59,7.1
+Salesandrelated,35.04,100.0,26.35,75.2,8.69,24.8,2.10,6.0,1.04,3.0,2.07,5.9,0.85,2.4,2.64,7.5
+Officeandadministrativesupport,37.47,100.0,25.03,66.8,12.44,33.2,2.93,7.8,0.97,2.6,4.30,11.5,1.69,4.5,2.55,6.8
+Service,26.72,100.0,19.29,72.2,7.43,27.8,1.41,5.3,0.70,2.6,1.91,7.1,1.25,4.7,2.16,8.1
+"Naturalresources,construction,and maintenance",47.68,100.0,32.33,67.8,15.34,32.2,2.83,5.9,1.90,4.0,4.12,8.6,2.59,5.4,3.90,8.2
+"Construction,extraction,farming, fishing,andforestry",46.36,100.0,31.44,67.8,14.93,32.2,2.29,4.9,1.98,4.3,4.00,8.6,2.59,5.6,4.07,8.8
+"Installation,maintenance,and repair",49.04,100.0,33.26,67.8,15.78,32.2,3.40,6.9,1.81,3.7,4.25,8.7,2.60,5.3,3.72,7.6
+"Production,transportation,and materialmoving",36.81,100.0,24.99,67.9,11.81,32.1,2.24,6.1,1.63,4.4,3.53,9.6,1.45,3.9,2.96,8.1
+Production,37.06,100.0,24.88,67.1,12.18,32.9,2.33,6.3,2.24,6.0,3.57,9.6,1.13,3.1,2.90,7.8
+Transportationandmaterial moving,36.65,100.0,25.06,68.4,11.59,31.6,2.19,6.0,1.26,3.4,3.50,9.5,1.65,4.5,3.00,8.2
+Industrygroup Educationandhealthservices,55.27,100.0,37.67,68.2,17.60,31.8,4.20,7.6,1.24,2.2,4.93,8.9,3.84,7.0,3.39,6.1
+Educationalservices,66.51,100.0,43.71,65.7,22.80,34.3,4.28,6.4,0.35,0.5,6.90,10.4,7.79,11.7,3.47,5.2
+Elementaryandsecondary schools,65.19,100.0,42.28,64.9,22.91,35.1,3.42,5.2,0.27,0.4,7.23,11.1,8.80,13.5,3.18,4.9
+"Juniorcolleges,colleges,and universities",74.67,100.0,49.03,65.7,25.64,34.3,6.48,8.7,0.50,0.7,7.35,9.8,7.21,9.7,4.09,5.5
+Healthcareandsocialassistance,49.17,100.0,34.39,69.9,14.78,30.1,4.16,8.5,1.71,3.5,3.86,7.8,1.70,3.5,3.35,6.8
+Hospitals,65.05,100.0,42.50,65.3,22.55,34.7,6.29,9.7,2.98,4.6,5.85,9.0,3.27,5.0,4.16,6.4

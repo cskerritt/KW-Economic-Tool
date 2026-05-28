@@ -1,0 +1,33 @@
+{% if not cases %}
+<p class="muted">No saved cases yet.</p>
+{% else %}
+<table>
+  <thead>
+    <tr><th>Title</th><th>Module</th><th>Updated</th><th>Headline total</th><th></th></tr>
+  </thead>
+  <tbody>
+    {% for c in cases %}
+    <tr>
+      <td>{{ c.title }}</td>
+      <td>{{ labels.get(c.module, c.module) }}</td>
+      <td>{{ c.updated_at }}</td>
+      <td>
+        {% if c.module == 'lcp' %}
+          ${{ '{:,.0f}'.format(c.summary.get('lifetime_present_value', 0)) }}
+        {% else %}
+          ${{ '{:,.0f}'.format(c.summary.get('total_present_value', 0)) }}
+        {% endif %}
+      </td>
+      <td>
+        <a href="/{{ c.module }}?case_id={{ c.id }}">Open</a>
+        &middot;
+        <button class="link"
+                hx-post="/cases/{{ c.id }}/delete"
+                hx-target="#cases"
+                hx-confirm="Delete this case?">Delete</button>
+      </td>
+    </tr>
+    {% endfor %}
+  </tbody>
+</table>
+{% endif %}

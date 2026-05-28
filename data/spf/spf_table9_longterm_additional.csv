@@ -1,0 +1,46 @@
+horizon,series,statistic,value
+2026-2035,real_gdp_growth,MINIMUM,1.78
+2026-2035,productivity_growth,MINIMUM,0.80
+2026-2035,real_gdp_growth,LOWER QUARTILE,2.00
+2026-2035,productivity_growth,LOWER QUARTILE,1.45
+2026-2035,real_gdp_growth,MEDIAN,2.10
+2026-2035,productivity_growth,MEDIAN,1.80
+2026-2035,real_gdp_growth,UPPER QUARTILE,2.20
+2026-2035,productivity_growth,UPPER QUARTILE,2.15
+2026-2035,real_gdp_growth,MAXIMUM,2.52
+2026-2035,productivity_growth,MAXIMUM,3.00
+2026-2035,real_gdp_growth,MEAN,2.10
+2026-2035,productivity_growth,MEAN,1.82
+2026-2035,real_gdp_growth,STD. DEVIATION,0.20
+2026-2035,productivity_growth,STD. DEVIATION,0.55
+2026-2035,real_gdp_growth,N,25
+2026-2035,productivity_growth,N,20
+2026-2035,real_gdp_growth,MISSING,12
+2026-2035,productivity_growth,MISSING,17
+2026-2035,stock_returns_sp500,MINIMUM,4.00
+2026-2035,bond_rate_10yr,MINIMUM,2.50
+2026-2035,bill_returns_3mo,MINIMUM,2.00
+2026-2035,stock_returns_sp500,LOWER QUARTILE,5.90
+2026-2035,bond_rate_10yr,LOWER QUARTILE,3.78
+2026-2035,bill_returns_3mo,LOWER QUARTILE,2.88
+2026-2035,stock_returns_sp500,MEDIAN,7.00
+2026-2035,bond_rate_10yr,MEDIAN,4.00
+2026-2035,bill_returns_3mo,MEDIAN,3.00
+2026-2035,stock_returns_sp500,UPPER QUARTILE,8.50
+2026-2035,bond_rate_10yr,UPPER QUARTILE,4.21
+2026-2035,bill_returns_3mo,UPPER QUARTILE,3.20
+2026-2035,stock_returns_sp500,MAXIMUM,13.50
+2026-2035,bond_rate_10yr,MAXIMUM,4.50
+2026-2035,bill_returns_3mo,MAXIMUM,3.60
+2026-2035,stock_returns_sp500,MEAN,7.31
+2026-2035,bond_rate_10yr,MEAN,3.90
+2026-2035,bill_returns_3mo,MEAN,2.99
+2026-2035,stock_returns_sp500,STD. DEVIATION,2.25
+2026-2035,bond_rate_10yr,STD. DEVIATION,0.47
+2026-2035,bill_returns_3mo,STD. DEVIATION,0.32
+2026-2035,stock_returns_sp500,N,19
+2026-2035,bond_rate_10yr,N,24
+2026-2035,bill_returns_3mo,N,24
+2026-2035,stock_returns_sp500,MISSING,18
+2026-2035,bond_rate_10yr,MISSING,13
+2026-2035,bill_returns_3mo,MISSING,13

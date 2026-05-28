@@ -1,0 +1,10 @@
+file,rows
+spf_table1_macro_medians_levels.csv,19
+spf_table2_macro_percent_changes.csv,20
+spf_table3_price_indicators_medians.csv,4
+spf_table4_yield_spreads_medians.csv,4
+spf_table5_prob_decline_realgdp.csv,5
+spf_table6_mean_prob_unemp_realgdp.csv,84
+spf_table7_mean_prob_core_cpi_pce.csv,40
+spf_table8_longterm_inflation.csv,54
+spf_table9_longterm_additional.csv,45

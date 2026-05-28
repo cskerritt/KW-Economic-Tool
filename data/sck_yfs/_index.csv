@@ -1,0 +1,41 @@
+table,sex,initial_state,education,file,n_ages,age_min,age_max
+1,Men,Initially Active,All Education Levels,yfs_table_01_initially_active_men_all_education_levels.csv,73,18,90
+2,Men,Initially Active,No Education through 9th Grade,yfs_table_02_initially_active_men_no_education_through_9th_grade.csv,73,18,90
+3,Men,Initially Active,10th Grade to 12th Grade No Diploma,yfs_table_03_initially_active_men_10th_grade_to_12th_grade_no_diploma.csv,73,18,90
+4,Men,Initially Active,GED,yfs_table_04_initially_active_men_ged.csv,73,18,90
+5,Men,Initially Active,High School Diploma,yfs_table_05_initially_active_men_high_school_diploma.csv,73,18,90
+6,Men,Initially Active,Some College No Degree,yfs_table_06_initially_active_men_some_college_no_degree.csv,71,20,90
+7,Men,Initially Active,Associate's Degree,yfs_table_07_initially_active_men_associates_degree.csv,70,21,90
+8,Men,Initially Active,Bachelor's Degree,yfs_table_08_initially_active_men_bachelors_degree.csv,69,22,90
+9,Men,Initially Active,Master's Degree,yfs_table_09_initially_active_men_masters_degree.csv,66,25,90
+10,Men,Initially Active,Professional or Doctoral Degree,yfs_table_10_initially_active_men_professional_or_doctoral_degree.csv,65,26,90
+11,Men,Initially Inactive,All Education Levels,yfs_table_11_initially_inactive_men_all_education_levels.csv,73,18,90
+12,Men,Initially Inactive,No Education through 9th Grade,yfs_table_12_initially_inactive_men_no_education_through_9th_grade.csv,73,18,90
+13,Men,Initially Inactive,10th Grade to 12th Grade No Diploma,yfs_table_13_initially_inactive_men_10th_grade_to_12th_grade_no_diploma.csv,73,18,90
+14,Men,Initially Inactive,GED,yfs_table_14_initially_inactive_men_ged.csv,73,18,90
+15,Men,Initially Inactive,High School Diploma,yfs_table_15_initially_inactive_men_high_school_diploma.csv,73,18,90
+16,Men,Initially Inactive,Some College No Degree,yfs_table_16_initially_inactive_men_some_college_no_degree.csv,71,20,90
+17,Men,Initially Inactive,Associate's Degree,yfs_table_17_initially_inactive_men_associates_degree.csv,70,21,90
+18,Men,Initially Inactive,Bachelor's Degree,yfs_table_18_initially_inactive_men_bachelors_degree.csv,69,22,90
+19,Men,Initially Inactive,Master's Degree,yfs_table_19_initially_inactive_men_masters_degree.csv,66,25,90
+20,Men,Initially Inactive,Professional or Doctoral Degree,yfs_table_20_initially_inactive_men_professional_or_doctoral_degree.csv,65,26,90
+21,Women,Initially Active,All Education Levels,yfs_table_21_initially_active_women_all_education_levels.csv,73,18,90
+22,Women,Initially Active,No Education through 9th Grade,yfs_table_22_initially_active_women_no_education_through_9th_grade.csv,73,18,90
+23,Women,Initially Active,10th Grade to 12th Grade No Diploma,yfs_table_23_initially_active_women_10th_grade_to_12th_grade_no_diploma.csv,73,18,90
+24,Women,Initially Active,GED,yfs_table_24_initially_active_women_ged.csv,73,18,90
+25,Women,Initially Active,High School Diploma,yfs_table_25_initially_active_women_high_school_diploma.csv,73,18,90
+26,Women,Initially Active,Some College No Degree,yfs_table_26_initially_active_women_some_college_no_degree.csv,71,20,90
+27,Women,Initially Active,Associate's Degree,yfs_table_27_initially_active_women_associates_degree.csv,70,21,90
+28,Women,Initially Active,Bachelor's Degree,yfs_table_28_initially_active_women_bachelors_degree.csv,69,22,90
+29,Women,Initially Active,Master's Degree,yfs_table_29_initially_active_women_masters_degree.csv,66,25,90
+30,Women,Initially Active,Professional or Doctoral Degree,yfs_table_30_initially_active_women_professional_or_doctoral_degree.csv,65,26,90
+31,Women,Initially Inactive,All Education Levels,yfs_table_31_initially_inactive_women_all_education_levels.csv,73,18,90
+32,Women,Initially Inactive,No Education through 9th Grade,yfs_table_32_initially_inactive_women_no_education_through_9th_grade.csv,73,18,90
+33,Women,Initially Inactive,10th Grade to 12th Grade No Diploma,yfs_table_33_initially_inactive_women_10th_grade_to_12th_grade_no_diploma.csv,73,18,90
+34,Women,Initially Inactive,GED,yfs_table_34_initially_inactive_women_ged.csv,73,18,90
+35,Women,Initially Inactive,High School Diploma,yfs_table_35_initially_inactive_women_high_school_diploma.csv,73,18,90
+36,Women,Initially Inactive,Some College No Degree,yfs_table_36_initially_inactive_women_some_college_no_degree.csv,71,20,90
+37,Women,Initially Inactive,Associate's Degree,yfs_table_37_initially_inactive_women_associates_degree.csv,70,21,90
+38,Women,Initially Inactive,Bachelor's Degree,yfs_table_38_initially_inactive_women_bachelors_degree.csv,69,22,90
+39,Women,Initially Inactive,Master's Degree,yfs_table_39_initially_inactive_women_masters_degree.csv,66,25,90
+40,Women,Initially Inactive,Professional or Doctoral Degree,yfs_table_40_initially_inactive_women_professional_or_doctoral_degree.csv,65,26,90

@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+{% block content %}
+<h1>Damages modules</h1>
+<p class="muted">Choose a module to build a calculation.</p>
+<div class="cards">
+  <a class="card" href="/earnings">
+    <h2>Economic loss</h2>
+    <p>Lost earnings via the Tinari algebraic method (AIF).</p>
+  </a>
+  <a class="card" href="/lcp">
+    <h2>Life care plan</h2>
+    <p>Cost projection via the DED Medical Care Cost Index method.</p>
+  </a>
+  <a class="card" href="/lhhs">
+    <h2>Loss of household services</h2>
+    <p>Replacement-cost six-step method using DVD values.</p>
+  </a>
+</div>
+{% endblock %}

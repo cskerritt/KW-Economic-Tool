@@ -1,0 +1,140 @@
+{% extends "base.html" %}
+{% block title %}Economic loss{% endblock %}
+{% block content %}
+<h1>Economic loss (Tinari algebraic method)</h1>
+<p class="muted">Rates are entered as percents. Defaults reproduce the Tinari (2016) example.</p>
+
+<fieldset class="helper">
+  <legend>Look up worklife &amp; life expectancy</legend>
+  <div class="helper-row">
+    <label>Sex
+      <select id="wl_sex"><option>Men</option><option>Women</option></select>
+    </label>
+    <label>Initial state
+      <select id="wl_state"><option>Active</option><option>Inactive</option></select>
+    </label>
+    <label>Education
+      <select id="wl_edu">
+        <option>All Education Levels</option>
+        <option>No Education through 9th Grade</option>
+        <option>10th Grade to 12th Grade No Diploma</option>
+        <option>GED</option>
+        <option selected>High School Diploma</option>
+        <option>Some College No Degree</option>
+        <option>Associate's Degree</option>
+        <option>Bachelor's Degree</option>
+        <option>Master's Degree</option>
+        <option>Professional or Doctoral Degree</option>
+      </select>
+    </label>
+    <label>Age <input type="number" id="wl_age" value="40"></label>
+    <button type="button" onclick="lookupWorklife()">Set WLE factor</button>
+  </div>
+  <div class="helper-row">
+    <label>State / area (NVSR) <input type="text" id="le_area" value="United States"></label>
+    <label>Sex
+      <select id="le_sex"><option>total</option><option>male</option><option>female</option></select>
+    </label>
+    <button type="button" onclick="lookupLE()">Life expectancy</button>
+  </div>
+  <span id="wl-msg" class="save-status"></span>
+</fieldset>
+
+<form hx-post="/earnings/calculate" hx-target="#result" hx-swap="innerHTML">
+  <input type="hidden" name="case_id" value="{{ case_id }}">
+  <fieldset>
+    <legend>Case</legend>
+    <label>Case type
+      <select name="case_type" id="case_type" onchange="toggleCaseType()">
+        <option value="WD" {{ 'selected' if v.case_type == 'WD' else '' }}>Wrongful death (deduct personal consumption)</option>
+        <option value="PI" {{ 'selected' if v.case_type == 'PI' else '' }}>Personal injury (pre-injury minus residual capacity)</option>
+      </select>
+    </label>
+    <p class="muted" id="case_hint"></p>
+  </fieldset>
+
+  <fieldset>
+    <legend>Earnings base and projection</legend>
+    <label>Base earnings ($) <input type="number" step="any" name="base_earnings" value="{{ v.base_earnings }}"></label>
+    <label>Base year <input type="number" name="base_year" value="{{ v.base_year }}"></label>
+    <label>Start year (first loss year) <input type="number" name="start_year" value="{{ v.start_year }}"></label>
+    <label>End year <input type="number" id="end_year" name="end_year" value="{{ v.end_year }}"></label>
+    <label>Valuation year (present reference) <input type="number" name="valuation_year" value="{{ v.valuation_year }}"></label>
+    <label>Partial years (YEAR:PORTION,...) <input type="text" name="partial_years" value="{{ v.partial_years }}"></label>
+  </fieldset>
+
+  <fieldset>
+    <legend>Growth and discount (%)</legend>
+    <label>Growth, past <input type="number" step="any" name="growth_past" value="{{ v.growth_past }}"></label>
+    <label>Growth, future <input type="number" step="any" name="growth_future" value="{{ v.growth_future }}"></label>
+    <label>Growth switch year <input type="number" name="growth_switch_year" value="{{ v.growth_switch_year }}"></label>
+    <label>Discount rate <input type="number" step="any" name="discount_rate" value="{{ v.discount_rate }}"></label>
+  </fieldset>
+
+  <fieldset>
+    <legend>Adjustment factors (%)</legend>
+    <label>Worklife ratio (WLE) <input type="number" step="any" id="worklife" name="worklife" value="{{ v.worklife }}"></label>
+    <label>Unemployment factor (UF) <input type="number" step="any" name="unemployment" value="{{ v.unemployment }}"></label>
+    <label>Tax rate (TL) <input type="number" step="any" name="tax" value="{{ v.tax }}"></label>
+    <label>Fringe rate (FB) <input type="number" step="any" name="fringe" value="{{ v.fringe }}"></label>
+    <label>Personal consumption, initial (PC) <input type="number" step="any" name="pc_initial" value="{{ v.pc_initial }}"></label>
+    <label>Personal consumption, later <input type="number" step="any" name="pc_later" value="{{ v.pc_later }}"></label>
+    <label>PC switch year <input type="number" name="pc_switch_year" value="{{ v.pc_switch_year }}"></label>
+  </fieldset>
+
+  <fieldset id="residual_fields">
+    <legend>Residual (post-injury) earning capacity &mdash; personal injury only</legend>
+    <p class="muted">The loss is pre-injury capacity (above) minus the residual capacity below.
+       Leave residual earnings at 0 for total disability.</p>
+    <label>Residual base earnings ($) <input type="number" step="any" name="residual_base_earnings" value="{{ v.residual_base_earnings }}"></label>
+    <label>Residual worklife ratio (%) <input type="number" step="any" name="residual_worklife" value="{{ v.residual_worklife }}"></label>
+    <label>Residual unemployment factor (%) <input type="number" step="any" name="residual_unemployment" value="{{ v.residual_unemployment }}"></label>
+    <label>Residual tax rate (%) <input type="number" step="any" name="residual_tax" value="{{ v.residual_tax }}"></label>
+    <label>Residual fringe rate (%) <input type="number" step="any" name="residual_fringe" value="{{ v.residual_fringe }}"></label>
+  </fieldset>
+
+  <button type="submit">Calculate</button>
+</form>
+
+<div id="result" class="result"></div>
+
+<script>
+function toggleCaseType() {
+  var isPI = document.getElementById('case_type').value === 'PI';
+  document.getElementById('residual_fields').style.display = isPI ? '' : 'none';
+  document.getElementById('case_hint').textContent = isPI
+    ? 'Personal injury: enter pre-injury capacity above and residual capacity below. '
+      + 'Personal consumption is not deducted; net loss = pre-injury minus residual.'
+    : 'Wrongful death: a single stream with the personal-consumption deduction applied.';
+}
+async function lookupWorklife() {
+  var msg = document.getElementById('wl-msg');
+  var qs = new URLSearchParams({
+    sex: document.getElementById('wl_sex').value,
+    initial_state: document.getElementById('wl_state').value,
+    education: document.getElementById('wl_edu').value,
+    age: document.getElementById('wl_age').value
+  });
+  var r = await fetch('/lookups/worklife?' + qs.toString());
+  if (!r.ok) { msg.textContent = 'No worklife row for that cohort/age.'; return; }
+  var d = await r.json();
+  var pct = Math.round(d.worklife_ratio * 1000) / 10;
+  document.getElementById('worklife').value = pct;
+  msg.textContent = 'WLE factor set to ' + pct + '% (WLE mean ' + d.wle_mean + ' yrs).';
+}
+async function lookupLE() {
+  var msg = document.getElementById('wl-msg');
+  var qs = new URLSearchParams({
+    area: document.getElementById('le_area').value,
+    sex: document.getElementById('le_sex').value,
+    at: 'birth'
+  });
+  var r = await fetch('/lookups/life-expectancy?' + qs.toString());
+  var d = await r.json();
+  if (d.life_expectancy == null) { msg.textContent = 'No NVSR match for that area.'; return; }
+  msg.textContent = 'Life expectancy at birth: ' + d.life_expectancy +
+                    ' years (' + d.area + ', ' + d.sex + ').';
+}
+toggleCaseType();
+</script>
+{% endblock %}

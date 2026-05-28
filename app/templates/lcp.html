@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+{% block title %}Life care plan{% endblock %}
+{% block content %}
+<h1>Life care plan (Medical Care Cost Index)</h1>
+<p class="muted">Enter cost items as JSON. growth_rate is a decimal from the
+Medical Care Cost Index (real medical inflation + expected general inflation).</p>
+
+<form hx-post="/lcp/calculate" hx-target="#result" hx-swap="innerHTML">
+  <input type="hidden" name="case_id" value="{{ case_id }}">
+  <label>Discount rate (%) <input type="number" step="any" name="discount_rate" value="{{ v.discount_rate }}"></label>
+  <label>Valuation year <input type="number" name="valuation_year" value="{{ v.valuation_year }}"></label>
+  <label>Cost items (JSON array)
+    <textarea name="items_json" rows="16">{{ v.items_json }}</textarea>
+  </label>
+  <button type="submit">Calculate</button>
+</form>
+
+<div id="result" class="result"></div>
+{% endblock %}

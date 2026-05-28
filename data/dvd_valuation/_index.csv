@@ -1,0 +1,28 @@
+table,activity,file,n_occupations,hourly_value_with_benefits,legally_required_benefits_pct
+386,Inside Housework,dvd_val_table_386.csv,7,18.31,11.2
+387,Food Cooking & Clean-up,dvd_val_table_387.csv,3,18.40,12.5
+388,"Pets, Home & Vehicles",dvd_val_table_388.csv,12,20.06,12.2
+389,Household Management,dvd_val_table_389.csv,6,24.72,10.4
+390,Shopping,dvd_val_table_390.csv,3,18.13,9.5
+391,Obtaining Services,dvd_val_table_391.csv,3,21.87,9.5
+392,Travel for Household Activity,dvd_val_table_392.csv,1,24.75,11.2
+393,Caring for and Helping Household Children,dvd_val_table_393.csv,3,18.05,10.0
+394,Caring for and Helping Household Adults,dvd_val_table_394.csv,9,17.91,10.0
+395,Caring for and Helping Non-Household Members,dvd_val_table_395.csv,10,18.09,10.0
+396,Travel – Caring for and Helping Household Members,dvd_val_table_396.csv,1,24.75,11.2
+397,Travel – Caring for and Helping Non-Household Members,dvd_val_table_397.csv,1,24.75,11.2
+398,Eating & Drinking,dvd_val_table_398.csv,3,18.25,10.0
+399,Personal Health Care,dvd_val_table_399.csv,5,17.95,10.0
+400,Grooming,dvd_val_table_400.csv,5,18.17,10.0
+401,Sleeping,dvd_val_table_401.csv,2,18.58,10.0
+402,"Private, Personal, or N/A",dvd_val_table_402.csv,0,20.56,11.2
+403,Socializing,dvd_val_table_403.csv,1,20.35,10.0
+404,Passive Leisure,dvd_val_table_404.csv,2,17.40,10.0
+405,Active Leisure,dvd_val_table_405.csv,2,17.40,10.0
+406,Attendance Leisure,dvd_val_table_406.csv,2,17.40,10.0
+407,Religious Activities,dvd_val_table_407.csv,1,23.41,10.0
+408,Volunteering,dvd_val_table_408.csv,1,23.41,10.0
+409,Travel Related to Leisure,dvd_val_table_409.csv,1,24.75,11.2
+410,Working at a Job,dvd_val_table_410.csv,0,,
+411,Educational Activities,dvd_val_table_411.csv,1,23.41,10.0
+412,Commuting to Work or School,dvd_val_table_412.csv,1,24.75,11.2

@@ -1,0 +1,45 @@
+<h2>Result</h2>
+{% if result.pre_injury is defined %}
+<table class="streams">
+  <thead>
+    <tr><th>Stream</th><th>Present value</th></tr>
+  </thead>
+  <tbody>
+    <tr><td>Pre-injury earning capacity</td>
+        <td>${{ '{:,.2f}'.format(result.pre_injury.total_present_value) }}</td></tr>
+    <tr><td>Less: residual (post-injury) capacity</td>
+        <td>${{ '{:,.2f}'.format(result.residual.total_present_value) }}</td></tr>
+    <tr class="total"><td>Net personal-injury loss</td>
+        <td>${{ '{:,.2f}'.format(result.total_present_value) }}</td></tr>
+  </tbody>
+</table>
+<p class="muted">The table below shows the net (pre-injury minus residual) amount per year.</p>
+{% endif %}
+<table>
+  <thead>
+    <tr><th>Year</th><th>Portion</th><th>Gross earnings</th><th>AIF</th>
+        <th>Adjusted income</th><th>Present value</th></tr>
+  </thead>
+  <tbody>
+    {% for r in result.rows %}
+    <tr class="{{ 'future' if r.is_future else 'past' }}">
+      <td>{{ r.year }}</td>
+      <td>{{ '%.0f%%' % (r.portion * 100) }}</td>
+      <td>${{ '{:,.0f}'.format(r.gross_earnings) }}</td>
+      <td>{{ '%.2f%%' % (r.aif * 100) }}</td>
+      <td>${{ '{:,.0f}'.format(r.adjusted_income) }}</td>
+      <td>${{ '{:,.0f}'.format(r.present_value) }}</td>
+    </tr>
+    {% endfor %}
+  </tbody>
+  <tfoot>
+    <tr><td colspan="5">Past present value</td>
+        <td>${{ '{:,.0f}'.format(result.past_present_value) }}</td></tr>
+    <tr><td colspan="5">Future present value</td>
+        <td>${{ '{:,.0f}'.format(result.future_present_value) }}</td></tr>
+    <tr class="total"><td colspan="5">Total present value</td>
+        <td>${{ '{:,.2f}'.format(result.total_present_value) }}</td></tr>
+  </tfoot>
+</table>
+{% include "_actions.html" %}
+

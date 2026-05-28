@@ -1,0 +1,37 @@
+<h2>Result</h2>
+<table>
+  <thead>
+    <tr><th>Item</th><th>Category</th><th>Occurrences</th>
+        <th>Nominal total</th><th>Present value</th><th>Overlaps LHHS</th></tr>
+  </thead>
+  <tbody>
+    {% for it in result.items %}
+    <tr>
+      <td>{{ it.name }}</td>
+      <td>{{ it.category }}</td>
+      <td>{{ it.occurrences }}</td>
+      <td>${{ '{:,.0f}'.format(it.nominal_total) }}</td>
+      <td>${{ '{:,.0f}'.format(it.present_value) }}</td>
+      <td>{{ 'yes' if it.overlaps_household else '' }}</td>
+    </tr>
+    {% endfor %}
+  </tbody>
+</table>
+
+<h3>By category (present value)</h3>
+<table>
+  <tbody>
+    {% for cat, pv in result.category_present_value.items() %}
+    <tr><td>{{ cat }}</td><td>${{ '{:,.0f}'.format(pv) }}</td></tr>
+    {% endfor %}
+  </tbody>
+  <tfoot>
+    <tr class="total"><td>Lifetime present value</td>
+        <td>${{ '{:,.2f}'.format(result.lifetime_present_value) }}</td></tr>
+    <tr><td>Household-services overlap (net out of LHHS)</td>
+        <td>${{ '{:,.2f}'.format(result.household_overlap_present_value) }}</td></tr>
+    <tr><td>Lifetime excluding overlap</td>
+        <td>${{ '{:,.2f}'.format(result.lifetime_excluding_overlap()) }}</td></tr>
+  </tfoot>
+</table>
+{% include "_actions.html" %}

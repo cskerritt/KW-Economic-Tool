@@ -1,0 +1,10 @@
+{% extends "base.html" %}
+{% block title %}Saved cases{% endblock %}
+{% block content %}
+<h1>Saved cases</h1>
+<p class="muted">Open reloads a case into its module form. Cases recompute from
+their stored inputs, so they reproduce exactly.</p>
+<div id="cases">
+  {% include "_cases_table.html" %}
+</div>
+{% endblock %}
