@@ -3,6 +3,7 @@
 from __future__ import annotations
 
 import sqlite3
+from pathlib import Path
 
 SCHEMA = """
 CREATE TABLE IF NOT EXISTS cases (
@@ -19,7 +20,14 @@ CREATE INDEX IF NOT EXISTS idx_cases_module ON cases(module);
 
 
 def connect(db_path: str) -> sqlite3.Connection:
-    """Open a connection with row access by name and foreign keys on."""
+    """Open a connection with row access by name and foreign keys on.
+
+    Creates the parent directory if needed so a mounted-volume path like
+    ``/data/forensic_calc.sqlite`` works on first boot.
+    """
+    if db_path != ":memory:":
+        parent = Path(db_path).expanduser().resolve().parent
+        parent.mkdir(parents=True, exist_ok=True)
     conn = sqlite3.connect(db_path)
     conn.row_factory = sqlite3.Row
     conn.execute("PRAGMA foreign_keys = ON;")

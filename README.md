@@ -45,16 +45,38 @@ Only emails in `ALLOWED_EMAILS` can sign in. See `app/config.py`.
 
 ## Deploy to Railway
 
-The repo includes `Procfile`, `railway.json`, and `runtime.txt`.
+The repo includes `Procfile`, `railway.json`, and `runtime.txt`. The start
+command runs uvicorn with `--proxy-headers --forwarded-allow-ips=*` so that
+behind Railway's TLS-terminating proxy the OAuth callback URL is built as
+`https://…` (Google requires an exact, https redirect URI).
 
-1. Create a Railway project from this repo.
-2. Add a Volume mounted at `/data` (so saved cases survive redeploys).
-3. Set environment variables: `SESSION_SECRET`, `GOOGLE_CLIENT_ID`,
-   `GOOGLE_CLIENT_SECRET`, `ALLOWED_EMAILS`, and `DB_PATH=/data/forensic_calc.sqlite`.
-4. In the Google OAuth client, set the redirect URI to
-   `https://YOUR_RAILWAY_DOMAIN/auth/callback`.
+1. Create a Railway project from this repo. Nixpacks builds it and runs
+   `pip install -e ".[web,export]"` (engine stays dependency-free; web + export
+   extras, including reportlab for PDF, are installed).
+2. Add a **Volume mounted at `/data`** so saved cases survive redeploys. The app
+   creates the DB file's parent directory on first boot.
+3. Set environment variables (see `.env.example` for the full annotated list):
 
-The health check path is `/healthz`.
+   | Variable | Required | Notes |
+   |---|---|---|
+   | `SESSION_SECRET` | yes | long random string; signs the session cookie |
+   | `DB_PATH` | yes | `/data/forensic_calc.sqlite` (the mounted volume) |
+   | `COOKIE_SECURE` | yes | `true` in production (HTTPS-only session cookie) |
+   | `GOOGLE_CLIENT_ID` | yes | OAuth 2.0 Web client id |
+   | `GOOGLE_CLIENT_SECRET` | yes | OAuth 2.0 Web client secret |
+   | `ALLOWED_EMAILS` | yes | comma-separated sign-in allow-list |
+   | `FRED_API_KEY` | for LCP helper | enables `/lookups/lcp-growth`; never commit it |
+   | `REPORT_FIRM` | optional | PDF report header (e.g. `KW Economics`) |
+   | `REPORT_AUTHOR` | optional | PDF signature block |
+   | `AUTH_DISABLED` | no | must be unset/false in production |
+
+4. In the Google Cloud OAuth client (Web application), set the authorized
+   redirect URI to `https://YOUR_RAILWAY_DOMAIN/auth/callback` and the authorized
+   JavaScript origin to `https://YOUR_RAILWAY_DOMAIN`.
+
+The health check path is `/healthz`. After deploy, visit the domain, sign in
+with an allow-listed Google account, and confirm Saved cases persist across a
+redeploy (proves the volume is mounted at `DB_PATH`).
 
 ## MCP server (Claude Code)
 

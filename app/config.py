@@ -46,6 +46,9 @@ class Settings:
     # Branding for the PDF report header/signature block. Override per firm.
     report_firm: str = os.getenv("REPORT_FIRM", "Forensic Economic Analysis")
     report_author: str = os.getenv("REPORT_AUTHOR", "")
+    # Send the session cookie only over HTTPS. Set COOKIE_SECURE=true in
+    # production (Railway serves HTTPS); leave false for local http dev.
+    secure_cookies: bool = _bool("COOKIE_SECURE", False)
 
     def is_allowed(self, email: str) -> bool:
         return email.strip().lower() in self.allowed_emails
