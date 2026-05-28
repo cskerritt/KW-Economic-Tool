@@ -34,9 +34,21 @@ mcp = [
 dev = [
     "pytest>=8.0",
 ]
+# Browser end-to-end tests. After install run: playwright install chromium
+e2e = [
+    "pytest>=8.0",
+    "playwright>=1.40",
+]
 
 [tool.setuptools.packages.find]
 include = ["engine*", "app*", "exports*", "storage*", "mcp_server*", "datasets*"]
 
 [tool.pytest.ini_options]
 testpaths = ["tests"]
+# E2E tests need a live server + a browser, so they are NOT part of the default
+# run. Opt in with `pytest -m e2e` (after `pip install -e ".[web,export,e2e]"`
+# and `playwright install chromium`).
+addopts = "-m 'not e2e' --strict-markers"
+markers = [
+    "e2e: browser end-to-end test; needs playwright + a live server (opt in with -m e2e)",
+]

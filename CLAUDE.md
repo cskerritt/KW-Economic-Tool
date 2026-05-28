@@ -12,14 +12,15 @@ runtime dependencies. It is the product. Everything else imports it:
 ```
 engine/            pure math, fully unit-tested, no web/db deps
   common/          present value, growth, discounting, shared assumptions
-  earnings/        Tinari algebraic method
+  earnings/        Tinari algebraic method (incl. personal_injury dual-stream)
   lcp/             DED Medical Care Cost Index method   (phase 3)
   lhhs/            DED replacement-cost six-step method (phase 4)
 app/               FastAPI + Jinja2/HTMX UI             (phase 2+)
-exports/           xlsx (openpyxl) and docx (python-docx) (phase 3+)
-storage/           SQLite via SQLModel                  (phase 5)
+exports/           xlsx (openpyxl), docx (python-docx), pdf (reportlab)
+storage/           SQLite (stdlib sqlite3)              (phase 5)
 mcp_server/        optional MCP over the same engine    (phase 5)
-tests/             pytest, golden-value cases
+datasets/          stdlib loaders/lookups over data/ (incl. FRED for LCP growth)
+tests/             pytest golden-value cases; tests/e2e/ Playwright (opt-in)
 ```
 
 Rule: the web layer, exports, and MCP NEVER do math. They build typed inputs,
@@ -94,6 +95,21 @@ Flag overlapping LCP items so they can be netted out of LHHS (avoid double count
 4. (done) lhhs module + docx report export.
 5. (done) SQLite persistence of saved cases (stdlib sqlite3, `storage/`),
    wired export downloads, Railway deploy config, MCP server (`mcp_server/`).
+6. (done) personal-injury dual-stream earnings: `engine/earnings/personal_injury.py`
+   subtracts a residual stream from a pre-injury stream (both PC=0). A WD case is
+   a single stream with the personal-consumption deduction; a PI case carries an
+   optional `residual` sub-dict in its canonical inputs. Golden: net = pre - residual.
+7. (done) PDF report export: `exports/pdf.py` (reportlab) renders all three
+   modules; additive alongside xlsx/docx. `export_result(module, result, fmt=...)`;
+   the route passes `fmt=pdf`. Branding via `REPORT_FIRM` / `REPORT_AUTHOR`.
+8. (done) LCP growth-rate helper: `datasets/fred.py` fetches BLS CPI series from
+   FRED and composes the DED §920 item growth rate (category CAGR - overall CAGR
+   + expected general inflation). Endpoint `/lookups/lcp-growth`; needs
+   `FRED_API_KEY` (never committed). Network lives only in `datasets/`.
+9. (done) Railway deploy hardening: start command runs uvicorn with
+   `--proxy-headers --forwarded-allow-ips='*'` so the OAuth callback is built as
+   https; `COOKIE_SECURE=true` makes the session cookie HTTPS-only; the DB parent
+   dir is created on first boot for the mounted volume. See `.env.example`.
 
 ## Shared compute path
 `app/compute.py` is the single place that turns a canonical input dict (DECIMAL
@@ -111,6 +127,14 @@ stays pure; `datasets/builders.py` turns lookups into canonical engine inputs
 (e.g. an LHHS input dict from a DVD table number plus a residence). The MCP
 server exposes the lookups as `lookup_*` tools.
 
+`datasets/fred.py` is the one place that makes a network call (stdlib urllib),
+and it lives here on purpose so the engine stays offline-pure. It turns FRED CPI
+index series into a CAGR and composes the LCP item growth rate via the engine's
+`medical_growth_rate`. The category->series map is auditable reference data in
+`data/fred/cpi_series.csv`; series ids must be verified to resolve on FRED before
+being added. `FRED_API_KEY` is read from the environment and never committed.
+Network failures surface as a clean 504 from `/lookups/lcp-growth`, never a 500.
+
 ## Persistence
 `storage/` is stdlib sqlite3 (no ORM dependency). Cases store their canonical
 inputs (JSON) plus a small summary; results are recomputed from inputs on load
@@ -120,3 +144,19 @@ so a case reproduces exactly. Set `DB_PATH` to a mounted volume in production.
 `pytest` from the repo root. Golden-value tests are mandatory for every engine
 module and must not be weakened to make a change pass. If a number changes,
 justify it against the source document in the test docstring.
+
+The default `pytest` run is hermetic and fast (no network, no browser); it
+deselects `-m e2e` via `addopts`. Browser end-to-end tests live in `tests/e2e/`
+(Playwright) and drive the real HTMX UI against a uvicorn server the fixtures
+start. Run them with:
+
+```
+pip install -e ".[web,export,e2e]"
+playwright install chromium
+pytest -m e2e            # set FRED_API_KEY to exercise the live LCP helper
+```
+
+The e2e FRED test is external-tolerant: it asserts the helper returns a composed
+rate OR degrades cleanly (it skips entirely without `FRED_API_KEY`), so it never
+flakes on FRED rate limits. The composition math is pinned by offline unit tests
+in `tests/test_fred.py`.
