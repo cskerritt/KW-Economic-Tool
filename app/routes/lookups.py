@@ -6,6 +6,8 @@ area-wage factor, worklife ratio, life expectancy) without leaving the page.
 
 from __future__ import annotations
 
+import urllib.error
+
 from fastapi import APIRouter, Depends, HTTPException
 
 from app.auth import require_user
@@ -84,5 +86,8 @@ def lcp_growth(
         raise HTTPException(404, str(e))
     except RuntimeError as e:  # missing FRED_API_KEY
         raise HTTPException(503, str(e))
+    except (urllib.error.URLError, TimeoutError, OSError) as e:
+        # FRED unreachable / slow / rate-limited: fail cleanly, not a 500.
+        raise HTTPException(504, f"FRED is unreachable right now: {e}")
     except ValueError as e:
         raise HTTPException(502, f"FRED data problem: {e}")
