@@ -82,3 +82,88 @@ def test_lcp_item_start_before_base_is_422():
 def test_save_unknown_module_is_404():
     r = client.post("/nope/save", data={"title": "t", "inputs_json": "{}"})
     assert r.status_code == 404
+
+
+# --- lookup endpoints: confirm the route wiring + returned values -----------
+# These lock the HTTP layer (query-param names, status codes, and the exact
+# values surfaced from the CSVs) so a future column/param rename can't silently
+# break a form helper. Values are cross-checked against the source data files.
+
+def test_lookup_worklife_returns_csv_values():
+    r = client.get("/lookups/worklife", params={
+        "sex": "Men", "initial_state": "Active",
+        "education": "High School Diploma", "age": 45,
+    })
+    assert r.status_code == 200
+    d = r.json()
+    assert d["wle_mean"] == 16.67                      # WLE table, age 45
+    assert abs(d["worklife_ratio"] - 16.67 / 21.17) < 1e-9  # YFS-derived ratio
+
+
+def test_lookup_worklife_unknown_cohort_is_404():
+    r = client.get("/lookups/worklife", params={
+        "sex": "Martian", "initial_state": "Active", "education": "X", "age": 45,
+    })
+    assert r.status_code == 404
+
+
+def test_lookup_worklife_out_of_range_age_is_404():
+    r = client.get("/lookups/worklife", params={
+        "sex": "Men", "initial_state": "Active",
+        "education": "High School Diploma", "age": 999,
+    })
+    assert r.status_code == 404
+
+
+def test_lookup_life_expectancy_birth_and_65():
+    rb = client.get("/lookups/life-expectancy", params={
+        "area": "California", "sex": "total", "at": "birth"})
+    assert rb.status_code == 200 and rb.json()["life_expectancy"] == 79.3
+    r65 = client.get("/lookups/life-expectancy", params={
+        "area": "California", "sex": "male", "at": "65"})
+    assert r65.json()["life_expectancy"] == 18.3
+
+
+def test_lookup_life_expectancy_unknown_area_is_null():
+    r = client.get("/lookups/life-expectancy", params={"area": "Atlantis"})
+    assert r.status_code == 200 and r.json()["life_expectancy"] is None
+
+
+def test_lookup_dvd_returns_household_production():
+    r = client.get("/lookups/dvd", params={"table_num": 1})
+    assert r.status_code == 200
+    d = r.json()
+    assert d["weekly_hours"] == 12.37
+    assert d["dollar_value_of_a_day"] == 35.63
+    assert abs(d["annual_value"] - 35.63 * 365.25) < 1e-6
+
+
+def test_lookup_dvd_out_of_range_is_404():
+    assert client.get("/lookups/dvd", params={"table_num": 999}).status_code == 404
+    assert client.get("/lookups/dvd", params={"table_num": 0}).status_code == 404
+
+
+def test_lookup_area_factor_and_unknown():
+    r = client.get("/lookups/area", params={"area": "California"})
+    assert r.status_code == 200 and abs(r.json()["factor"] - 1.1385) < 1e-9
+    assert client.get("/lookups/area", params={"area": "Nowhere"}).json()["factor"] is None
+
+
+def test_lookup_lcp_categories_nonempty():
+    r = client.get("/lookups/lcp-categories")
+    assert r.status_code == 200
+    cats = r.json()["categories"]
+    assert "Medical care" in cats and len(cats) >= 1
+
+
+def test_lookup_lcp_growth_years_out_of_range_is_400():
+    r = client.get("/lookups/lcp-growth", params={"category": "Medical care", "years": 99})
+    assert r.status_code == 400
+
+
+def test_lookup_lcp_growth_without_api_key_is_503(monkeypatch):
+    # No FRED_API_KEY -> clean 503, never a 500.
+    monkeypatch.delenv("FRED_API_KEY", raising=False)
+    r = client.get("/lookups/lcp-growth", params={
+        "category": "Medical care", "years": 10, "general_inflation": 0.023})
+    assert r.status_code == 503
