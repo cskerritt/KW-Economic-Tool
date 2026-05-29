@@ -156,6 +156,32 @@ dedicated var, never the live `DATABASE_URL`) points at a throwaway Postgres db.
 module and must not be weakened to make a change pass. If a number changes,
 justify it against the source document in the test docstring.
 
+### Calculation-regression battery (no number moves silently)
+On top of the per-module golden tests there is a large, fast regression battery
+driven by one scenario matrix (`tests/regression_scenarios.py`, ~82 scenarios
+across earnings WD/PI, LCP, and LHHS). It has three layers:
+
+- **Snapshot** (`tests/test_regression_snapshot.py`): every scenario is computed
+  through the real `app.compute.compute` path and deep-compared — totals AND
+  every year/item row — against a frozen baseline (`tests/regression_baseline.json`).
+  Any drift fails and names the exact field. The baseline is produced by
+  `tests/generate_regression_baseline.py`; regenerate it ONLY for an intended,
+  source-justified change, and the JSON diff becomes the reviewable record of
+  which numbers moved. The source-document anchors (Tinari $858,384.39; PI net
+  $665,991.33) are scenarios in the matrix and also asserted in the unit tests.
+- **Export accuracy** (`tests/test_export_accuracy.py`): exports each scenario
+  and parses the numbers back OUT of the xlsx (openpyxl), docx (python-docx), and
+  pdf (pypdf) to assert what a user downloads equals the engine result — closing
+  the gap where a formatting bug could ship a clean file with wrong numbers.
+- **Invariants** (`tests/test_invariants.py`): laws that hold for any inputs —
+  past + future = total, row PVs sum to the total, PI net = pre − residual,
+  LCP items/categories sum to lifetime, past losses are undiscounted, etc.
+
+The baseline regenerates byte-identically (deterministic engine), so a non-empty
+`git diff` on `regression_baseline.json` always means a calculation actually
+changed. The export-reading libs are in the `dev` extra; install with
+`pip install -e ".[web,export,dev]"`.
+
 The default `pytest` run is hermetic and fast (no network, no browser); it
 deselects `-m e2e` via `addopts`. Browser end-to-end tests live in `tests/e2e/`
 (Playwright) and drive the real HTMX UI against a uvicorn server the fixtures

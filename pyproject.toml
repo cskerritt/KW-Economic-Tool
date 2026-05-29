@@ -34,6 +34,10 @@ mcp = [
 ]
 dev = [
     "pytest>=8.0",
+    "openpyxl>=3.1",        # read xlsx back in export-accuracy tests
+    "python-docx>=1.1",     # read docx back in export-accuracy tests
+    "reportlab>=4.0",       # generate PDFs in export-accuracy tests
+    "pypdf>=4.0",           # read PDF text back in export-accuracy tests
 ]
 # Browser end-to-end tests. After install run: playwright install chromium
 e2e = [
