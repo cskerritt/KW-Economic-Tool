@@ -220,3 +220,38 @@ def test_pi_dual_stream_golden_totals():
         net.past_present_value + net.future_present_value,
         net.total_present_value,
     )
+
+
+# --- grown_gross base-year edge cases ---------------------------------------
+
+from engine.earnings.projection import grown_gross  # noqa: E402
+
+
+def test_grown_gross_at_base_year_is_unchanged():
+    # Base earnings are already in base-year dollars: zero growth periods.
+    assert grown_gross(50000.0, 2020, 2020, 0.03, 0.04, 2021) == 50000.0
+
+
+def test_grown_gross_before_base_year_is_rejected():
+    import pytest
+    with pytest.raises(ValueError):
+        grown_gross(50000.0, 2020, 2019, 0.03, 0.04, 2021)
+
+
+def test_loss_period_can_start_in_base_year():
+    """A current-year injury (start_year == base_year) must not crash; the
+    base-year row carries the ungrown base earnings."""
+    a = EarningsAssumptions(
+        base_earnings=80000.0, base_year=2024,
+        start_year=2024, end_year=2027, valuation_year=2025,
+        growth_past=0.03, growth_future=0.035, growth_switch_year=2026,
+        discount_rate=0.04, worklife=0.95, unemployment=0.04, tax=0.15,
+    )
+    rows = build_earnings_inputs(a)
+    assert rows[0].year == 2024
+    assert rows[0].gross_earnings == 80000.0
+    # Following year grows once at the past rate.
+    assert math.isclose(rows[1].gross_earnings, 80000.0 * 1.03)
+    # Whole projection runs without error.
+    result = project_earnings(rows, a.discount_rate, a.valuation_year)
+    assert len(result.rows) == 4

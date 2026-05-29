@@ -71,8 +71,12 @@ def series_cagr(annual_points: list[tuple[int, float]], years: int) -> dict:
     """CAGR over the last ``years`` of annual (year, index_value) points.
 
     ``annual_points`` must be sorted ascending by year. Uses the point ``years``
-    back from the latest as the base. Returns the rate plus the endpoints used,
-    so the result is fully traceable.
+    entries back from the latest as the base. The CAGR is annualized over the
+    ACTUAL calendar span between the two endpoints (``end_year - base_year``),
+    not the requested ``years`` -- if FRED has a gap and an entry is missing, the
+    two endpoints can be more than ``years`` calendar years apart, and using the
+    literal ``years`` as the denominator would overstate the rate. Returns the
+    rate plus the endpoints used, so the result is fully traceable.
     """
     pts = [p for p in annual_points if p[1] is not None]
     if len(pts) < years + 1:
@@ -82,8 +86,11 @@ def series_cagr(annual_points: list[tuple[int, float]], years: int) -> dict:
         )
     base_year, base_val = pts[-(years + 1)]
     end_year, end_val = pts[-1]
+    span = end_year - base_year
+    if span <= 0:
+        raise ValueError("endpoints must span at least one year")
     return {
-        "rate": cagr(base_val, end_val, years),
+        "rate": cagr(base_val, end_val, span),
         "base_year": base_year,
         "base_value": base_val,
         "end_year": end_year,

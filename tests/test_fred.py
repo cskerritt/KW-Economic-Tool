@@ -53,6 +53,22 @@ def test_series_cagr_needs_enough_points():
         series_cagr([(2019, 100.0), (2020, 103.0)], years=5)
 
 
+def test_series_cagr_annualizes_over_actual_span_with_gap():
+    """If FRED is missing a year, the two endpoints span more calendar years
+    than ``years``; the CAGR must annualize over the real span, not the literal
+    ``years``, or it overstates the rate."""
+    # Six points but 2017 is missing, so 5 steps back from 2021 lands on 2015 ->
+    # a 6-year span, not 5.
+    pts = [(2015, 100.0), (2016, 105.0), (2018, 115.0),
+           (2019, 120.0), (2020, 125.0), (2021, 130.0)]
+    out = series_cagr(pts, years=5)
+    assert out["base_year"] == 2015 and out["end_year"] == 2021
+    # Annualized over the true 6-year span.
+    assert math.isclose(out["rate"], cagr(100.0, 130.0, 6))
+    # The naive (buggy) 5-year denominator would be materially higher.
+    assert out["rate"] < cagr(100.0, 130.0, 5)
+
+
 # --- mapping ----------------------------------------------------------------
 
 def test_mapping_has_overall_and_categories():

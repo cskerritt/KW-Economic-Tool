@@ -96,6 +96,11 @@ def _earnings_scenarios() -> list[Scenario]:
                       _earn(end_year=2055)))
     s.append(Scenario("earn-fringe-and-pc", "earnings",
                       _earn(fringe=0.20, pc_initial=0.25)))
+    # First loss year equals the base year (current-year injury): the base-year
+    # gross must equal base_earnings (zero growth periods), not crash.
+    s.append(Scenario("earn-start-equals-base", "earnings",
+                      _earn(base_year=2020, start_year=2020, end_year=2035,
+                            growth_switch_year=2026, valuation_year=2025)))
 
     # Personal-injury dual stream: total disability + partial residual capacity.
     def _pi(resid_base, **over):

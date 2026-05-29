@@ -5252,6 +5252,160 @@
       "total_present_value": 187044.45350399998
     }
   },
+  "earn-start-equals-base": {
+    "module": "earnings",
+    "result": {
+      "future_present_value": 663344.2108660812,
+      "past_present_value": 380032.0175223936,
+      "rows": [
+        {
+          "adjusted_income": 58751.99999999999,
+          "aif": 0.7343999999999999,
+          "gross_earnings": 80000.0,
+          "is_future": false,
+          "portion": 1.0,
+          "present_value": 58751.99999999999,
+          "year": 2020
+        },
+        {
+          "adjusted_income": 60514.56,
+          "aif": 0.7343999999999999,
+          "gross_earnings": 82400.0,
+          "is_future": false,
+          "portion": 1.0,
+          "present_value": 60514.56,
+          "year": 2021
+        },
+        {
+          "adjusted_income": 62329.99679999999,
+          "aif": 0.7343999999999999,
+          "gross_earnings": 84872.0,
+          "is_future": false,
+          "portion": 1.0,
+          "present_value": 62329.99679999999,
+          "year": 2022
+        },
+        {
+          "adjusted_income": 64199.896704,
+          "aif": 0.7343999999999999,
+          "gross_earnings": 87418.16,
+          "is_future": false,
+          "portion": 1.0,
+          "present_value": 64199.896704,
+          "year": 2023
+        },
+        {
+          "adjusted_income": 66125.89360512,
+          "aif": 0.7343999999999999,
+          "gross_earnings": 90040.7048,
+          "is_future": false,
+          "portion": 1.0,
+          "present_value": 66125.89360512,
+          "year": 2024
+        },
+        {
+          "adjusted_income": 68109.67041327359,
+          "aif": 0.7343999999999999,
+          "gross_earnings": 92741.925944,
+          "is_future": false,
+          "portion": 1.0,
+          "present_value": 68109.67041327359,
+          "year": 2025
+        },
+        {
+          "adjusted_income": 70493.50887773816,
+          "aif": 0.7343999999999999,
+          "gross_earnings": 95987.89335203999,
+          "is_future": true,
+          "portion": 1.0,
+          "present_value": 67782.22007474823,
+          "year": 2026
+        },
+        {
+          "adjusted_income": 72960.78168845898,
+          "aif": 0.7343999999999999,
+          "gross_earnings": 99347.46961936138,
+          "is_future": true,
+          "portion": 1.0,
+          "present_value": 67456.34401669654,
+          "year": 2027
+        },
+        {
+          "adjusted_income": 75514.40904755505,
+          "aif": 0.7343999999999999,
+          "gross_earnings": 102824.63105603901,
+          "is_future": true,
+          "portion": 1.0,
+          "present_value": 67132.03467046242,
+          "year": 2028
+        },
+        {
+          "adjusted_income": 78157.41336421946,
+          "aif": 0.7343999999999999,
+          "gross_earnings": 106423.49314300036,
+          "is_future": true,
+          "portion": 1.0,
+          "present_value": 66809.2845037775,
+          "year": 2029
+        },
+        {
+          "adjusted_income": 80892.92283196714,
+          "aif": 0.7343999999999999,
+          "gross_earnings": 110148.31540300537,
+          "is_future": true,
+          "portion": 1.0,
+          "present_value": 66488.08602058626,
+          "year": 2030
+        },
+        {
+          "adjusted_income": 83724.17513108598,
+          "aif": 0.7343999999999999,
+          "gross_earnings": 114003.50644211055,
+          "is_future": true,
+          "portion": 1.0,
+          "present_value": 66168.43176087188,
+          "year": 2031
+        },
+        {
+          "adjusted_income": 86654.52126067398,
+          "aif": 0.7343999999999999,
+          "gross_earnings": 117993.62916758441,
+          "is_future": true,
+          "portion": 1.0,
+          "present_value": 65850.31430048308,
+          "year": 2032
+        },
+        {
+          "adjusted_income": 89687.42950479756,
+          "aif": 0.7343999999999999,
+          "gross_earnings": 122123.40618844985,
+          "is_future": true,
+          "portion": 1.0,
+          "present_value": 65533.72625096151,
+          "year": 2033
+        },
+        {
+          "adjusted_income": 92826.48953746547,
+          "aif": 0.7343999999999999,
+          "gross_earnings": 126397.72540504558,
+          "is_future": true,
+          "portion": 1.0,
+          "present_value": 65218.660259370336,
+          "year": 2034
+        },
+        {
+          "adjusted_income": 96075.41667127675,
+          "aif": 0.7343999999999999,
+          "gross_earnings": 130821.64579422216,
+          "is_future": true,
+          "portion": 1.0,
+          "present_value": 64905.10900812335,
+          "year": 2035
+        }
+      ],
+      "total_present_value": 1043376.2283884748
+    }
+  },
   "earn-tax-0.0": {
     "module": "earnings",
     "result": {

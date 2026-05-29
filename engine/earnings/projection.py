@@ -117,10 +117,14 @@ def grown_gross(
     """Gross earnings for ``year``, compounded from ``base_earnings``.
 
     Each step year uses ``growth_future`` if that step year is at or after
-    ``switch_year``, otherwise ``growth_past``.
+    ``switch_year``, otherwise ``growth_past``. When ``year == base_year`` the
+    base earnings are already stated in that year's dollars, so they are returned
+    unchanged (zero growth periods) -- this supports a loss period that begins in
+    the base year (e.g. a current-year injury). Growing backward is undefined, so
+    a year before the base year is still rejected.
     """
-    if year <= base_year:
-        raise ValueError("year must be after base_year")
+    if year < base_year:
+        raise ValueError("year must be on or after base_year")
     value = base_earnings
     for step_year in range(base_year + 1, year + 1):
         rate = growth_future if step_year >= switch_year else growth_past
