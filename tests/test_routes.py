@@ -195,6 +195,24 @@ def test_lookup_area_factor_and_unknown():
     assert client.get("/lookups/area", params={"area": "Nowhere"}).json()["factor"] is None
 
 
+def test_lookup_assumptions_from_spf():
+    r = client.get("/lookups/assumptions")
+    assert r.status_code == 200
+    d = r.json()
+    # From the SPF long-term medians in the data layer.
+    assert d["discount_rate"] == 4.0          # 10-yr Treasury
+    assert d["cpi_inflation"] == 2.3          # CPI
+    assert d["household_growth"] == 2.3       # CPI anchor
+    assert d["wage_growth"] == 4.1            # CPI + productivity
+    assert "SPF" in d["source"]
+
+
+def test_forms_have_index_fill_helpers():
+    assert "fillAssumptions" in client.get("/earnings").text
+    assert "fillDiscount" in client.get("/lcp").text
+    assert "fillAssumptions" in client.get("/lhhs").text
+
+
 def test_lookup_lcp_categories_nonempty():
     r = client.get("/lookups/lcp-categories")
     assert r.status_code == 200

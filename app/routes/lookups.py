@@ -17,6 +17,7 @@ from datasets import (
     household_production,
     life_expectancy,
     list_categories,
+    long_term,
     worklife_expectancy,
     worklife_ratio,
 )
@@ -57,6 +58,31 @@ def life(area: str, sex: str = "total", at: str = "birth",
          user: str = Depends(require_user)):
     return {"area": area, "sex": sex, "at": at,
             "life_expectancy": life_expectancy(area, sex, at)}
+
+
+@router.get("/assumptions")
+def assumptions(user: str = Depends(require_user)):
+    """Suggested growth/discount anchors (in PERCENT, for the forms) from the
+    SPF long-term medians, plus a citation string for the report appendix.
+
+    discount_rate = 10-yr Treasury; cpi_inflation = CPI; wage_growth = CPI +
+    productivity (a nominal-wage proxy); household_growth = CPI (ECI is not in
+    the bundled data). All are starting anchors the user can edit, not opinions.
+    """
+    lt = long_term()
+    cpi = lt.get("cpi_inflation") or 0.0
+    prod = lt.get("productivity_growth") or 0.0
+    bond = lt.get("bond_rate_10yr") or 0.0
+    return {
+        "discount_rate": round(bond, 2),
+        "cpi_inflation": round(cpi, 2),
+        "wage_growth": round(cpi + prod, 2),
+        "household_growth": round(cpi, 2),
+        "source": (
+            f"SPF Q1 2026 long-term medians (2026–2035): CPI {cpi:.2f}%, "
+            f"productivity {prod:.2f}%, 10-yr Treasury {bond:.2f}%"
+        ),
+    }
 
 
 @router.get("/lcp-categories")

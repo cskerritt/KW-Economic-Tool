@@ -70,6 +70,10 @@
     <label>Growth switch year <input type="number" name="growth_switch_year" value="{{ v.growth_switch_year }}"></label>
     <label>Discount rate <input type="number" step="any" name="discount_rate" value="{{ v.discount_rate }}"></label>
     {% include "_discount_mode.html" %}
+    <div class="helper-row">
+      <button type="button" onclick="fillAssumptions()">Fill growth &amp; discount from SPF/CBO</button>
+      <span id="assump-msg" class="save-status"></span>
+    </div>
   </fieldset>
 
   <fieldset>
@@ -135,6 +139,16 @@ async function lookupLE() {
   if (d.life_expectancy == null) { msg.textContent = 'No NVSR match for that area.'; return; }
   msg.textContent = 'Life expectancy at birth: ' + d.life_expectancy +
                     ' years (' + d.area + ', ' + d.sex + ').';
+}
+async function fillAssumptions() {
+  var msg = document.getElementById('assump-msg');
+  try {
+    var d = await (await fetch('/lookups/assumptions')).json();
+    document.querySelector('[name=growth_past]').value = d.wage_growth;
+    document.querySelector('[name=growth_future]').value = d.wage_growth;
+    document.querySelector('[name=discount_rate]').value = d.discount_rate;
+    msg.textContent = 'Filled from ' + d.source;
+  } catch (e) { msg.textContent = 'Could not load index defaults.'; }
 }
 toggleCaseType();
 </script>

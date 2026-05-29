@@ -21,6 +21,10 @@ Medical Care Cost Index (real medical inflation + expected general inflation).</
 <form hx-post="/lcp/calculate" hx-target="#result" hx-swap="innerHTML">
   <input type="hidden" name="case_id" value="{{ case_id }}">
   <label>Discount rate (%) <input type="number" step="any" name="discount_rate" value="{{ v.discount_rate }}"></label>
+  <div class="helper-row">
+    <button type="button" onclick="fillDiscount()">Fill discount from SPF</button>
+    <span id="assump-msg" class="save-status"></span>
+  </div>
   {% include "_discount_mode.html" %}
   <label>Valuation year <input type="number" name="valuation_year" value="{{ v.valuation_year }}"></label>
   <label>Cost items (JSON array)
@@ -66,6 +70,14 @@ async function lookupGrowth() {
     + (d.expected_general_inflation * 100).toFixed(2) + '%). '
     + 'Paste into an item: "growth_rate": ' + growth
     + ', "source": "' + d.source + '"';
+}
+async function fillDiscount() {
+  var msg = document.getElementById('assump-msg');
+  try {
+    var d = await (await fetch('/lookups/assumptions')).json();
+    document.querySelector('[name=discount_rate]').value = d.discount_rate;
+    msg.textContent = 'Discount set to ' + d.discount_rate + '% from ' + d.source;
+  } catch (e) { msg.textContent = 'Could not load index default.'; }
 }
 loadCategories();
 </script>

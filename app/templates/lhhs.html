@@ -35,6 +35,10 @@ declining health.</p>
   <label>Discount rate (%) <input type="number" step="any" name="discount_rate" value="{{ v.discount_rate }}"></label>
   <label>Area wage factor (% of national, DVD Table 414) <input type="number" step="any" id="area_wage_factor" name="area_wage_factor" value="{{ v.area_wage_factor }}"></label>
   <label>Self-consumption (%) <input type="number" step="any" name="self_consumption" value="{{ v.self_consumption }}"></label>
+  <div class="helper-row">
+    <button type="button" onclick="fillAssumptions()">Fill growth &amp; discount from SPF/CBO</button>
+    <span id="assump-msg" class="save-status"></span>
+  </div>
   {% include "_discount_mode.html" %}
   <label>Stages (JSON array)
     <textarea name="stages_json" id="stages_json" rows="12">{{ v.stages_json }}</textarea>
@@ -80,6 +84,15 @@ async function lookupArea() {
   if (d.factor == null) { msg.textContent = 'No area match for "' + area + '".'; return; }
   document.getElementById('area_wage_factor').value = Math.round(d.factor * 10000) / 100;
   msg.textContent = 'Area factor set to ' + (Math.round(d.factor * 10000) / 100) + '% (' + d.area + ').';
+}
+async function fillAssumptions() {
+  var msg = document.getElementById('assump-msg');
+  try {
+    var d = await (await fetch('/lookups/assumptions')).json();
+    document.querySelector('[name=growth_rate]').value = d.household_growth;
+    document.querySelector('[name=discount_rate]').value = d.discount_rate;
+    msg.textContent = 'Filled from ' + d.source;
+  } catch (e) { msg.textContent = 'Could not load index defaults.'; }
 }
 </script>
 {% endblock %}
