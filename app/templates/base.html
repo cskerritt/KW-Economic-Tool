@@ -23,5 +23,21 @@
   <main>
     {% block content %}{% endblock %}
   </main>
+  <script>
+    // Provenance capture: lookup helpers call recordSource() with the raw data
+    // they pulled, which is submitted as sources_json and rendered as the
+    // raw-data appendix in the exports. De-duped by title (last write wins).
+    window.caseSources = [];
+    function recordSource(rec) {
+      window.caseSources = window.caseSources.filter(function (s) { return s.title !== rec.title; });
+      window.caseSources.push(rec);
+      var f = document.getElementById('sources_json');
+      if (f) f.value = JSON.stringify(window.caseSources);
+    }
+    document.addEventListener('DOMContentLoaded', function () {
+      var f = document.getElementById('sources_json');
+      if (f && f.value) { try { window.caseSources = JSON.parse(f.value) || []; } catch (e) {} }
+    });
+  </script>
 </body>
 </html>

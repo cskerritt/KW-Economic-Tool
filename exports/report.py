@@ -16,7 +16,31 @@ def _money(value: float) -> str:
     return f"${value:,.0f}"
 
 
-def lhhs_report(result: LHHSResult, path: str, *, heading: str | None = None) -> str:
+def _sources_appendix(doc, sources: list | None) -> None:
+    """Append the raw look-up data behind the numbers as a report appendix."""
+    if not sources:
+        return
+    doc.add_page_break()
+    doc.add_heading("Appendix: raw data and sources", level=1)
+    for src in sources:
+        doc.add_heading(src.get("title", ""), level=2)
+        if src.get("citation"):
+            doc.add_paragraph(src["citation"]).italic = True
+        cols = src.get("columns") or []
+        rows = src.get("rows") or []
+        if cols and rows:
+            table = doc.add_table(rows=1, cols=len(cols))
+            table.style = "Light Grid Accent 1"
+            for i, label in enumerate(cols):
+                table.rows[0].cells[i].text = str(label)
+            for row in rows:
+                cells = table.add_row().cells
+                for i, val in enumerate(row):
+                    cells[i].text = str(val)
+
+
+def lhhs_report(result: LHHSResult, path: str, *, heading: str | None = None,
+                sources: list | None = None) -> str:
     doc = Document()
     doc.add_heading(heading or "Loss of Household Services", level=1)
 
@@ -55,5 +79,6 @@ def lhhs_report(result: LHHSResult, path: str, *, heading: str | None = None) ->
         if label.startswith("Total"):
             run.bold = True
 
+    _sources_appendix(doc, sources)
     doc.save(path)
     return path

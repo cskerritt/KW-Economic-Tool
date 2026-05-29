@@ -24,7 +24,33 @@ def _autosize(ws) -> None:
         ws.column_dimensions[get_column_letter(col[0].column)].width = width + 3
 
 
-def earnings_workbook(result: EarningsResult, path: str) -> str:
+def _sources_sheet(wb, sources: list | None) -> None:
+    """Append a 'Sources' sheet with the raw look-up data behind the numbers."""
+    if not sources:
+        return
+    ws = wb.create_sheet("Sources")
+    ws.append(["Raw data appendix"])
+    ws["A1"].font = Font(bold=True, size=13)
+    ws.append([])
+    for src in sources:
+        ws.append([src.get("title", "")])
+        ws.cell(row=ws.max_row, column=1).font = Font(bold=True)
+        if src.get("citation"):
+            ws.append([src["citation"]])
+            ws.cell(row=ws.max_row, column=1).font = Font(italic=True, size=9)
+        cols = src.get("columns") or []
+        if cols:
+            ws.append(list(cols))
+            for c in ws[ws.max_row]:
+                c.font = Font(bold=True)
+        for row in src.get("rows") or []:
+            ws.append(list(row))
+        ws.append([])
+    _autosize(ws)
+
+
+def earnings_workbook(result: EarningsResult, path: str, *,
+                      sources: list | None = None) -> str:
     wb = Workbook()
     ws = wb.active
     ws.title = "Earnings"
@@ -57,11 +83,13 @@ def earnings_workbook(result: EarningsResult, path: str) -> str:
         ws.cell(row=ws.max_row, column=1).font = Font(bold=True)
 
     _autosize(ws)
+    _sources_sheet(wb, sources)
     wb.save(path)
     return path
 
 
-def lcp_workbook(result: LCPResult, path: str) -> str:
+def lcp_workbook(result: LCPResult, path: str, *,
+                 sources: list | None = None) -> str:
     wb = Workbook()
     ws = wb.active
     ws.title = "LCP items"
@@ -97,5 +125,6 @@ def lcp_workbook(result: LCPResult, path: str) -> str:
         ws2.cell(row=ws2.max_row, column=1).font = Font(bold=True)
     _autosize(ws2)
 
+    _sources_sheet(wb, sources)
     wb.save(path)
     return path

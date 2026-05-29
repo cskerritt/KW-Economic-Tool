@@ -25,6 +25,17 @@ templates = Jinja2Templates(
     directory=str(Path(__file__).resolve().parents[1] / "templates")
 )
 
+
+def _parse_sources(raw) -> list:
+    """Lookup provenance captured client-side (report-appendix metadata)."""
+    if not raw:
+        return []
+    try:
+        data = json.loads(raw)
+        return data if isinstance(data, list) else []
+    except (ValueError, TypeError):
+        return []
+
 _DEFAULT_STAGES = [
     {"start_year": 2026, "end_year": 2028, "weekly_hours": 20,
      "hourly_value": 15, "loss_percent": 0.5},
@@ -58,6 +69,7 @@ def form(
                 "area_wage_factor": i.get("area_wage_factor", 1.0) * 100,
                 "self_consumption": i.get("self_consumption", 0.0) * 100,
                 "discount_mode": i.get("discount_mode", "standard"),
+                "sources_json": json.dumps(i.get("sources", [])),
                 "stages_json": json.dumps(i["stages"], indent=2),
             }
     return templates.TemplateResponse(
@@ -80,6 +92,7 @@ def calculate(
     self_consumption: str = Form("0"),
     stages_json: str = Form(...),
     discount_mode: str = Form("standard"),
+    sources_json: str = Form("[]"),
     case_id: int = Form(0),
 ):
     inputs = {
@@ -90,6 +103,7 @@ def calculate(
         "area_wage_factor": float(area_wage_factor) / 100.0,
         "self_consumption": float(self_consumption) / 100.0,
         "discount_mode": discount_mode or "standard",
+        "sources": _parse_sources(sources_json),
         "stages": json.loads(stages_json),
     }
     result = compute("lhhs", inputs)

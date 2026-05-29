@@ -42,6 +42,7 @@
 
 <form hx-post="/earnings/calculate" hx-target="#result" hx-swap="innerHTML">
   <input type="hidden" name="case_id" value="{{ case_id }}">
+  <input type="hidden" name="sources_json" id="sources_json" value="{{ v.sources_json | default('[]') }}">
   <fieldset>
     <legend>Case</legend>
     <label>Case type
@@ -126,6 +127,16 @@ async function lookupWorklife() {
   var pct = Math.round(d.worklife_ratio * 1000) / 10;
   document.getElementById('worklife').value = pct;
   msg.textContent = 'WLE factor set to ' + pct + '% (WLE mean ' + d.wle_mean + ' yrs).';
+  recordSource({
+    title: 'Worklife expectancy (Skoog-Ciecka-Krueger)',
+    citation: 'SCK worklife tables: ' + document.getElementById('wl_sex').value + ', '
+      + document.getElementById('wl_state').value + ', '
+      + document.getElementById('wl_edu').value + ', age '
+      + document.getElementById('wl_age').value,
+    columns: ['Statistic', 'Value'],
+    rows: [['WLE mean (years)', d.wle_mean],
+           ['Worklife ratio (WLE factor)', pct + '%']]
+  });
 }
 async function lookupLE() {
   var msg = document.getElementById('wl-msg');
@@ -139,6 +150,12 @@ async function lookupLE() {
   if (d.life_expectancy == null) { msg.textContent = 'No NVSR match for that area.'; return; }
   msg.textContent = 'Life expectancy at birth: ' + d.life_expectancy +
                     ' years (' + d.area + ', ' + d.sex + ').';
+  recordSource({
+    title: 'Life expectancy (NVSR 2022 state life tables)',
+    citation: 'NVSR life expectancy at ' + d.at + ': ' + d.area + ', ' + d.sex,
+    columns: ['Statistic', 'Value'],
+    rows: [['Life expectancy (years)', d.life_expectancy]]
+  });
 }
 async function fillAssumptions() {
   var msg = document.getElementById('assump-msg');
@@ -148,6 +165,14 @@ async function fillAssumptions() {
     document.querySelector('[name=growth_future]').value = d.wage_growth;
     document.querySelector('[name=discount_rate]').value = d.discount_rate;
     msg.textContent = 'Filled from ' + d.source;
+    recordSource({
+      title: 'Growth & discount assumptions (SPF long-term medians)',
+      citation: d.source,
+      columns: ['Assumption', 'Value (%)'],
+      rows: [['Wage growth (CPI + productivity)', d.wage_growth],
+             ['CPI inflation', d.cpi_inflation],
+             ['Discount rate (10-yr Treasury)', d.discount_rate]]
+    });
   } catch (e) { msg.textContent = 'Could not load index defaults.'; }
 }
 toggleCaseType();

@@ -23,6 +23,7 @@ from reportlab.lib.styles import ParagraphStyle, getSampleStyleSheet
 from reportlab.lib.units import inch
 from reportlab.platypus import (
     HRFlowable,
+    PageBreak,
     Paragraph,
     SimpleDocTemplate,
     Spacer,
@@ -327,6 +328,28 @@ _SECTION = {
 }
 
 
+def _appendix_flowables(sources: list, st: dict) -> list:
+    """Render the raw look-up data behind the numbers as a report appendix."""
+    if not sources:
+        return []
+    flow: list = [PageBreak(), Paragraph("Appendix: raw data and sources", st["h2"])]
+    for src in sources:
+        flow.append(Paragraph(src.get("title", ""), st["h2"]))
+        if src.get("citation"):
+            flow.append(Paragraph(src["citation"], st["sub"]))
+        cols = src.get("columns") or []
+        rows = src.get("rows") or []
+        if cols and rows:
+            data_rows = [[str(c) for c in row] for row in rows]
+            n = max(len(cols), 1)
+            flow.append(_data_table(
+                [str(c) for c in cols], data_rows,
+                [6.5 * inch / n] * n, right_cols=(),
+            ))
+            flow.append(Spacer(1, 8))
+    return flow
+
+
 def pdf_report(
     module: str,
     result: Any,
@@ -358,6 +381,7 @@ def pdf_report(
         Paragraph(_METHOD[module], st["body"]),
     ]
     flow.extend(_SECTION[module](result, inputs, st))
+    flow.extend(_appendix_flowables(inputs.get("sources") or [], st))
 
     if author:
         flow.append(Spacer(1, 24))

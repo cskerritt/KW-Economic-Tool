@@ -42,13 +42,15 @@ def export_result(
 
     from exports import earnings_workbook, lcp_workbook, lhhs_report
 
+    sources = (inputs or {}).get("sources") or []
+
     if module == "earnings":
-        earnings_workbook(result, buf)
+        earnings_workbook(result, buf, sources=sources)
         return buf.getvalue(), "economic_loss.xlsx", _XLSX
     if module == "lcp":
-        lcp_workbook(result, buf)
+        lcp_workbook(result, buf, sources=sources)
         return buf.getvalue(), "life_care_plan.xlsx", _XLSX
     if module == "lhhs":
-        lhhs_report(result, buf)
+        lhhs_report(result, buf, sources=sources)
         return buf.getvalue(), "household_services.docx", _DOCX
     raise ValueError(f"unknown module: {module}")

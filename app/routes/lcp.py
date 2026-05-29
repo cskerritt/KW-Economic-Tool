@@ -23,6 +23,17 @@ templates = Jinja2Templates(
     directory=str(Path(__file__).resolve().parents[1] / "templates")
 )
 
+
+def _parse_sources(raw) -> list:
+    """Lookup provenance captured client-side (report-appendix metadata)."""
+    if not raw:
+        return []
+    try:
+        data = json.loads(raw)
+        return data if isinstance(data, list) else []
+    except (ValueError, TypeError):
+        return []
+
 _DEFAULT_ITEMS = [
     {"name": "Physician visits", "category": "Physician", "cost_per_unit": 200,
      "start_year": 2026, "end_year": 2028, "growth_rate": 0.037,
@@ -53,6 +64,7 @@ def form(
                 "discount_rate": case.inputs["discount_rate"] * 100,
                 "valuation_year": case.inputs["valuation_year"],
                 "discount_mode": case.inputs.get("discount_mode", "standard"),
+                "sources_json": json.dumps(case.inputs.get("sources", [])),
                 "items_json": json.dumps(case.inputs["items"], indent=2),
             }
     return templates.TemplateResponse(
@@ -68,12 +80,14 @@ def calculate(
     valuation_year: int = Form(...),
     items_json: str = Form(...),
     discount_mode: str = Form("standard"),
+    sources_json: str = Form("[]"),
     case_id: int = Form(0),
 ):
     inputs = {
         "discount_rate": float(discount_rate) / 100.0,
         "valuation_year": valuation_year,
         "discount_mode": discount_mode or "standard",
+        "sources": _parse_sources(sources_json),
         "items": json.loads(items_json),
     }
     result = compute("lcp", inputs)

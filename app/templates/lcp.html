@@ -20,6 +20,7 @@ Medical Care Cost Index (real medical inflation + expected general inflation).</
 
 <form hx-post="/lcp/calculate" hx-target="#result" hx-swap="innerHTML">
   <input type="hidden" name="case_id" value="{{ case_id }}">
+  <input type="hidden" name="sources_json" id="sources_json" value="{{ v.sources_json | default('[]') }}">
   <label>Discount rate (%) <input type="number" step="any" name="discount_rate" value="{{ v.discount_rate }}"></label>
   <div class="helper-row">
     <button type="button" onclick="fillDiscount()">Fill discount from SPF</button>
@@ -62,6 +63,19 @@ async function lookupGrowth() {
   }
   var d = await r.json();
   var growth = d.item_growth_rate.toFixed(4);
+  recordSource({
+    title: 'Medical Care Cost Index growth rate (FRED CPI)',
+    citation: d.source,
+    columns: ['Component', 'Value'],
+    rows: [['Category', d.category],
+           ['Category CAGR', (d.category_cagr * 100).toFixed(2) + '%'],
+           ['Overall CPI CAGR', (d.overall_cagr * 100).toFixed(2) + '%'],
+           ['Real medical inflation', (d.real_medical_inflation * 100).toFixed(2) + '%'],
+           ['Expected general inflation', (d.expected_general_inflation * 100).toFixed(2) + '%'],
+           ['Item growth rate', (d.item_growth_rate * 100).toFixed(2) + '%'],
+           ['Category series / window', d.category_series_id + ' (' + d.window.category.from + '–' + d.window.category.to + ')'],
+           ['Overall series', d.overall_series_id]]
+  });
   msg.innerHTML =
     '<strong>growth_rate: ' + growth + '</strong> '
     + '(category CAGR ' + (d.category_cagr * 100).toFixed(2) + '% − overall '
@@ -77,6 +91,12 @@ async function fillDiscount() {
     var d = await (await fetch('/lookups/assumptions')).json();
     document.querySelector('[name=discount_rate]').value = d.discount_rate;
     msg.textContent = 'Discount set to ' + d.discount_rate + '% from ' + d.source;
+    recordSource({
+      title: 'Discount rate (SPF long-term median)',
+      citation: d.source,
+      columns: ['Assumption', 'Value (%)'],
+      rows: [['Discount rate (10-yr Treasury)', d.discount_rate]]
+    });
   } catch (e) { msg.textContent = 'Could not load index default.'; }
 }
 loadCategories();

@@ -101,3 +101,58 @@ def test_pdf_unknown_module_rejected():
     pytest.importorskip("reportlab")
     with pytest.raises(ValueError):
         export_result("nope", object(), fmt="pdf", inputs={})
+
+
+# --- raw-data appendix ------------------------------------------------------
+
+_SOURCES = [
+    {"title": "Worklife expectancy (Skoog-Ciecka-Krueger)",
+     "citation": "SCK: Men, Active, High School Diploma, age 45",
+     "columns": ["Statistic", "Value"],
+     "rows": [["WLE mean (years)", 16.67], ["Worklife ratio", "78.7%"]]},
+    {"title": "Life expectancy (NVSR 2022)",
+     "citation": "California, total, birth",
+     "columns": ["Statistic", "Value"], "rows": [["Life expectancy (years)", 79.3]]},
+]
+
+
+def test_pdf_includes_sources_appendix():
+    pypdf = pytest.importorskip("pypdf")
+    pytest.importorskip("reportlab")
+    inputs = dict(EXPOSITO, sources=_SOURCES)
+    content, _, _ = export_result("earnings", _result("earnings", inputs),
+                                  fmt="pdf", inputs=inputs)
+    text = "".join(p.extract_text() for p in pypdf.PdfReader(__import__("io").BytesIO(content)).pages)
+    assert "Appendix: raw data and sources" in text
+    assert "Worklife expectancy" in text and "16.67" in text
+    # Main report still present.
+    assert "$858,384.39" in text
+
+
+def test_xlsx_includes_sources_sheet():
+    openpyxl = pytest.importorskip("openpyxl")
+    inputs = dict(EXPOSITO, sources=_SOURCES)
+    content, _, _ = export_result("earnings", _result("earnings", inputs), inputs=inputs)
+    wb = openpyxl.load_workbook(__import__("io").BytesIO(content))
+    assert "Sources" in wb.sheetnames
+    flat = [str(c) for row in wb["Sources"].iter_rows(values_only=True) for c in row]
+    assert any("Worklife expectancy" in s for s in flat)
+    assert any("16.67" in s for s in flat)
+
+
+def test_docx_includes_sources_appendix():
+    docx = pytest.importorskip("docx")
+    inputs = dict(LHHS, sources=_SOURCES)
+    content, _, _ = export_result("lhhs", _result("lhhs", inputs), inputs=inputs)
+    doc = docx.Document(__import__("io").BytesIO(content))
+    heads = [p.text for p in doc.paragraphs]
+    assert "Appendix: raw data and sources" in heads
+
+
+def test_no_sources_means_no_appendix():
+    pypdf = pytest.importorskip("pypdf")
+    pytest.importorskip("reportlab")
+    content, _, _ = export_result("earnings", _result("earnings", EXPOSITO),
+                                  fmt="pdf", inputs=EXPOSITO)
+    text = "".join(p.extract_text() for p in pypdf.PdfReader(__import__("io").BytesIO(content)).pages)
+    assert "Appendix: raw data and sources" not in text

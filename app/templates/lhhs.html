@@ -29,6 +29,7 @@ declining health.</p>
 
 <form hx-post="/lhhs/calculate" hx-target="#result" hx-swap="innerHTML">
   <input type="hidden" name="case_id" value="{{ case_id }}">
+  <input type="hidden" name="sources_json" id="sources_json" value="{{ v.sources_json | default('[]') }}">
   <label>Base year (DVD value year) <input type="number" name="base_year" value="{{ v.base_year }}"></label>
   <label>Valuation year <input type="number" name="valuation_year" value="{{ v.valuation_year }}"></label>
   <label>Wage growth (%) <input type="number" step="any" name="growth_rate" value="{{ v.growth_rate }}"></label>
@@ -74,6 +75,15 @@ async function addDvdStage() {
   ta.value = JSON.stringify(stages, null, 2);
   msg.textContent = 'Added Table ' + n + ' (HP ' + hp.weekly_hours + ' hrs/wk, $' +
                     hp.dollar_value_of_a_day + '/day).';
+  recordSource({
+    title: 'Household production (Expectancy Data DVD 2023), Table ' + n,
+    citation: 'DVD demographic table ' + n + ', Household Production row',
+    columns: ['Statistic', 'Value'],
+    rows: [['Weekly hours', hp.weekly_hours],
+           ['Dollar value of a day', '$' + hp.dollar_value_of_a_day],
+           ['Implied hourly value', '$' + (Math.round(hp.hourly_value * 100) / 100)],
+           ['Annual value (x 365.25)', '$' + (Math.round(hp.annual_value * 100) / 100)]]
+  });
 }
 async function lookupArea() {
   var msg = document.getElementById('dvd-msg');
@@ -84,6 +94,13 @@ async function lookupArea() {
   if (d.factor == null) { msg.textContent = 'No area match for "' + area + '".'; return; }
   document.getElementById('area_wage_factor').value = Math.round(d.factor * 10000) / 100;
   msg.textContent = 'Area factor set to ' + (Math.round(d.factor * 10000) / 100) + '% (' + d.area + ').';
+  recordSource({
+    title: 'Area wage adjustment (Expectancy Data DVD Table 414)',
+    citation: 'DVD Table 414 national-to-area wage factor: ' + d.area,
+    columns: ['Statistic', 'Value'],
+    rows: [['Area', d.area],
+           ['Area wage factor', (Math.round(d.factor * 10000) / 100) + '%']]
+  });
 }
 async function fillAssumptions() {
   var msg = document.getElementById('assump-msg');
@@ -92,6 +109,13 @@ async function fillAssumptions() {
     document.querySelector('[name=growth_rate]').value = d.household_growth;
     document.querySelector('[name=discount_rate]').value = d.discount_rate;
     msg.textContent = 'Filled from ' + d.source;
+    recordSource({
+      title: 'Growth & discount assumptions (SPF long-term medians)',
+      citation: d.source,
+      columns: ['Assumption', 'Value (%)'],
+      rows: [['Household wage growth (CPI)', d.household_growth],
+             ['Discount rate (10-yr Treasury)', d.discount_rate]]
+    });
   } catch (e) { msg.textContent = 'Could not load index defaults.'; }
 }
 </script>

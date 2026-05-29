@@ -55,11 +55,24 @@ def _parse_partial_years(raw: str) -> dict[int, float]:
     return out
 
 
+def _parse_sources(raw) -> list:
+    """Lookup provenance captured client-side; metadata for the report appendix,
+    ignored by the math. Tolerant of empty/malformed input."""
+    if not raw:
+        return []
+    try:
+        data = json.loads(raw)
+        return data if isinstance(data, list) else []
+    except (ValueError, TypeError):
+        return []
+
+
 def _canonical_inputs(form: dict) -> dict:
     """Form values (percents) -> canonical input dict (decimals)."""
     inputs = {
         "case_type": form["case_type"],
         "discount_mode": form.get("discount_mode", "standard") or "standard",
+        "sources": _parse_sources(form.get("sources_json")),
         "base_earnings": float(form["base_earnings"]),
         "base_year": int(form["base_year"]),
         "start_year": int(form["start_year"]),
@@ -99,6 +112,7 @@ def _inputs_to_form_values(inputs: dict) -> dict:
     return {
         "case_type": inputs.get("case_type", "WD"),
         "discount_mode": inputs.get("discount_mode", "standard"),
+        "sources_json": json.dumps(inputs.get("sources", [])),
         "base_earnings": inputs["base_earnings"],
         "base_year": inputs["base_year"],
         "start_year": inputs["start_year"],
@@ -149,6 +163,7 @@ def calculate(
     user: str = Depends(require_user),
     case_type: str = Form("WD"),
     discount_mode: str = Form("standard"),
+    sources_json: str = Form("[]"),
     base_earnings: str = Form(...),
     base_year: str = Form(...),
     start_year: str = Form(...),
