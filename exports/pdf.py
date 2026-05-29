@@ -42,6 +42,20 @@ _TITLE = {
     "lhhs": "Loss of Household Services",
 }
 
+# Display labels for the discounting basis (kept here so the exporter has no
+# dependency on the app layer). Mirrors app.compute.DISCOUNT_MODE_LABELS.
+_MODE_LABEL = {
+    "standard": "Standard (discounted to present value)",
+    "nominal": "Undiscounted (nominal future dollars)",
+    "offset_zero": "Total offset (no growth, no discount)",
+    "offset_match": "Total offset (growth offsets discount)",
+}
+
+
+def _mode(inputs: dict) -> str:
+    m = str(inputs.get("discount_mode", "standard") or "standard")
+    return m if m in _MODE_LABEL else "standard"
+
 _METHOD = {
     "earnings": (
         "Lost earnings are computed by the Tinari algebraic method (Tinari, "
@@ -187,6 +201,7 @@ def _earnings_flowables(result: Any, inputs: dict, st: dict) -> list:
          f"{_pct(float(inputs.get('growth_future', 0)))} future "
          f"(switch {inputs.get('growth_switch_year', '')})"),
         ("Discount rate", _pct(float(inputs.get("discount_rate", 0)))),
+        ("Discounting basis", _MODE_LABEL[_mode(inputs)]),
         ("Worklife ratio", _pct(float(inputs.get("worklife", 0)))),
         ("Unemployment factor", _pct(float(inputs.get("unemployment", 0)))),
         ("Tax rate", _pct(float(inputs.get("tax", 0)))),
@@ -252,6 +267,7 @@ def _lcp_flowables(result: Any, inputs: dict, st: dict) -> list:
     flow.append(Paragraph("Assumptions", st["h2"]))
     flow.append(_kv_table([
         ("Discount rate", _pct(float(inputs.get("discount_rate", 0)))),
+        ("Discounting basis", _MODE_LABEL[_mode(inputs)]),
         ("Valuation year", str(inputs.get("valuation_year", ""))),
         ("Line items", str(len(result.items))),
     ]))
@@ -296,6 +312,7 @@ def _lhhs_flowables(result: Any, inputs: dict, st: dict) -> list:
         ("Discount rate", _pct(float(inputs.get("discount_rate", 0)))),
         ("Area-wage factor", _pct(float(inputs.get("area_wage_factor", 1.0)))),
         ("Self-consumption", _pct(float(inputs.get("self_consumption", 0)))),
+        ("Discounting basis", _MODE_LABEL[_mode(inputs)]),
     ]))
 
     flow.append(Paragraph("Year-by-year projection", st["h2"]))
@@ -389,10 +406,18 @@ def pdf_report(
         flow.append(Paragraph(author, st["body"]))
 
     flow.append(Spacer(1, 10))
+    mode = _mode(inputs)
+    if mode == "standard":
+        basis = ("Past losses are not discounted; future losses are discounted "
+                 "to the valuation date.")
+    elif mode == "nominal":
+        basis = ("Losses are stated in nominal (future) dollars; no discounting "
+                 "to present value has been applied.")
+    else:
+        basis = ("Losses are stated on a total-offset basis "
+                 f"({_MODE_LABEL[mode].split('(')[1].rstrip(')')}).")
     flow.append(Paragraph(
-        "Every figure traces to an input, a formula, and a cited source. "
-        "Past losses are not discounted; future losses are discounted to the "
-        "valuation date.",
+        "Every figure traces to an input, a formula, and a cited source. " + basis,
         st["foot"],
     ))
 
