@@ -39,6 +39,17 @@ MODULES = ("earnings", "lcp", "lhhs")
 #                 dollars while still showing the grown amounts. (#2b)
 DISCOUNT_MODES = ("standard", "nominal", "offset_zero", "offset_match")
 
+DISCOUNT_MODE_LABELS = {
+    "standard": "Standard (discounted to present value)",
+    "nominal": "Undiscounted (nominal future dollars)",
+    "offset_zero": "Total offset (no growth, no discount)",
+    "offset_match": "Total offset (growth offsets discount)",
+}
+
+
+def discount_mode_label(inputs: dict) -> str:
+    return DISCOUNT_MODE_LABELS.get(_mode(inputs), DISCOUNT_MODE_LABELS["standard"])
+
 
 def _mode(inputs: dict) -> str:
     mode = str(inputs.get("discount_mode", "standard") or "standard")

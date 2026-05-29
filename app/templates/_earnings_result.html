@@ -1,4 +1,5 @@
 <h2>Result</h2>
+{% if mode_label %}<p class="muted">Basis: {{ mode_label }}.</p>{% endif %}
 {% if result.pre_injury is defined %}
 <table class="streams">
   <thead>

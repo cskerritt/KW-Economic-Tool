@@ -21,6 +21,7 @@ Medical Care Cost Index (real medical inflation + expected general inflation).</
 <form hx-post="/lcp/calculate" hx-target="#result" hx-swap="innerHTML">
   <input type="hidden" name="case_id" value="{{ case_id }}">
   <label>Discount rate (%) <input type="number" step="any" name="discount_rate" value="{{ v.discount_rate }}"></label>
+  {% include "_discount_mode.html" %}
   <label>Valuation year <input type="number" name="valuation_year" value="{{ v.valuation_year }}"></label>
   <label>Cost items (JSON array)
     <textarea name="items_json" rows="16">{{ v.items_json }}</textarea>

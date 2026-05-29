@@ -14,7 +14,7 @@ from fastapi.responses import HTMLResponse
 from fastapi.templating import Jinja2Templates
 
 from app.auth import require_user
-from app.compute import compute
+from app.compute import compute, discount_mode_label
 from app.deps import get_store
 from storage import CaseStore
 
@@ -44,6 +44,7 @@ def form(
     case_id: int = 0,
 ):
     values = {"discount_rate": 3.0, "valuation_year": 2025,
+              "discount_mode": "standard",
               "items_json": json.dumps(_DEFAULT_ITEMS, indent=2)}
     if case_id:
         case = store.get(case_id)
@@ -51,6 +52,7 @@ def form(
             values = {
                 "discount_rate": case.inputs["discount_rate"] * 100,
                 "valuation_year": case.inputs["valuation_year"],
+                "discount_mode": case.inputs.get("discount_mode", "standard"),
                 "items_json": json.dumps(case.inputs["items"], indent=2),
             }
     return templates.TemplateResponse(
@@ -65,11 +67,13 @@ def calculate(
     discount_rate: str = Form(...),
     valuation_year: int = Form(...),
     items_json: str = Form(...),
+    discount_mode: str = Form("standard"),
     case_id: int = Form(0),
 ):
     inputs = {
         "discount_rate": float(discount_rate) / 100.0,
         "valuation_year": valuation_year,
+        "discount_mode": discount_mode or "standard",
         "items": json.loads(items_json),
     }
     result = compute("lcp", inputs)
@@ -77,5 +81,6 @@ def calculate(
         request,
         "_lcp_result.html",
         {"result": result, "module": "lcp",
-         "inputs_json": json.dumps(inputs), "case_id": case_id},
+         "inputs_json": json.dumps(inputs), "case_id": case_id,
+         "mode_label": discount_mode_label(inputs)},
     )

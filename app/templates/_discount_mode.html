@@ -1,0 +1,8 @@
+<label>Discounting mode
+  <select name="discount_mode">
+    <option value="standard" {{ 'selected' if v.discount_mode == 'standard' else '' }}>Standard &mdash; discount future losses to present value</option>
+    <option value="nominal" {{ 'selected' if v.discount_mode == 'nominal' else '' }}>Undiscounted &mdash; future (nominal) dollars, no discounting</option>
+    <option value="offset_zero" {{ 'selected' if v.discount_mode == 'offset_zero' else '' }}>Total offset &mdash; no growth, no discount (current-dollar sum)</option>
+    <option value="offset_match" {{ 'selected' if v.discount_mode == 'offset_match' else '' }}>Total offset &mdash; growth offsets discount</option>
+  </select>
+</label>

@@ -15,7 +15,7 @@ from fastapi.responses import HTMLResponse
 from fastapi.templating import Jinja2Templates
 
 from app.auth import require_user
-from app.compute import compute
+from app.compute import compute, discount_mode_label
 from app.deps import get_store
 from datasets import list_demographics
 from storage import CaseStore
@@ -43,6 +43,7 @@ def form(
     values = {
         "base_year": 2026, "valuation_year": 2025, "growth_rate": 3.0,
         "discount_rate": 3.0, "area_wage_factor": 100.0, "self_consumption": 0.0,
+        "discount_mode": "standard",
         "stages_json": json.dumps(_DEFAULT_STAGES, indent=2),
     }
     if case_id:
@@ -56,6 +57,7 @@ def form(
                 "discount_rate": i["discount_rate"] * 100,
                 "area_wage_factor": i.get("area_wage_factor", 1.0) * 100,
                 "self_consumption": i.get("self_consumption", 0.0) * 100,
+                "discount_mode": i.get("discount_mode", "standard"),
                 "stages_json": json.dumps(i["stages"], indent=2),
             }
     return templates.TemplateResponse(
@@ -77,6 +79,7 @@ def calculate(
     area_wage_factor: str = Form("100"),
     self_consumption: str = Form("0"),
     stages_json: str = Form(...),
+    discount_mode: str = Form("standard"),
     case_id: int = Form(0),
 ):
     inputs = {
@@ -86,6 +89,7 @@ def calculate(
         "discount_rate": float(discount_rate) / 100.0,
         "area_wage_factor": float(area_wage_factor) / 100.0,
         "self_consumption": float(self_consumption) / 100.0,
+        "discount_mode": discount_mode or "standard",
         "stages": json.loads(stages_json),
     }
     result = compute("lhhs", inputs)
@@ -93,5 +97,6 @@ def calculate(
         request,
         "_lhhs_result.html",
         {"result": result, "module": "lhhs",
-         "inputs_json": json.dumps(inputs), "case_id": case_id},
+         "inputs_json": json.dumps(inputs), "case_id": case_id,
+         "mode_label": discount_mode_label(inputs)},
     )

@@ -15,7 +15,7 @@ from fastapi.responses import HTMLResponse
 from fastapi.templating import Jinja2Templates
 
 from app.auth import require_user
-from app.compute import compute
+from app.compute import compute, discount_mode_label
 from app.deps import get_store
 from storage import CaseStore
 
@@ -28,7 +28,8 @@ templates = Jinja2Templates(
 # residual_* describe the post-injury residual earning capacity used only for
 # personal-injury (PI) cases; they are ignored for wrongful death.
 _DEFAULTS = {
-    "case_type": "WD", "base_earnings": 93628.0, "base_year": 2008,
+    "case_type": "WD", "discount_mode": "standard",
+    "base_earnings": 93628.0, "base_year": 2008,
     "start_year": 2009, "end_year": 2022, "valuation_year": 2015,
     "growth_past": 3.1, "growth_future": 3.8, "growth_switch_year": 2016,
     "discount_rate": 3.25, "worklife": 91.9, "unemployment": 3.5, "tax": 12.0,
@@ -58,6 +59,7 @@ def _canonical_inputs(form: dict) -> dict:
     """Form values (percents) -> canonical input dict (decimals)."""
     inputs = {
         "case_type": form["case_type"],
+        "discount_mode": form.get("discount_mode", "standard") or "standard",
         "base_earnings": float(form["base_earnings"]),
         "base_year": int(form["base_year"]),
         "start_year": int(form["start_year"]),
@@ -96,6 +98,7 @@ def _inputs_to_form_values(inputs: dict) -> dict:
     res = inputs.get("residual") or {}
     return {
         "case_type": inputs.get("case_type", "WD"),
+        "discount_mode": inputs.get("discount_mode", "standard"),
         "base_earnings": inputs["base_earnings"],
         "base_year": inputs["base_year"],
         "start_year": inputs["start_year"],
@@ -145,6 +148,7 @@ def calculate(
     request: Request,
     user: str = Depends(require_user),
     case_type: str = Form("WD"),
+    discount_mode: str = Form("standard"),
     base_earnings: str = Form(...),
     base_year: str = Form(...),
     start_year: str = Form(...),
@@ -179,5 +183,6 @@ def calculate(
             "module": "earnings",
             "inputs_json": json.dumps(inputs),
             "case_id": case_id,
+            "mode_label": discount_mode_label(inputs),
         },
     )

@@ -84,6 +84,25 @@ def test_save_unknown_module_is_404():
     assert r.status_code == 404
 
 
+# --- discounting mode selector flows through the form to the result --------
+
+def test_forms_render_discount_mode_selector():
+    for path in ("/earnings", "/lcp", "/lhhs"):
+        assert 'name="discount_mode"' in client.get(path).text
+
+
+@pytest.mark.parametrize("mode,label", [
+    ("standard", "Standard (discounted to present value)"),
+    ("nominal", "Undiscounted (nominal future dollars)"),
+    ("offset_zero", "Total offset (no growth, no discount)"),
+    ("offset_match", "Total offset (growth offsets discount)"),
+])
+def test_earnings_discount_mode_labels_result(mode, label):
+    r = client.post("/earnings/calculate", data=dict(_GOOD_EARNINGS, discount_mode=mode))
+    assert r.status_code == 200
+    assert label in r.text
+
+
 # --- unauthenticated UX: browser page loads redirect to login --------------
 
 def test_anonymous_browser_page_redirects_to_login():

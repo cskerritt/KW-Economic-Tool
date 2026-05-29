@@ -69,6 +69,7 @@
     <label>Growth, future <input type="number" step="any" name="growth_future" value="{{ v.growth_future }}"></label>
     <label>Growth switch year <input type="number" name="growth_switch_year" value="{{ v.growth_switch_year }}"></label>
     <label>Discount rate <input type="number" step="any" name="discount_rate" value="{{ v.discount_rate }}"></label>
+    {% include "_discount_mode.html" %}
   </fieldset>
 
   <fieldset>

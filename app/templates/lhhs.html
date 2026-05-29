@@ -35,6 +35,7 @@ declining health.</p>
   <label>Discount rate (%) <input type="number" step="any" name="discount_rate" value="{{ v.discount_rate }}"></label>
   <label>Area wage factor (% of national, DVD Table 414) <input type="number" step="any" id="area_wage_factor" name="area_wage_factor" value="{{ v.area_wage_factor }}"></label>
   <label>Self-consumption (%) <input type="number" step="any" name="self_consumption" value="{{ v.self_consumption }}"></label>
+  {% include "_discount_mode.html" %}
   <label>Stages (JSON array)
     <textarea name="stages_json" id="stages_json" rows="12">{{ v.stages_json }}</textarea>
   </label>
