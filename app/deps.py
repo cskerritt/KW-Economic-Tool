@@ -10,8 +10,9 @@ from app.config import settings
 
 
 def get_store() -> Iterator[CaseStore]:
-    """Yield a CaseStore backed by a fresh SQLite connection per request."""
-    conn = connect(settings.db_path)
+    """Yield a CaseStore backed by a fresh connection per request (Postgres if
+    DATABASE_URL is set, else SQLite)."""
+    conn = connect(settings.db_target)
     try:
         yield CaseStore(conn)
     finally:

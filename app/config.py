@@ -27,8 +27,11 @@ def _bool(name: str, default: bool = False) -> bool:
 @dataclass(frozen=True)
 class Settings:
     session_secret: str = os.getenv("SESSION_SECRET", "dev-insecure-change-me")
-    # SQLite file. On Railway, point this at a mounted volume, e.g.
-    # /data/forensic_calc.sqlite, so saved cases survive redeploys.
+    # Persistence. If DATABASE_URL is set (e.g. Railway's Postgres plugin), the
+    # app uses Postgres; otherwise it falls back to a local SQLite file at
+    # DB_PATH. On Railway with SQLite (no Postgres plugin), point DB_PATH at a
+    # mounted volume so saved cases survive redeploys.
+    database_url: str = os.getenv("DATABASE_URL", "")
     db_path: str = os.getenv("DB_PATH", "forensic_calc.sqlite")
     google_client_id: str = os.getenv("GOOGLE_CLIENT_ID", "")
     google_client_secret: str = os.getenv("GOOGLE_CLIENT_SECRET", "")
@@ -52,6 +55,12 @@ class Settings:
 
     def is_allowed(self, email: str) -> bool:
         return email.strip().lower() in self.allowed_emails
+
+    @property
+    def db_target(self) -> str:
+        """Connection target for storage: the Postgres URL if set, else the
+        SQLite file path."""
+        return self.database_url or self.db_path
 
 
 settings = Settings()

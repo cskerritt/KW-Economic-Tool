@@ -136,9 +136,20 @@ being added. `FRED_API_KEY` is read from the environment and never committed.
 Network failures surface as a clean 504 from `/lookups/lcp-growth`, never a 500.
 
 ## Persistence
-`storage/` is stdlib sqlite3 (no ORM dependency). Cases store their canonical
-inputs (JSON) plus a small summary; results are recomputed from inputs on load
-so a case reproduces exactly. Set `DB_PATH` to a mounted volume in production.
+`storage/` is a thin, no-ORM repository with a dual backend chosen at connect
+time: a `postgres://`/`postgresql://` `DATABASE_URL` selects Postgres (psycopg,
+production — Railway's Postgres plugin injects this, so no Volume is needed);
+anything else is a local SQLite file at `DB_PATH` (stdlib sqlite3, local dev and
+the default test run). `app/config.py` exposes `settings.db_target` (the URL or
+the path); `storage/db.connect` and `init_db` branch on it. The two dialects
+differ only in the parameter placeholder (`?` vs `%s`) and the id column type;
+`CaseStore` reads new ids back with `RETURNING id` on both, and rows are name-
+addressable on both (`sqlite3.Row` / psycopg `dict_row`) so `SavedCase.from_row`
+is shared. psycopg is imported lazily, so SQLite-only environments need no extra
+dependency. Cases store their canonical inputs (JSON) plus a small summary;
+results are recomputed from inputs on load so a case reproduces exactly. The
+optional `test_postgres_roundtrip` runs only when `TEST_DATABASE_URL` (a
+dedicated var, never the live `DATABASE_URL`) points at a throwaway Postgres db.
 
 ## Testing
 `pytest` from the repo root. Golden-value tests are mandatory for every engine

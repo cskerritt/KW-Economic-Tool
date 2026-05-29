@@ -22,6 +22,7 @@ web = [
     "httpx>=0.27",          # required by authlib's Starlette OAuth client
     "itsdangerous>=2.1",
     "sqlmodel>=0.0.16",
+    "psycopg[binary]>=3.1",  # Postgres backend in production (DATABASE_URL); SQLite needs nothing
 ]
 export = [
     "openpyxl>=3.1",

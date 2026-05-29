@@ -43,7 +43,7 @@ app.include_router(persistence.router)
 
 @app.on_event("startup")
 def _ensure_schema() -> None:
-    conn = connect(settings.db_path)
+    conn = connect(settings.db_target)
     try:
         init_db(conn)
     finally:
