@@ -101,6 +101,9 @@ def _earnings_scenarios() -> list[Scenario]:
     s.append(Scenario("earn-start-equals-base", "earnings",
                       _earn(base_year=2020, start_year=2020, end_year=2035,
                             growth_switch_year=2026, valuation_year=2025)))
+    # Discounting modes (lock the non-standard totals against regression).
+    for m in ("nominal", "offset_zero", "offset_match"):
+        s.append(Scenario(f"earn-mode-{m}", "earnings", _earn(discount_mode=m)))
 
     # Personal-injury dual stream: total disability + partial residual capacity.
     def _pi(resid_base, **over):
@@ -217,6 +220,13 @@ def _lcp_scenarios() -> list[Scenario]:
     ], valuation_year=2035)))
 
     # Many categories.
+    for m in ("nominal", "offset_zero", "offset_match"):
+        s.append(Scenario(f"lcp-mode-{m}", "lcp", dict(_lcp([
+            _item(name="Visits", category="Physician", cost_per_unit=250.0,
+                  units_per_year=6, growth_rate=0.04, base_year=2024,
+                  end_year=2045),
+        ]), discount_mode=m)))
+
     s.append(Scenario("lcp-many-categories", "lcp", _lcp([
         _item(name="MD", category="Physician", cost_per_unit=220.0,
               units_per_year=4, growth_rate=0.04, end_year=2050),
@@ -285,6 +295,10 @@ def _lhhs_scenarios() -> list[Scenario]:
     s.append(Scenario("lhhs-late-valuation", "lhhs",
                       _lhhs([_stage(start_year=2026, end_year=2050)],
                             valuation_year=2035)))
+    for m in ("nominal", "offset_zero", "offset_match"):
+        s.append(Scenario(f"lhhs-mode-{m}", "lhhs",
+                          dict(_lhhs([_stage()]), discount_mode=m)))
+
     s.append(Scenario("lhhs-full-combo", "lhhs", _lhhs([
         _stage(start_year=2026, end_year=2035, weekly_hours=28,
                hourly_value=16.5, loss_percent=0.6),

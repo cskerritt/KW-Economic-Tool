@@ -2975,6 +2975,576 @@
       "total_present_value": 2509632.6836585375
     }
   },
+  "earn-mode-nominal": {
+    "module": "earnings",
+    "result": {
+      "future_present_value": 1360220.2513199295,
+      "past_present_value": 321280.0175223936,
+      "rows": [
+        {
+          "adjusted_income": 60514.56,
+          "aif": 0.7343999999999999,
+          "gross_earnings": 82400.0,
+          "is_future": false,
+          "portion": 1.0,
+          "present_value": 60514.56,
+          "year": 2016
+        },
+        {
+          "adjusted_income": 62329.99679999999,
+          "aif": 0.7343999999999999,
+          "gross_earnings": 84872.0,
+          "is_future": false,
+          "portion": 1.0,
+          "present_value": 62329.99679999999,
+          "year": 2017
+        },
+        {
+          "adjusted_income": 64199.896704,
+          "aif": 0.7343999999999999,
+          "gross_earnings": 87418.16,
+          "is_future": false,
+          "portion": 1.0,
+          "present_value": 64199.896704,
+          "year": 2018
+        },
+        {
+          "adjusted_income": 66125.89360512,
+          "aif": 0.7343999999999999,
+          "gross_earnings": 90040.7048,
+          "is_future": false,
+          "portion": 1.0,
+          "present_value": 66125.89360512,
+          "year": 2019
+        },
+        {
+          "adjusted_income": 68109.67041327359,
+          "aif": 0.7343999999999999,
+          "gross_earnings": 92741.925944,
+          "is_future": false,
+          "portion": 1.0,
+          "present_value": 68109.67041327359,
+          "year": 2020
+        },
+        {
+          "adjusted_income": 70493.50887773816,
+          "aif": 0.7343999999999999,
+          "gross_earnings": 95987.89335203999,
+          "is_future": true,
+          "portion": 1.0,
+          "present_value": 70493.50887773816,
+          "year": 2021
+        },
+        {
+          "adjusted_income": 72960.78168845898,
+          "aif": 0.7343999999999999,
+          "gross_earnings": 99347.46961936138,
+          "is_future": true,
+          "portion": 1.0,
+          "present_value": 72960.78168845898,
+          "year": 2022
+        },
+        {
+          "adjusted_income": 75514.40904755505,
+          "aif": 0.7343999999999999,
+          "gross_earnings": 102824.63105603901,
+          "is_future": true,
+          "portion": 1.0,
+          "present_value": 75514.40904755505,
+          "year": 2023
+        },
+        {
+          "adjusted_income": 78157.41336421946,
+          "aif": 0.7343999999999999,
+          "gross_earnings": 106423.49314300036,
+          "is_future": true,
+          "portion": 1.0,
+          "present_value": 78157.41336421946,
+          "year": 2024
+        },
+        {
+          "adjusted_income": 80892.92283196714,
+          "aif": 0.7343999999999999,
+          "gross_earnings": 110148.31540300537,
+          "is_future": true,
+          "portion": 1.0,
+          "present_value": 80892.92283196714,
+          "year": 2025
+        },
+        {
+          "adjusted_income": 83724.17513108598,
+          "aif": 0.7343999999999999,
+          "gross_earnings": 114003.50644211055,
+          "is_future": true,
+          "portion": 1.0,
+          "present_value": 83724.17513108598,
+          "year": 2026
+        },
+        {
+          "adjusted_income": 86654.52126067398,
+          "aif": 0.7343999999999999,
+          "gross_earnings": 117993.62916758441,
+          "is_future": true,
+          "portion": 1.0,
+          "present_value": 86654.52126067398,
+          "year": 2027
+        },
+        {
+          "adjusted_income": 89687.42950479756,
+          "aif": 0.7343999999999999,
+          "gross_earnings": 122123.40618844985,
+          "is_future": true,
+          "portion": 1.0,
+          "present_value": 89687.42950479756,
+          "year": 2028
+        },
+        {
+          "adjusted_income": 92826.48953746547,
+          "aif": 0.7343999999999999,
+          "gross_earnings": 126397.72540504558,
+          "is_future": true,
+          "portion": 1.0,
+          "present_value": 92826.48953746547,
+          "year": 2029
+        },
+        {
+          "adjusted_income": 96075.41667127675,
+          "aif": 0.7343999999999999,
+          "gross_earnings": 130821.64579422216,
+          "is_future": true,
+          "portion": 1.0,
+          "present_value": 96075.41667127675,
+          "year": 2030
+        },
+        {
+          "adjusted_income": 99438.05625477142,
+          "aif": 0.7343999999999999,
+          "gross_earnings": 135400.40339701992,
+          "is_future": true,
+          "portion": 1.0,
+          "present_value": 99438.05625477142,
+          "year": 2031
+        },
+        {
+          "adjusted_income": 102918.38822368842,
+          "aif": 0.7343999999999999,
+          "gross_earnings": 140139.41751591561,
+          "is_future": true,
+          "portion": 1.0,
+          "present_value": 102918.38822368842,
+          "year": 2032
+        },
+        {
+          "adjusted_income": 106520.5318115175,
+          "aif": 0.7343999999999999,
+          "gross_earnings": 145044.29712897266,
+          "is_future": true,
+          "portion": 1.0,
+          "present_value": 106520.5318115175,
+          "year": 2033
+        },
+        {
+          "adjusted_income": 110248.75042492061,
+          "aif": 0.7343999999999999,
+          "gross_earnings": 150120.8475284867,
+          "is_future": true,
+          "portion": 1.0,
+          "present_value": 110248.75042492061,
+          "year": 2034
+        },
+        {
+          "adjusted_income": 114107.45668979282,
+          "aif": 0.7343999999999999,
+          "gross_earnings": 155375.0771919837,
+          "is_future": true,
+          "portion": 1.0,
+          "present_value": 114107.45668979282,
+          "year": 2035
+        }
+      ],
+      "total_present_value": 1681500.2688423232
+    }
+  },
+  "earn-mode-offset_match": {
+    "module": "earnings",
+    "result": {
+      "future_present_value": 1021645.0561991042,
+      "past_present_value": 321280.0175223936,
+      "rows": [
+        {
+          "adjusted_income": 60514.56,
+          "aif": 0.7343999999999999,
+          "gross_earnings": 82400.0,
+          "is_future": false,
+          "portion": 1.0,
+          "present_value": 60514.56,
+          "year": 2016
+        },
+        {
+          "adjusted_income": 62329.99679999999,
+          "aif": 0.7343999999999999,
+          "gross_earnings": 84872.0,
+          "is_future": false,
+          "portion": 1.0,
+          "present_value": 62329.99679999999,
+          "year": 2017
+        },
+        {
+          "adjusted_income": 64199.896704,
+          "aif": 0.7343999999999999,
+          "gross_earnings": 87418.16,
+          "is_future": false,
+          "portion": 1.0,
+          "present_value": 64199.896704,
+          "year": 2018
+        },
+        {
+          "adjusted_income": 66125.89360512,
+          "aif": 0.7343999999999999,
+          "gross_earnings": 90040.7048,
+          "is_future": false,
+          "portion": 1.0,
+          "present_value": 66125.89360512,
+          "year": 2019
+        },
+        {
+          "adjusted_income": 68109.67041327359,
+          "aif": 0.7343999999999999,
+          "gross_earnings": 92741.925944,
+          "is_future": false,
+          "portion": 1.0,
+          "present_value": 68109.67041327359,
+          "year": 2020
+        },
+        {
+          "adjusted_income": 70493.50887773816,
+          "aif": 0.7343999999999999,
+          "gross_earnings": 95987.89335203999,
+          "is_future": true,
+          "portion": 1.0,
+          "present_value": 68109.67041327359,
+          "year": 2021
+        },
+        {
+          "adjusted_income": 72960.78168845898,
+          "aif": 0.7343999999999999,
+          "gross_earnings": 99347.46961936138,
+          "is_future": true,
+          "portion": 1.0,
+          "present_value": 68109.67041327358,
+          "year": 2022
+        },
+        {
+          "adjusted_income": 75514.40904755505,
+          "aif": 0.7343999999999999,
+          "gross_earnings": 102824.63105603901,
+          "is_future": true,
+          "portion": 1.0,
+          "present_value": 68109.67041327359,
+          "year": 2023
+        },
+        {
+          "adjusted_income": 78157.41336421946,
+          "aif": 0.7343999999999999,
+          "gross_earnings": 106423.49314300036,
+          "is_future": true,
+          "portion": 1.0,
+          "present_value": 68109.67041327358,
+          "year": 2024
+        },
+        {
+          "adjusted_income": 80892.92283196714,
+          "aif": 0.7343999999999999,
+          "gross_earnings": 110148.31540300537,
+          "is_future": true,
+          "portion": 1.0,
+          "present_value": 68109.67041327359,
+          "year": 2025
+        },
+        {
+          "adjusted_income": 83724.17513108598,
+          "aif": 0.7343999999999999,
+          "gross_earnings": 114003.50644211055,
+          "is_future": true,
+          "portion": 1.0,
+          "present_value": 68109.67041327359,
+          "year": 2026
+        },
+        {
+          "adjusted_income": 86654.52126067398,
+          "aif": 0.7343999999999999,
+          "gross_earnings": 117993.62916758441,
+          "is_future": true,
+          "portion": 1.0,
+          "present_value": 68109.67041327359,
+          "year": 2027
+        },
+        {
+          "adjusted_income": 89687.42950479756,
+          "aif": 0.7343999999999999,
+          "gross_earnings": 122123.40618844985,
+          "is_future": true,
+          "portion": 1.0,
+          "present_value": 68109.67041327358,
+          "year": 2028
+        },
+        {
+          "adjusted_income": 92826.48953746547,
+          "aif": 0.7343999999999999,
+          "gross_earnings": 126397.72540504558,
+          "is_future": true,
+          "portion": 1.0,
+          "present_value": 68109.67041327358,
+          "year": 2029
+        },
+        {
+          "adjusted_income": 96075.41667127675,
+          "aif": 0.7343999999999999,
+          "gross_earnings": 130821.64579422216,
+          "is_future": true,
+          "portion": 1.0,
+          "present_value": 68109.67041327358,
+          "year": 2030
+        },
+        {
+          "adjusted_income": 99438.05625477142,
+          "aif": 0.7343999999999999,
+          "gross_earnings": 135400.40339701992,
+          "is_future": true,
+          "portion": 1.0,
+          "present_value": 68109.67041327358,
+          "year": 2031
+        },
+        {
+          "adjusted_income": 102918.38822368842,
+          "aif": 0.7343999999999999,
+          "gross_earnings": 140139.41751591561,
+          "is_future": true,
+          "portion": 1.0,
+          "present_value": 68109.67041327358,
+          "year": 2032
+        },
+        {
+          "adjusted_income": 106520.5318115175,
+          "aif": 0.7343999999999999,
+          "gross_earnings": 145044.29712897266,
+          "is_future": true,
+          "portion": 1.0,
+          "present_value": 68109.67041327358,
+          "year": 2033
+        },
+        {
+          "adjusted_income": 110248.75042492061,
+          "aif": 0.7343999999999999,
+          "gross_earnings": 150120.8475284867,
+          "is_future": true,
+          "portion": 1.0,
+          "present_value": 68109.67041327358,
+          "year": 2034
+        },
+        {
+          "adjusted_income": 114107.45668979282,
+          "aif": 0.7343999999999999,
+          "gross_earnings": 155375.0771919837,
+          "is_future": true,
+          "portion": 1.0,
+          "present_value": 68109.67041327358,
+          "year": 2035
+        }
+      ],
+      "total_present_value": 1342925.0737214978
+    }
+  },
+  "earn-mode-offset_zero": {
+    "module": "earnings",
+    "result": {
+      "future_present_value": 881279.9999999999,
+      "past_present_value": 293759.99999999994,
+      "rows": [
+        {
+          "adjusted_income": 58751.99999999999,
+          "aif": 0.7343999999999999,
+          "gross_earnings": 80000.0,
+          "is_future": false,
+          "portion": 1.0,
+          "present_value": 58751.99999999999,
+          "year": 2016
+        },
+        {
+          "adjusted_income": 58751.99999999999,
+          "aif": 0.7343999999999999,
+          "gross_earnings": 80000.0,
+          "is_future": false,
+          "portion": 1.0,
+          "present_value": 58751.99999999999,
+          "year": 2017
+        },
+        {
+          "adjusted_income": 58751.99999999999,
+          "aif": 0.7343999999999999,
+          "gross_earnings": 80000.0,
+          "is_future": false,
+          "portion": 1.0,
+          "present_value": 58751.99999999999,
+          "year": 2018
+        },
+        {
+          "adjusted_income": 58751.99999999999,
+          "aif": 0.7343999999999999,
+          "gross_earnings": 80000.0,
+          "is_future": false,
+          "portion": 1.0,
+          "present_value": 58751.99999999999,
+          "year": 2019
+        },
+        {
+          "adjusted_income": 58751.99999999999,
+          "aif": 0.7343999999999999,
+          "gross_earnings": 80000.0,
+          "is_future": false,
+          "portion": 1.0,
+          "present_value": 58751.99999999999,
+          "year": 2020
+        },
+        {
+          "adjusted_income": 58751.99999999999,
+          "aif": 0.7343999999999999,
+          "gross_earnings": 80000.0,
+          "is_future": true,
+          "portion": 1.0,
+          "present_value": 58751.99999999999,
+          "year": 2021
+        },
+        {
+          "adjusted_income": 58751.99999999999,
+          "aif": 0.7343999999999999,
+          "gross_earnings": 80000.0,
+          "is_future": true,
+          "portion": 1.0,
+          "present_value": 58751.99999999999,
+          "year": 2022
+        },
+        {
+          "adjusted_income": 58751.99999999999,
+          "aif": 0.7343999999999999,
+          "gross_earnings": 80000.0,
+          "is_future": true,
+          "portion": 1.0,
+          "present_value": 58751.99999999999,
+          "year": 2023
+        },
+        {
+          "adjusted_income": 58751.99999999999,
+          "aif": 0.7343999999999999,
+          "gross_earnings": 80000.0,
+          "is_future": true,
+          "portion": 1.0,
+          "present_value": 58751.99999999999,
+          "year": 2024
+        },
+        {
+          "adjusted_income": 58751.99999999999,
+          "aif": 0.7343999999999999,
+          "gross_earnings": 80000.0,
+          "is_future": true,
+          "portion": 1.0,
+          "present_value": 58751.99999999999,
+          "year": 2025
+        },
+        {
+          "adjusted_income": 58751.99999999999,
+          "aif": 0.7343999999999999,
+          "gross_earnings": 80000.0,
+          "is_future": true,
+          "portion": 1.0,
+          "present_value": 58751.99999999999,
+          "year": 2026
+        },
+        {
+          "adjusted_income": 58751.99999999999,
+          "aif": 0.7343999999999999,
+          "gross_earnings": 80000.0,
+          "is_future": true,
+          "portion": 1.0,
+          "present_value": 58751.99999999999,
+          "year": 2027
+        },
+        {
+          "adjusted_income": 58751.99999999999,
+          "aif": 0.7343999999999999,
+          "gross_earnings": 80000.0,
+          "is_future": true,
+          "portion": 1.0,
+          "present_value": 58751.99999999999,
+          "year": 2028
+        },
+        {
+          "adjusted_income": 58751.99999999999,
+          "aif": 0.7343999999999999,
+          "gross_earnings": 80000.0,
+          "is_future": true,
+          "portion": 1.0,
+          "present_value": 58751.99999999999,
+          "year": 2029
+        },
+        {
+          "adjusted_income": 58751.99999999999,
+          "aif": 0.7343999999999999,
+          "gross_earnings": 80000.0,
+          "is_future": true,
+          "portion": 1.0,
+          "present_value": 58751.99999999999,
+          "year": 2030
+        },
+        {
+          "adjusted_income": 58751.99999999999,
+          "aif": 0.7343999999999999,
+          "gross_earnings": 80000.0,
+          "is_future": true,
+          "portion": 1.0,
+          "present_value": 58751.99999999999,
+          "year": 2031
+        },
+        {
+          "adjusted_income": 58751.99999999999,
+          "aif": 0.7343999999999999,
+          "gross_earnings": 80000.0,
+          "is_future": true,
+          "portion": 1.0,
+          "present_value": 58751.99999999999,
+          "year": 2032
+        },
+        {
+          "adjusted_income": 58751.99999999999,
+          "aif": 0.7343999999999999,
+          "gross_earnings": 80000.0,
+          "is_future": true,
+          "portion": 1.0,
+          "present_value": 58751.99999999999,
+          "year": 2033
+        },
+        {
+          "adjusted_income": 58751.99999999999,
+          "aif": 0.7343999999999999,
+          "gross_earnings": 80000.0,
+          "is_future": true,
+          "portion": 1.0,
+          "present_value": 58751.99999999999,
+          "year": 2034
+        },
+        {
+          "adjusted_income": 58751.99999999999,
+          "aif": 0.7343999999999999,
+          "gross_earnings": 80000.0,
+          "is_future": true,
+          "portion": 1.0,
+          "present_value": 58751.99999999999,
+          "year": 2035
+        }
+      ],
+      "total_present_value": 1175039.9999999998
+    }
+  },
   "earn-partial-years": {
     "module": "earnings",
     "result": {
@@ -7868,6 +8438,69 @@
       "lifetime_present_value": 108413.68429626065
     }
   },
+  "lcp-mode-nominal": {
+    "module": "lcp",
+    "result": {
+      "category_present_value": {
+        "Physician": 48311.95468143551
+      },
+      "household_overlap_present_value": 0.0,
+      "items": [
+        {
+          "category": "Physician",
+          "name": "Visits",
+          "nominal_total": 48311.95468143551,
+          "occurrences": 20,
+          "overlaps_household": false,
+          "present_value": 48311.95468143551
+        }
+      ],
+      "lifetime_excluding_overlap": 48311.95468143551,
+      "lifetime_present_value": 48311.95468143551
+    }
+  },
+  "lcp-mode-offset_match": {
+    "module": "lcp",
+    "result": {
+      "category_present_value": {
+        "Physician": 31200.0
+      },
+      "household_overlap_present_value": 0.0,
+      "items": [
+        {
+          "category": "Physician",
+          "name": "Visits",
+          "nominal_total": 48311.95468143551,
+          "occurrences": 20,
+          "overlaps_household": false,
+          "present_value": 31200.0
+        }
+      ],
+      "lifetime_excluding_overlap": 31200.0,
+      "lifetime_present_value": 31200.0
+    }
+  },
+  "lcp-mode-offset_zero": {
+    "module": "lcp",
+    "result": {
+      "category_present_value": {
+        "Physician": 30000.0
+      },
+      "household_overlap_present_value": 0.0,
+      "items": [
+        {
+          "category": "Physician",
+          "name": "Visits",
+          "nominal_total": 30000.0,
+          "occurrences": 20,
+          "overlaps_household": false,
+          "present_value": 30000.0
+        }
+      ],
+      "lifetime_excluding_overlap": 30000.0,
+      "lifetime_present_value": 30000.0
+    }
+  },
   "lcp-replace-10yr": {
     "module": "lcp",
     "result": {
@@ -10501,6 +11134,396 @@
         }
       ],
       "total_present_value": 227964.63245492362
+    }
+  },
+  "lhhs-mode-nominal": {
+    "module": "lhhs",
+    "result": {
+      "future_present_value": 145569.71350959237,
+      "past_present_value": 0.0,
+      "rows": [
+        {
+          "annual_loss": 7826.785714285714,
+          "base_annual_value": 15653.571428571428,
+          "is_future": true,
+          "loss_percent": 0.5,
+          "present_value": 7826.785714285714,
+          "year": 2026
+        },
+        {
+          "annual_loss": 8061.589285714285,
+          "base_annual_value": 16123.17857142857,
+          "is_future": true,
+          "loss_percent": 0.5,
+          "present_value": 8061.589285714285,
+          "year": 2027
+        },
+        {
+          "annual_loss": 8303.436964285713,
+          "base_annual_value": 16606.873928571425,
+          "is_future": true,
+          "loss_percent": 0.5,
+          "present_value": 8303.436964285713,
+          "year": 2028
+        },
+        {
+          "annual_loss": 8552.540073214284,
+          "base_annual_value": 17105.08014642857,
+          "is_future": true,
+          "loss_percent": 0.5,
+          "present_value": 8552.540073214284,
+          "year": 2029
+        },
+        {
+          "annual_loss": 8809.116275410715,
+          "base_annual_value": 17618.23255082143,
+          "is_future": true,
+          "loss_percent": 0.5,
+          "present_value": 8809.116275410715,
+          "year": 2030
+        },
+        {
+          "annual_loss": 9073.389763673036,
+          "base_annual_value": 18146.779527346072,
+          "is_future": true,
+          "loss_percent": 0.5,
+          "present_value": 9073.389763673036,
+          "year": 2031
+        },
+        {
+          "annual_loss": 9345.591456583226,
+          "base_annual_value": 18691.182913166453,
+          "is_future": true,
+          "loss_percent": 0.5,
+          "present_value": 9345.591456583226,
+          "year": 2032
+        },
+        {
+          "annual_loss": 9625.959200280724,
+          "base_annual_value": 19251.918400561448,
+          "is_future": true,
+          "loss_percent": 0.5,
+          "present_value": 9625.959200280724,
+          "year": 2033
+        },
+        {
+          "annual_loss": 9914.737976289147,
+          "base_annual_value": 19829.475952578294,
+          "is_future": true,
+          "loss_percent": 0.5,
+          "present_value": 9914.737976289147,
+          "year": 2034
+        },
+        {
+          "annual_loss": 10212.180115577821,
+          "base_annual_value": 20424.360231155642,
+          "is_future": true,
+          "loss_percent": 0.5,
+          "present_value": 10212.180115577821,
+          "year": 2035
+        },
+        {
+          "annual_loss": 10518.545519045156,
+          "base_annual_value": 21037.09103809031,
+          "is_future": true,
+          "loss_percent": 0.5,
+          "present_value": 10518.545519045156,
+          "year": 2036
+        },
+        {
+          "annual_loss": 10834.101884616512,
+          "base_annual_value": 21668.203769233023,
+          "is_future": true,
+          "loss_percent": 0.5,
+          "present_value": 10834.101884616512,
+          "year": 2037
+        },
+        {
+          "annual_loss": 11159.124941155007,
+          "base_annual_value": 22318.249882310014,
+          "is_future": true,
+          "loss_percent": 0.5,
+          "present_value": 11159.124941155007,
+          "year": 2038
+        },
+        {
+          "annual_loss": 11493.898689389658,
+          "base_annual_value": 22987.797378779316,
+          "is_future": true,
+          "loss_percent": 0.5,
+          "present_value": 11493.898689389658,
+          "year": 2039
+        },
+        {
+          "annual_loss": 11838.715650071348,
+          "base_annual_value": 23677.431300142696,
+          "is_future": true,
+          "loss_percent": 0.5,
+          "present_value": 11838.715650071348,
+          "year": 2040
+        }
+      ],
+      "total_present_value": 145569.71350959237
+    }
+  },
+  "lhhs-mode-offset_match": {
+    "module": "lhhs",
+    "result": {
+      "future_present_value": 113982.31622746181,
+      "past_present_value": 0.0,
+      "rows": [
+        {
+          "annual_loss": 7826.785714285714,
+          "base_annual_value": 15653.571428571428,
+          "is_future": true,
+          "loss_percent": 0.5,
+          "present_value": 7598.82108183079,
+          "year": 2026
+        },
+        {
+          "annual_loss": 8061.589285714285,
+          "base_annual_value": 16123.17857142857,
+          "is_future": true,
+          "loss_percent": 0.5,
+          "present_value": 7598.82108183079,
+          "year": 2027
+        },
+        {
+          "annual_loss": 8303.436964285713,
+          "base_annual_value": 16606.873928571425,
+          "is_future": true,
+          "loss_percent": 0.5,
+          "present_value": 7598.82108183079,
+          "year": 2028
+        },
+        {
+          "annual_loss": 8552.540073214284,
+          "base_annual_value": 17105.08014642857,
+          "is_future": true,
+          "loss_percent": 0.5,
+          "present_value": 7598.821081830788,
+          "year": 2029
+        },
+        {
+          "annual_loss": 8809.116275410715,
+          "base_annual_value": 17618.23255082143,
+          "is_future": true,
+          "loss_percent": 0.5,
+          "present_value": 7598.821081830791,
+          "year": 2030
+        },
+        {
+          "annual_loss": 9073.389763673036,
+          "base_annual_value": 18146.779527346072,
+          "is_future": true,
+          "loss_percent": 0.5,
+          "present_value": 7598.82108183079,
+          "year": 2031
+        },
+        {
+          "annual_loss": 9345.591456583226,
+          "base_annual_value": 18691.182913166453,
+          "is_future": true,
+          "loss_percent": 0.5,
+          "present_value": 7598.821081830789,
+          "year": 2032
+        },
+        {
+          "annual_loss": 9625.959200280724,
+          "base_annual_value": 19251.918400561448,
+          "is_future": true,
+          "loss_percent": 0.5,
+          "present_value": 7598.821081830789,
+          "year": 2033
+        },
+        {
+          "annual_loss": 9914.737976289147,
+          "base_annual_value": 19829.475952578294,
+          "is_future": true,
+          "loss_percent": 0.5,
+          "present_value": 7598.821081830791,
+          "year": 2034
+        },
+        {
+          "annual_loss": 10212.180115577821,
+          "base_annual_value": 20424.360231155642,
+          "is_future": true,
+          "loss_percent": 0.5,
+          "present_value": 7598.82108183079,
+          "year": 2035
+        },
+        {
+          "annual_loss": 10518.545519045156,
+          "base_annual_value": 21037.09103809031,
+          "is_future": true,
+          "loss_percent": 0.5,
+          "present_value": 7598.82108183079,
+          "year": 2036
+        },
+        {
+          "annual_loss": 10834.101884616512,
+          "base_annual_value": 21668.203769233023,
+          "is_future": true,
+          "loss_percent": 0.5,
+          "present_value": 7598.821081830791,
+          "year": 2037
+        },
+        {
+          "annual_loss": 11159.124941155007,
+          "base_annual_value": 22318.249882310014,
+          "is_future": true,
+          "loss_percent": 0.5,
+          "present_value": 7598.82108183079,
+          "year": 2038
+        },
+        {
+          "annual_loss": 11493.898689389658,
+          "base_annual_value": 22987.797378779316,
+          "is_future": true,
+          "loss_percent": 0.5,
+          "present_value": 7598.82108183079,
+          "year": 2039
+        },
+        {
+          "annual_loss": 11838.715650071348,
+          "base_annual_value": 23677.431300142696,
+          "is_future": true,
+          "loss_percent": 0.5,
+          "present_value": 7598.821081830791,
+          "year": 2040
+        }
+      ],
+      "total_present_value": 113982.31622746181
+    }
+  },
+  "lhhs-mode-offset_zero": {
+    "module": "lhhs",
+    "result": {
+      "future_present_value": 117401.78571428567,
+      "past_present_value": 0.0,
+      "rows": [
+        {
+          "annual_loss": 7826.785714285714,
+          "base_annual_value": 15653.571428571428,
+          "is_future": true,
+          "loss_percent": 0.5,
+          "present_value": 7826.785714285714,
+          "year": 2026
+        },
+        {
+          "annual_loss": 7826.785714285714,
+          "base_annual_value": 15653.571428571428,
+          "is_future": true,
+          "loss_percent": 0.5,
+          "present_value": 7826.785714285714,
+          "year": 2027
+        },
+        {
+          "annual_loss": 7826.785714285714,
+          "base_annual_value": 15653.571428571428,
+          "is_future": true,
+          "loss_percent": 0.5,
+          "present_value": 7826.785714285714,
+          "year": 2028
+        },
+        {
+          "annual_loss": 7826.785714285714,
+          "base_annual_value": 15653.571428571428,
+          "is_future": true,
+          "loss_percent": 0.5,
+          "present_value": 7826.785714285714,
+          "year": 2029
+        },
+        {
+          "annual_loss": 7826.785714285714,
+          "base_annual_value": 15653.571428571428,
+          "is_future": true,
+          "loss_percent": 0.5,
+          "present_value": 7826.785714285714,
+          "year": 2030
+        },
+        {
+          "annual_loss": 7826.785714285714,
+          "base_annual_value": 15653.571428571428,
+          "is_future": true,
+          "loss_percent": 0.5,
+          "present_value": 7826.785714285714,
+          "year": 2031
+        },
+        {
+          "annual_loss": 7826.785714285714,
+          "base_annual_value": 15653.571428571428,
+          "is_future": true,
+          "loss_percent": 0.5,
+          "present_value": 7826.785714285714,
+          "year": 2032
+        },
+        {
+          "annual_loss": 7826.785714285714,
+          "base_annual_value": 15653.571428571428,
+          "is_future": true,
+          "loss_percent": 0.5,
+          "present_value": 7826.785714285714,
+          "year": 2033
+        },
+        {
+          "annual_loss": 7826.785714285714,
+          "base_annual_value": 15653.571428571428,
+          "is_future": true,
+          "loss_percent": 0.5,
+          "present_value": 7826.785714285714,
+          "year": 2034
+        },
+        {
+          "annual_loss": 7826.785714285714,
+          "base_annual_value": 15653.571428571428,
+          "is_future": true,
+          "loss_percent": 0.5,
+          "present_value": 7826.785714285714,
+          "year": 2035
+        },
+        {
+          "annual_loss": 7826.785714285714,
+          "base_annual_value": 15653.571428571428,
+          "is_future": true,
+          "loss_percent": 0.5,
+          "present_value": 7826.785714285714,
+          "year": 2036
+        },
+        {
+          "annual_loss": 7826.785714285714,
+          "base_annual_value": 15653.571428571428,
+          "is_future": true,
+          "loss_percent": 0.5,
+          "present_value": 7826.785714285714,
+          "year": 2037
+        },
+        {
+          "annual_loss": 7826.785714285714,
+          "base_annual_value": 15653.571428571428,
+          "is_future": true,
+          "loss_percent": 0.5,
+          "present_value": 7826.785714285714,
+          "year": 2038
+        },
+        {
+          "annual_loss": 7826.785714285714,
+          "base_annual_value": 15653.571428571428,
+          "is_future": true,
+          "loss_percent": 0.5,
+          "present_value": 7826.785714285714,
+          "year": 2039
+        },
+        {
+          "annual_loss": 7826.785714285714,
+          "base_annual_value": 15653.571428571428,
+          "is_future": true,
+          "loss_percent": 0.5,
+          "present_value": 7826.785714285714,
+          "year": 2040
+        }
+      ],
+      "total_present_value": 117401.78571428567
     }
   },
   "lhhs-selfconsume-0.0": {
