@@ -84,6 +84,33 @@ def test_save_unknown_module_is_404():
     assert r.status_code == 404
 
 
+# --- unauthenticated UX: browser page loads redirect to login --------------
+
+def test_anonymous_browser_page_redirects_to_login():
+    """A 401 (raised by require_user for anonymous users) should redirect a
+    full-page browser GET to /auth/login, while HTMX and JSON clients still get
+    a plain 401. Force the 401 via a dependency override so we don't depend on
+    real auth state."""
+    from fastapi import HTTPException
+
+    from app.auth import require_user
+
+    def _deny():
+        raise HTTPException(status_code=401, detail="Sign in required.")
+
+    app.dependency_overrides[require_user] = _deny
+    try:
+        r = client.get("/", headers={"accept": "text/html"}, follow_redirects=False)
+        assert r.status_code == 302 and r.headers["location"] == "/auth/login"
+        assert client.get("/", headers={"accept": "text/html", "hx-request": "true"},
+                          follow_redirects=False).status_code == 401
+        assert client.get("/", headers={"accept": "application/json"},
+                          follow_redirects=False).status_code == 401
+        assert client.get("/healthz").status_code == 200  # public, unaffected
+    finally:
+        app.dependency_overrides.pop(require_user, None)
+
+
 # --- lookup endpoints: confirm the route wiring + returned values -----------
 # These lock the HTTP layer (query-param names, status codes, and the exact
 # values surfaced from the CSVs) so a future column/param rename can't silently

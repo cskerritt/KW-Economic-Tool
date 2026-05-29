@@ -10,7 +10,7 @@ from __future__ import annotations
 from pathlib import Path
 
 from fastapi import Depends, FastAPI, Request
-from fastapi.responses import HTMLResponse, PlainTextResponse
+from fastapi.responses import HTMLResponse, PlainTextResponse, RedirectResponse
 from fastapi.staticfiles import StaticFiles
 from fastapi.templating import Jinja2Templates
 from starlette.middleware.sessions import SessionMiddleware
@@ -56,6 +56,26 @@ def _bad_input(request: Request, exc: Exception) -> PlainTextResponse:
     if isinstance(exc, KeyError):
         detail = f"missing required field: {detail}"
     return PlainTextResponse(f"Invalid input: {detail}", status_code=422)
+
+
+@app.exception_handler(401)
+def _needs_login(request: Request, exc) -> object:
+    """Send unauthenticated browser page-loads to the OAuth login.
+
+    ``require_user`` raises 401 for anonymous requests. For a normal full-page
+    GET (not an HTMX fragment or an API/JSON client) that should land the user
+    on Google sign-in, not a bare 401 body. HTMX and non-HTML clients still get
+    a plain 401 so they can handle it programmatically.
+    """
+    accept = request.headers.get("accept", "")
+    is_page_load = (
+        request.method == "GET"
+        and "text/html" in accept
+        and request.headers.get("hx-request") != "true"
+    )
+    if is_page_load:
+        return RedirectResponse("/auth/login", status_code=302)
+    return PlainTextResponse(getattr(exc, "detail", "Sign in required."), status_code=401)
 
 
 @app.on_event("startup")
